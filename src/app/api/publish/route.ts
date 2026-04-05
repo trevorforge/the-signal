@@ -20,14 +20,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    saveBriefing(briefing);
+    const url = await saveBriefing(briefing);
 
     return NextResponse.json({
       ok: true,
       date: briefing.date,
       story_count: briefing.story_count,
+      blob_url: url,
     });
-  } catch (e) {
+  } catch {
     return NextResponse.json(
       { error: "Invalid JSON body" },
       { status: 400 }

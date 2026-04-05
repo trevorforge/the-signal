@@ -10,8 +10,8 @@ import { Footer } from "@/components/Footer";
 
 export const dynamic = "force-dynamic";
 
-export default function Home() {
-  const briefing = getLatestBriefing();
+export default async function Home() {
+  const briefing = await getLatestBriefing();
 
   if (!briefing) {
     return (

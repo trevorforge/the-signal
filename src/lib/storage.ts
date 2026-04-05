@@ -1,51 +1,46 @@
 import { Briefing } from "./types";
-import fs from "fs";
-import path from "path";
+import { put, list, head } from "@vercel/blob";
 
-const DATA_DIR = path.join(process.cwd(), "src", "data", "briefings");
+const PREFIX = "briefings/";
 
-function ensureDir() {
-  if (!fs.existsSync(DATA_DIR)) {
-    fs.mkdirSync(DATA_DIR, { recursive: true });
-  }
+export async function saveBriefing(briefing: Briefing): Promise<string> {
+  const filename = `${PREFIX}${briefing.date}.json`;
+  const blob = await put(filename, JSON.stringify(briefing), {
+    access: "public",
+    addRandomSuffix: false,
+    contentType: "application/json",
+  });
+  return blob.url;
 }
 
-export function saveBriefing(briefing: Briefing): void {
-  ensureDir();
-  const filename = `${briefing.date}.json`;
-  fs.writeFileSync(
-    path.join(DATA_DIR, filename),
-    JSON.stringify(briefing, null, 2)
+export async function getLatestBriefing(): Promise<Briefing | null> {
+  const { blobs } = await list({ prefix: PREFIX, limit: 100 });
+
+  if (blobs.length === 0) return null;
+
+  // Sort by pathname (date-based) descending
+  const sorted = blobs.sort((a, b) =>
+    b.pathname.localeCompare(a.pathname)
   );
+
+  const response = await fetch(sorted[0].url);
+  return response.json();
 }
 
-export function getLatestBriefing(): Briefing | null {
-  ensureDir();
-  const files = fs
-    .readdirSync(DATA_DIR)
-    .filter((f) => f.endsWith(".json"))
-    .sort()
-    .reverse();
+export async function getBriefing(
+  date: string
+): Promise<Briefing | null> {
+  const { blobs } = await list({ prefix: `${PREFIX}${date}` });
+  if (blobs.length === 0) return null;
 
-  if (files.length === 0) return null;
-
-  const content = fs.readFileSync(path.join(DATA_DIR, files[0]), "utf-8");
-  return JSON.parse(content);
+  const response = await fetch(blobs[0].url);
+  return response.json();
 }
 
-export function getBriefing(date: string): Briefing | null {
-  const filepath = path.join(DATA_DIR, `${date}.json`);
-  if (!fs.existsSync(filepath)) return null;
-  const content = fs.readFileSync(filepath, "utf-8");
-  return JSON.parse(content);
-}
-
-export function listBriefingDates(): string[] {
-  ensureDir();
-  return fs
-    .readdirSync(DATA_DIR)
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => f.replace(".json", ""))
+export async function listBriefingDates(): Promise<string[]> {
+  const { blobs } = await list({ prefix: PREFIX, limit: 100 });
+  return blobs
+    .map((b) => b.pathname.replace(PREFIX, "").replace(".json", ""))
     .sort()
     .reverse();
 }
