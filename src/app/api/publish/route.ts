@@ -28,9 +28,10 @@ export async function POST(request: NextRequest) {
       story_count: briefing.story_count,
       blob_url: url,
     });
-  } catch {
+  } catch (e: unknown) {
+    const message = e instanceof Error ? e.message : "Unknown error";
     return NextResponse.json(
-      { error: "Invalid JSON body" },
+      { error: message },
       { status: 400 }
     );
   }
