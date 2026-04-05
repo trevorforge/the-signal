@@ -8,7 +8,7 @@ import { WatchList } from "@/components/WatchList";
 import { QuickHits } from "@/components/QuickHits";
 import { Footer } from "@/components/Footer";
 
-export const dynamic = "force-dynamic";
+// Static: rebuilds on each git push from the trigger
 
 export default async function Home() {
   const briefing = await getLatestBriefing();

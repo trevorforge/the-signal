@@ -1,46 +1,43 @@
 import { Briefing } from "./types";
-import { put, list, head } from "@vercel/blob";
+import fs from "fs";
+import path from "path";
 
-const PREFIX = "briefings/";
+const DATA_DIR = path.join(process.cwd(), "src", "data", "briefings");
+
+function ensureDir() {
+  if (!fs.existsSync(DATA_DIR)) {
+    fs.mkdirSync(DATA_DIR, { recursive: true });
+  }
+}
 
 export async function saveBriefing(briefing: Briefing): Promise<string> {
-  const filename = `${PREFIX}${briefing.date}.json`;
-  const blob = await put(filename, JSON.stringify(briefing), {
-    access: "public",
-    addRandomSuffix: false,
-    contentType: "application/json",
-  });
-  return blob.url;
+  ensureDir();
+  const filename = `${briefing.date}.json`;
+  const filepath = path.join(DATA_DIR, filename);
+  fs.writeFileSync(filepath, JSON.stringify(briefing, null, 2));
+  return filepath;
 }
 
 export async function getLatestBriefing(): Promise<Briefing | null> {
-  const { blobs } = await list({ prefix: PREFIX, limit: 100 });
+  ensureDir();
+  const files = fs
+    .readdirSync(DATA_DIR)
+    .filter((f) => f.endsWith(".json"))
+    .sort()
+    .reverse();
 
-  if (blobs.length === 0) return null;
+  if (files.length === 0) return null;
 
-  // Sort by pathname (date-based) descending
-  const sorted = blobs.sort((a, b) =>
-    b.pathname.localeCompare(a.pathname)
-  );
-
-  const response = await fetch(sorted[0].url);
-  return response.json();
-}
-
-export async function getBriefing(
-  date: string
-): Promise<Briefing | null> {
-  const { blobs } = await list({ prefix: `${PREFIX}${date}` });
-  if (blobs.length === 0) return null;
-
-  const response = await fetch(blobs[0].url);
-  return response.json();
+  const content = fs.readFileSync(path.join(DATA_DIR, files[0]), "utf-8");
+  return JSON.parse(content);
 }
 
 export async function listBriefingDates(): Promise<string[]> {
-  const { blobs } = await list({ prefix: PREFIX, limit: 100 });
-  return blobs
-    .map((b) => b.pathname.replace(PREFIX, "").replace(".json", ""))
+  ensureDir();
+  return fs
+    .readdirSync(DATA_DIR)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.replace(".json", ""))
     .sort()
     .reverse();
 }
