@@ -4,19 +4,17 @@ export function QuickHits({ items }: { items: QuickHit[] }) {
   if (!items.length) return null;
 
   return (
-    <section className="bg-surface border border-border p-6 sm:p-8">
+    <section className="bg-surface border border-border rounded-xl p-5 sm:p-6">
       <h2 className="font-[Georgia,serif] text-xl font-bold text-text-primary mb-4">
         Quick Hits
       </h2>
-      <ul className="space-y-3">
+      <ul className="space-y-2.5">
         {items.map((item, i) => (
           <li
             key={i}
-            className="flex gap-3 text-sm pb-3 border-b border-border last:border-0 last:pb-0"
+            className="flex gap-2.5 text-sm pb-2.5 border-b border-border last:border-0 last:pb-0"
           >
-            <span className="text-signal-orange mt-0.5 shrink-0 text-xs">
-              &#x25CF;
-            </span>
+            <span className="text-signal-orange mt-0.5 shrink-0 text-[8px]">&#x25CF;</span>
             <div>
               <a
                 href={item.url}
@@ -26,10 +24,7 @@ export function QuickHits({ items }: { items: QuickHit[] }) {
               >
                 {item.title}
               </a>
-              <span className="text-text-secondary">
-                {" "}
-                &mdash; {item.description}
-              </span>
+              <span className="text-text-secondary"> &mdash; {item.description}</span>
             </div>
           </li>
         ))}

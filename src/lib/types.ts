@@ -1,3 +1,14 @@
+export type StoryCategory =
+  | "claude-anthropic"
+  | "design-tools"
+  | "creative-advertising"
+  | "rag-knowledge"
+  | "competitive-intel"
+  | "ai-coding"
+  | "ai-agents"
+  | "product-launches"
+  | "general";
+
 export interface TopStory {
   title: string;
   url: string;
@@ -8,6 +19,9 @@ export interface TopStory {
   bull_case: string;
   bear_case: string;
   the_signal: string;
+  category?: StoryCategory;
+  signal_score?: number;
+  tags?: string[];
 }
 
 export interface ProductItem {
@@ -15,6 +29,8 @@ export interface ProductItem {
   url: string;
   description: string;
   tag: "NEW" | "UPDATE" | "BETA" | "BREAKING";
+  category?: StoryCategory;
+  tags?: string[];
 }
 
 export interface IntelItem {
@@ -22,6 +38,9 @@ export interface IntelItem {
   url: string;
   source: string;
   summary: string;
+  category?: StoryCategory;
+  signal_score?: number;
+  tags?: string[];
 }
 
 export interface VideoItem {
@@ -31,12 +50,16 @@ export interface VideoItem {
   channel: string;
   duration?: string;
   summary: string;
+  category?: StoryCategory;
+  tags?: string[];
 }
 
 export interface QuickHit {
   title: string;
   url: string;
   description: string;
+  category?: StoryCategory;
+  tags?: string[];
 }
 
 export interface Briefing {
@@ -50,4 +73,5 @@ export interface Briefing {
   knowledge_shelf: IntelItem[];
   watch_list: VideoItem[];
   quick_hits: QuickHit[];
+  hero_story_index?: number;
 }

@@ -1,6 +1,9 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme inline {
+  /* Brand */
   --color-signal-orange: #f97316;
   --color-signal-teal: #06b6d4;
   --color-bull-green: #059669;
@@ -8,37 +11,63 @@
   --color-bear-red: #dc2626;
   --color-bear-red-bg: #fee2e2;
   --color-signal-bg: #ffedd5;
-  --color-dark: #0d1117;
-  --color-dark-secondary: #161b22;
+
+  /* Semantic (light mode defaults - overridden by .dark) */
+  --color-bg: #f1f5f9;
   --color-surface: #ffffff;
-  --color-muted: #f8fafc;
+  --color-surface-elevated: #ffffff;
+  --color-surface-inset: #f8fafc;
   --color-border: #e2e8f0;
   --color-text-primary: #1e293b;
   --color-text-secondary: #475569;
   --color-text-muted: #94a3b8;
+
+  /* Dark chrome (header/footer - always dark) */
+  --color-chrome: #0d1117;
+  --color-chrome-secondary: #161b22;
+
+  /* Category accents */
+  --color-cat-claude: #06b6d4;
+  --color-cat-design: #8b5cf6;
+  --color-cat-creative: #3b82f6;
+  --color-cat-knowledge: #a855f7;
+  --color-cat-competitive: #ef4444;
+  --color-cat-coding: #10b981;
+  --color-cat-agents: #f59e0b;
+  --color-cat-product: #ec4899;
+  --color-cat-general: #6b7280;
+
+  /* Typography */
   --font-display: Georgia, "Times New Roman", serif;
 }
 
+/* Dark mode overrides */
+.dark {
+  --color-bg: #0d1117;
+  --color-surface: #161b22;
+  --color-surface-elevated: #1c2128;
+  --color-surface-inset: #0d1117;
+  --color-border: #30363d;
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #484f58;
+  --color-bull-green-bg: #05966915;
+  --color-bear-red-bg: #dc262615;
+  --color-signal-bg: #f9731615;
+}
+
 body {
-  background: #f1f5f9;
+  background: var(--color-bg);
   color: var(--color-text-primary);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-::-webkit-scrollbar-thumb {
-  background: #d1d5db;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 
 @media (display-mode: standalone) {
-  body {
-    padding-top: env(safe-area-inset-top);
-  }
+  body { padding-top: env(safe-area-inset-top); }
 }

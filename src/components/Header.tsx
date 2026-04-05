@@ -16,27 +16,18 @@ export function Header({ date, storyCount, updatedAt }: HeaderProps) {
   });
 
   return (
-    <header className="bg-dark text-white rounded-t-2xl px-6 py-8 sm:px-10">
-      <div className="flex items-center gap-3">
-        <div className="w-2 h-9 bg-signal-orange rounded-sm" />
-        <h1 className="font-[Georgia,serif] text-3xl sm:text-4xl font-bold tracking-tight">
-          THE SIGNAL
-        </h1>
-      </div>
-      <p className="mt-2 text-sm tracking-wide text-text-muted uppercase">
-        Daily AI Intelligence for Creative Builders
-      </p>
-      <div className="mt-4 flex flex-wrap items-center gap-2">
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-signal-orange/15 text-signal-orange">
-          {displayDate}
-        </span>
-        <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-signal-teal/15 text-signal-teal">
+    <div className="px-1 py-5 sm:py-7">
+      <h1 className="font-[Georgia,serif] text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
+        {displayDate}
+      </h1>
+      <div className="mt-2 flex items-center gap-3">
+        <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[11px] font-semibold bg-signal-orange/15 text-signal-orange">
           {storyCount} stories
         </span>
-        <span className="text-xs text-text-muted ml-auto">
+        <span className="text-xs text-text-muted">
           Updated {updateTime}
         </span>
       </div>
-    </header>
+    </div>
   );
 }

@@ -4,7 +4,7 @@
   "description": "Daily AI intelligence for creative builders",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#f1f5f9",
+  "background_color": "#0d1117",
   "theme_color": "#0d1117",
   "icons": [
     {

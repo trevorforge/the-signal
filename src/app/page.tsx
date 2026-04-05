@@ -2,13 +2,12 @@ import { getLatestBriefing } from "@/lib/storage";
 import { Header } from "@/components/Header";
 import { TldrSection } from "@/components/TldrSection";
 import { TopStoryCard } from "@/components/TopStoryCard";
+import { HeroStory } from "@/components/HeroStory";
 import { ProductRadar } from "@/components/ProductRadar";
 import { IntelSection } from "@/components/IntelSection";
 import { WatchList } from "@/components/WatchList";
 import { QuickHits } from "@/components/QuickHits";
 import { Footer } from "@/components/Footer";
-
-// Static: rebuilds on each git push from the trigger
 
 export default async function Home() {
   const briefing = await getLatestBriefing();
@@ -30,6 +29,10 @@ export default async function Home() {
     );
   }
 
+  const heroIndex = briefing.hero_story_index ?? 0;
+  const heroStory = briefing.top_stories[heroIndex];
+  const otherStories = briefing.top_stories.filter((_, i) => i !== heroIndex);
+
   const sourceCount =
     briefing.top_stories.length +
     briefing.product_radar.length +
@@ -39,7 +42,7 @@ export default async function Home() {
     briefing.quick_hits.length;
 
   return (
-    <main className="flex-1 flex justify-center px-4 py-6 sm:py-10">
+    <main className="flex-1 flex justify-center px-4 pb-8">
       <div className="w-full max-w-2xl">
         <Header
           date={briefing.date}
@@ -47,20 +50,28 @@ export default async function Home() {
           updatedAt={briefing.updated_at}
         />
 
-        <div className="flex flex-col">
+        <div className="flex flex-col gap-3">
+          {/* Morning Brief */}
           <TldrSection items={briefing.tldr} />
 
-          {/* Top Stories */}
-          <section className="bg-surface border-x border-b border-border p-6 sm:p-8">
-            <h2 className="font-[Georgia,serif] text-xl font-bold text-text-primary mb-5">
-              Top Stories
-            </h2>
-            <div className="space-y-5">
-              {briefing.top_stories.map((story, i) => (
-                <TopStoryCard key={i} story={story} />
+          {/* Hero Story */}
+          {heroStory && (
+            <HeroStory story={heroStory} briefingDate={briefing.date} />
+          )}
+
+          {/* Other Top Stories */}
+          {otherStories.length > 0 && (
+            <div className="space-y-3">
+              {otherStories.map((story, i) => (
+                <TopStoryCard
+                  key={i}
+                  story={story}
+                  briefingDate={briefing.date}
+                  storyIndex={i + (heroIndex === 0 ? 1 : 0)}
+                />
               ))}
             </div>
-          </section>
+          )}
 
           <ProductRadar items={briefing.product_radar} />
 
