@@ -1,410 +1,317 @@
 {
   "date": "2026-04-06",
-  "updated_at": "2026-04-06T18:45:00.000Z",
+  "updated_at": "2026-04-06T12:00:00Z",
   "version": 2,
-  "story_count": 6,
+  "story_count": 5,
   "tldr": [
-    "Anthropic blocks OpenClaw and third-party agent frameworks from using Claude subscription limits, forcing pay-as-you-go billing starting April 4",
-    "Claude Code ships Q1 2026 mega-update with computer use, auto mode, remote control, and scheduled tasks, but also accidentally leaked 500K lines of source code via npm",
-    "OpenAI closes a record $122 billion funding round at $852B valuation, then launches ChatGPT Voice on Apple CarPlay",
-    "MCP roadmap for 2026 pivots to enterprise readiness with transport scalability, agent communication primitives, and SSO-integrated auth"
+    "Anthropic ends Claude Code third-party harness access under base subscriptions, triggering up to 50x cost increases for OpenClaw users",
+    "Linux Foundation forms Agentic AI Foundation to govern MCP and open-source agent standards",
+    "Vibe coding drives 84% App Store submission surge and $12.8B market estimate for AI coding tools",
+    "OpenAI retires GPT-4o, Gemini gains cross-platform chat import from ChatGPT and Claude",
+    "Cursor 3 launches with native AI agent support, reigniting Claude Code vs Codex debate"
   ],
   "topics": [
     {
-      "id": "anthropic-blocks-openclaw-subscriptions",
-      "title": "Anthropic Cuts Off OpenClaw From Claude Subscriptions in Cost Crackdown",
-      "summary": "Anthropic blocked Claude Pro and Max subscribers from using flat-rate plans with third-party agent frameworks like OpenClaw, effective April 4. Users now face pay-as-you-go billing that could increase costs up to 50x for heavy agent workloads.",
+      "id": "anthropic-openclaw-billing",
+      "title": "Anthropic Cuts Off Third-Party Claude Code Harnesses",
+      "summary": "Anthropic has ended subscription-plan access for third-party Claude Code harnesses like OpenClaw, citing usage patterns the subscriptions were never designed for. Thousands of developers now face cost increases of up to 50x their previous monthly bills.",
       "key_takeaways": [
-        "OpenClaw users can no longer piggyback on Claude subscription limits and must use separate pay-as-you-go billing or API keys",
-        "Anthropic cites infrastructure strain from third-party tools that bypass prompt cache optimizations built into Claude Code",
-        "One-time credit equal to monthly plan cost offered through April 17, plus up to 30% off pre-purchased usage bundles",
-        "OpenClaw creator Peter Steinberger left the project in February to join OpenAI, adding drama to the split"
+        "Claude Code subscribers can no longer use base subscription limits with third-party harnesses like OpenClaw as of April 4, 2026",
+        "Some users report monthly costs jumping from ~$20 to over $1,000 depending on usage volume",
+        "Anthropic head of Claude Code Boris Cherny confirmed the change was intentional, not a bug",
+        "Anthropic accidentally leaked internal source code on April 1, exposing next-model codenames: Capybara and Mythos",
+        "Claude.ai experienced a significant outage on April 6 affecting login, voice mode, and chat completions"
       ],
-      "article": "Anthropic dropped a bombshell on April 4 when it formally blocked Claude subscribers from using their flat-rate plans to power OpenClaw and other third-party agent frameworks. The move shifts the cost of running autonomous agents onto users through a new pay-as-you-go billing tier.\n\nBoris Cherny, Anthropic's head of Claude Code, explained that subscriptions \"weren't built for the usage patterns of these third-party tools.\" The core issue: third-party harnesses bypass prompt cache optimizations that Claude Code uses to keep costs manageable, placing \"outsized strain\" on infrastructure. Some power users were reportedly burning token volumes worth thousands of dollars monthly on $20-$200 subscription plans.\n\nFor creative directors and builders who run Claude through custom pipelines, this is a meaningful cost shift. If you use Claude Code directly, nothing changes. But if you've built workflows through OpenClaw or similar agent frameworks, you now need to budget for API-rate billing: $3/$15 per million tokens for Sonnet 4.6, $15/$75 for Opus 4.6.\n\nThe timing is loaded. OpenClaw creator Peter Steinberger left the project in February to join OpenAI, and the framework had grown to 247,000 GitHub stars. Anthropic offered a one-time credit and bundle discounts, but the message is clear: first-party tooling gets the price advantage.",
-      "impact_tier": "watch",
+      "article": "Anthropic's week began with an accidental source code release on April 1 -- a packaging error that exposed internal codenames for its next model family (Capybara and Mythos) -- and escalated on April 4 when the company formally ended subscription-tier access for third-party Claude Code harnesses. OpenClaw, a popular automation wrapper, is now excluded from standard plan limits, pushing costs up to 50x for heavy users. Anthropic's Boris Cherny defended the move, saying base subscriptions were never designed to support the usage intensity of agentic harnesses. The week closed with a platform outage on April 6, affecting login flows, voice mode, and chat completions across Claude.ai. Collectively, the events underscore Anthropic's effort to monetize agentic usage separately from consumer chat access -- a strategic pivot that is drawing significant developer backlash.",
+      "impact_tier": "adopt",
       "category": "claude-anthropic",
-      "signal_score": 82,
-      "image": "https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-1396827010.jpg",
-      "tags": ["anthropic", "openclaw", "pricing", "claude-code", "agent-frameworks"],
+      "signal_score": 92,
+      "image": null,
+      "tags": ["anthropic", "claude-code", "billing", "openclaw", "model-leak"],
       "sources": [
         {
-          "title": "Anthropic says Claude Code subscribers will need to pay extra for OpenClaw usage",
+          "title": "Anthropic says Claude Code subscribers will need to pay extra for OpenClaw support",
           "url": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
           "source_name": "TechCrunch",
-          "image": "https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-1396827010.jpg",
-          "excerpt": "Anthropic is implementing a pricing change affecting Claude Code subscribers who use third-party tools like OpenClaw, requiring separate pay-as-you-go billing.",
-          "applicability_score": 85,
-          "factuality_score": 92,
-          "angle": "Breaking news with direct quotes from Anthropic leadership on the business rationale"
-        },
-        {
-          "title": "Anthropic cuts off the ability to use Claude subscriptions with OpenClaw and third-party AI agents",
-          "url": "https://venturebeat.com/technology/anthropic-cuts-off-the-ability-to-use-claude-subscriptions-with-openclaw-and",
-          "source_name": "VentureBeat",
           "image": null,
-          "excerpt": "Anthropic blocked Claude Pro and Max subscribers from using flat-rate plans with third-party AI agent frameworks, shifting costs to pay-as-you-go billing.",
-          "applicability_score": 80,
-          "factuality_score": 88,
-          "angle": "Industry analysis of the competitive implications for the agent ecosystem"
-        },
-        {
-          "title": "Anthropic Just Closed the OpenClaw Subscription Loophole",
-          "url": "https://www.hongkiat.com/blog/anthropic-closed-openclaw-loophole/",
-          "source_name": "Hongkiat",
-          "image": "https://assets.hongkiat.com/uploads/anthropic-closed-openclaw-loophole/claude-email.jpg",
-          "excerpt": "Third-party harnesses like OpenClaw no longer qualify for subscription usage limits. Heavy workloads previously subsidized at $20-$200/month now incur separate pay-as-you-go billing.",
-          "applicability_score": 78,
-          "factuality_score": 85,
-          "angle": "Practical breakdown of what users can do now, including the credit and discount options"
-        },
-        {
-          "title": "Bad news Claude users: Anthropic says you'll need to pay to use OpenClaw now",
-          "url": "https://www.techradar.com/pro/bad-news-claude-users-anthropic-says-youll-need-to-pay-to-use-openclaw-now",
-          "source_name": "TechRadar",
-          "image": null,
-          "excerpt": "Thousands of users face cost increases of up to 50 times their previous monthly outlay as Anthropic enforces separate billing for third-party agent tools.",
-          "applicability_score": 72,
-          "factuality_score": 82,
-          "angle": "Consumer impact focus with community reaction from Reddit and Hacker News"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "claude-code-q1-updates-and-source-leak",
-      "title": "Claude Code Ships Mega Q1 Update, Then Accidentally Leaks 500K Lines of Source Code",
-      "summary": "Claude Code's Q1 2026 updates include computer use, auto mode, remote control, and scheduled tasks. But the quarter also brought an embarrassing npm packaging error that exposed 500,000 lines of internal source code, revealing the agentic harness architecture.",
-      "key_takeaways": [
-        "Computer Use lets Claude Code interact with GUIs by taking screenshots and issuing mouse/keyboard actions",
-        "Auto Mode removes confirmation prompts for fully autonomous execution in isolated environments",
-        "Remote Control enables connecting to running sessions from outside the terminal for headless agent management",
-        "An npm packaging error leaked approximately 500,000 lines across 1,900 files, exposing the agentic harness layer"
-      ],
-      "article": "Claude Code had a blockbuster Q1 2026 with features that fundamentally change how creative technologists work with AI. Computer Use lets Claude interact with graphical interfaces directly, taking screenshots and issuing mouse and keyboard actions. Auto Mode removes all confirmation prompts for fully autonomous execution. Remote Control lets you start a task, walk away, and check on it from your phone.\n\nScheduled Tasks enable recurring automation without keeping a terminal open, and Cloud Auto-Fix can follow PRs, fix CI failures, and address review comments while you sleep. For creative directors building with Claude Code, these features turn it from a coding assistant into a true autonomous agent.\n\nBut March ended with a spectacular own-goal. An npm packaging error shipped the complete source code instead of just the compiled output, exposing roughly 500,000 lines across 1,900 files. Security researchers quickly identified the \"agentic harness\" layer, frustration detection regexes, an \"undercover mode,\" and references to unreleased models. This followed an earlier leak exposing details about an unreleased model codenamed \"Mythos.\"\n\nAnthropic called it \"human error, not a security breach\" and confirmed no customer data was involved. The latest version (2.1.92, April 4) adds stronger policy controls, a Bedrock setup wizard, and 60% faster diff computation.",
-      "impact_tier": "adopt",
-      "category": "ai-coding",
-      "signal_score": 90,
-      "image": "https://www.geeky-gadgets.com/wp-content/uploads/2026/03/claude-code-march-2026-update-overview.jpg",
-      "tags": ["claude-code", "computer-use", "auto-mode", "source-leak", "remote-control"],
-      "sources": [
-        {
-          "title": "Claude Code March 2026: Multi-Agent Review & Auto Mode",
-          "url": "https://www.geeky-gadgets.com/claude-code-channels/",
-          "source_name": "Geeky Gadgets",
-          "image": "https://www.geeky-gadgets.com/wp-content/uploads/2026/03/claude-code-march-2026-update-overview.jpg",
-          "excerpt": "Claude Code's March 2026 updates include computer use, auto mode, remote control, scheduled tasks, cloud fixes, visuals, and much bigger limits.",
-          "applicability_score": 92,
-          "factuality_score": 88,
-          "angle": "Comprehensive feature overview with practical use cases for each new capability"
-        },
-        {
-          "title": "Claude Code Q1 2026 Update Roundup: Every Feature That Actually Matters",
-          "url": "https://www.mindstudio.ai/blog/claude-code-q1-2026-update-roundup",
-          "source_name": "MindStudio",
-          "image": "https://i.mscdn.ai/70cbb1ad-08d7-4fdc-ab31-e343780966a6/generated-images/8a9d8af3-b9c4-400a-a710-09827bf6b316.png?fm=auto&w=1200&fit=cover",
-          "excerpt": "Six major capabilities including Remote Control, Dispatch, Channels, Computer Use, Auto Mode, and AutoDream for autonomous goal decomposition.",
+          "excerpt": "Thousands of Claude Code users face cost increases of up to 50x after Anthropic ends subscription access for third-party harnesses including OpenClaw.",
           "applicability_score": 90,
-          "factuality_score": 85,
-          "angle": "Developer-focused breakdown with emphasis on production automation patterns"
+          "factuality_score": 92,
+          "angle": "billing policy change and developer reaction"
         },
         {
-          "title": "Anthropic leaks its own AI coding tool's source code in second major security breach",
-          "url": "https://fortune.com/2026/03/31/anthropic-source-code-claude-code-data-leak-second-security-lapse-days-after-accidentally-revealing-mythos/",
-          "source_name": "Fortune",
-          "image": "https://fortune.com/img-assets/wp-content/uploads/2026/03/GettyImages-2154161015-2-e1774978835361.jpg",
-          "excerpt": "Approximately 500,000 lines of code across 1,900 files were exposed via npm packaging error, revealing the agentic harness that instructs Claude Code how to use tools.",
-          "applicability_score": 75,
-          "factuality_score": 90,
-          "angle": "Security and competitive implications of the leak, including the earlier Mythos incident"
-        },
-        {
-          "title": "Claude Code Release Notes - April 2026",
-          "url": "https://releasebot.io/updates/anthropic/claude-code",
-          "source_name": "Releasebot",
+          "title": "Anthropic Accidentally Releases Source Code for Claude AI Agent",
+          "url": "https://www.bloomberg.com/news/articles/2026-04-01/anthropic-accidentally-releases-source-code-for-claude-ai-agent",
+          "source_name": "Bloomberg",
           "image": null,
-          "excerpt": "Version 2.1.92 (April 4) brings policy controls, Bedrock setup wizard, per-model cost breakdowns, and 60% faster diff computation for large files.",
+          "excerpt": "A packaging mistake exposed Claude Code's internal source and revealed codenames Capybara and Mythos for Anthropic's next model family.",
           "applicability_score": 82,
-          "factuality_score": 95,
-          "angle": "Straight release notes with technical details on the latest patch"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "claude-outage-april-6",
-      "title": "Claude Goes Down for Thousands on April 6, Resolved Within Hours",
-      "summary": "Claude.ai experienced a major global outage on April 6, leaving nearly 5,000 users unable to log in or complete conversations. Anthropic resolved all issues by 2:27 PM ET after roughly two hours of disruption.",
-      "key_takeaways": [
-        "Login, voice mode, and chat completions all affected across desktop and mobile",
-        "The outage extended to Claude.code login functionality",
-        "Peak reports hit nearly 5,000 users on DownDetector",
-        "Full resolution confirmed by 2:27 PM ET, roughly two hours after issues started"
-      ],
-      "article": "If you tried to use Claude today and hit a wall, you were not alone. Anthropic confirmed elevated errors on Claude.ai affecting desktop and mobile, with users experiencing failures when attempting to log in, engage with voice mode, or complete chat conversations. The disruption also impacted Claude.code login.\n\nDownDetector reports spiked to nearly 5,000 users at peak, with the sharp rise starting around 10:30 AM Eastern. Anthropic's status page acknowledged the issue and the team worked on a fix throughout the midday hours. By 2:27 PM ET, Anthropic reported all issues resolved with success rates recovering across affected services.\n\nFor anyone building production workflows on Claude, this is a reminder to architect with resilience in mind. A two-hour outage during business hours can stall creative pipelines, automated research agents, and coding sessions. Consider caching strategies, fallback models, and offline-capable workflows for mission-critical processes. The timing is especially notable given the OpenClaw billing changes announced just two days earlier, which already had the community on edge.",
-      "impact_tier": "ignore",
-      "category": "claude-anthropic",
-      "signal_score": 45,
-      "image": "https://cdn.mos.cms.futurecdn.net/zEFXeYTtHV8bCodc2TArfH-2560-80.jpg",
-      "tags": ["claude", "outage", "reliability", "anthropic"],
-      "sources": [
+          "factuality_score": 88,
+          "angle": "accidental transparency revealing roadmap signals"
+        },
         {
-          "title": "Claude was down: here's everything we know",
+          "title": "Claude was down -- here's everything we know",
           "url": "https://www.techradar.com/news/live/claude-anthropic-down-outage-april-6-2026",
           "source_name": "TechRadar",
-          "image": "https://cdn.mos.cms.futurecdn.net/zEFXeYTtHV8bCodc2TArfH-2560-80.jpg",
-          "excerpt": "Anthropic confirmed elevated errors on Claude.ai affecting login, voice mode, and chat completions across desktop and mobile.",
-          "applicability_score": 65,
-          "factuality_score": 90,
-          "angle": "Live-updating coverage with timeline of the outage and resolution"
-        },
-        {
-          "title": "Is Claude down? You're not alone (Update: Working again)",
-          "url": "https://www.androidauthority.com/claude-ai-experiences-outage-3655092/",
-          "source_name": "Android Authority",
-          "image": "https://www.androidauthority.com/wp-content/uploads/2023/12/claude-homepage.jpg",
-          "excerpt": "Over 3,000 people submitted reports on DownDetector at peak outage. Anthropic reported all issues resolved by 2:27 PM ET.",
-          "applicability_score": 55,
-          "factuality_score": 88,
-          "angle": "User impact reporting with DownDetector data and timeline"
-        },
-        {
-          "title": "Claude Goes Down for Thousands on Monday, Downdetector Reports",
-          "url": "https://gvwire.com/2026/04/06/claude-goes-down-for-thousands-on-monday-downdetector-reports/",
-          "source_name": "GV Wire",
           "image": null,
-          "excerpt": "Claude AI experienced a major global outage on April 6, leaving thousands unable to log in or complete conversations.",
-          "applicability_score": 50,
-          "factuality_score": 82,
-          "angle": "Broad coverage with user complaint aggregation"
+          "excerpt": "Anthropic confirmed elevated errors across Claude.ai on April 6, including login failures, voice mode issues, and chat completion problems.",
+          "applicability_score": 70,
+          "factuality_score": 85,
+          "angle": "reliability concerns during a week of product controversy"
         }
       ],
       "reddit_threads": []
     },
     {
-      "id": "openai-122b-funding-chatgpt-carplay",
-      "title": "OpenAI Closes Record $122B Round at $852B Valuation, Then Puts ChatGPT in Your Car",
-      "summary": "OpenAI closed its record-breaking $122 billion funding round on March 31, led by Amazon ($50B), Nvidia ($30B), and SoftBank ($30B), reaching an $852 billion valuation. Days later, ChatGPT Voice launched on Apple CarPlay.",
+      "id": "mcp-linux-foundation-governance",
+      "title": "MCP Joins Linux Foundation as Open Standard",
+      "summary": "The Linux Foundation has launched the Agentic AI Foundation (AAIF) to govern MCP and other open-source agent infrastructure, signaling MCP's shift from Anthropic proprietary protocol to neutral community standard. The move comes as MCP faces mounting competition from Google's Agent2Agent protocol.",
       "key_takeaways": [
-        "Amazon invested $50B, Nvidia and SoftBank each put in $30B, with $3B raised from retail investors for the first time",
-        "OpenAI is generating $2 billion in monthly revenue with 900 million weekly active users",
-        "$35B of Amazon's investment is contingent on OpenAI going public or reaching AGI",
-        "ChatGPT Voice on CarPlay requires iOS 26.4, supports hands-free conversations but cannot control vehicle functions"
+        "Linux Foundation formed the Agentic AI Foundation (AAIF) with MCP, the goose agent framework, and AGENTS.md as founding contributions",
+        "Pinterest's MCP deployment reached 66,000 server invocations per month and saved 7,000 engineering hours monthly",
+        "Google's Agent2Agent (A2A) protocol is gaining traction as a rival to MCP, with Perplexity reportedly shifting away from MCP",
+        "Security researchers flag MCP as an emerging attack vector with authentication and resource amplification risks",
+        "MCP governance moving to a neutral foundation reduces Anthropic lock-in concerns for enterprise adopters"
       ],
-      "article": "OpenAI is operating at a scale that reshapes the competitive landscape for every AI company. The $122 billion funding round closed March 31 at an $852 billion post-money valuation, making it the largest private funding round in history. Amazon led with $50 billion, while Nvidia and SoftBank each committed $30 billion.\n\nThe numbers are staggering: $2 billion in monthly revenue, 900 million weekly active users, and over 50 million subscribers. Enterprise adoption now makes up more than 40% of revenue. For context, this is a company generating more monthly revenue than most publicly traded tech companies earn in a quarter.\n\nDays after closing the round, OpenAI launched ChatGPT Voice on Apple CarPlay. Users with iOS 26.4 or later can now start hands-free voice conversations directly from their car dashboard. It is a strictly voice-first experience with no text or visual responses on the car screen. ChatGPT cannot control vehicle functions, and there is no wake-word activation.\n\nFor creative professionals watching the competitive landscape, the funding gap between OpenAI and everyone else is now enormous. The $35 billion Amazon contingency tied to an IPO or AGI milestone signals that major investors expect OpenAI to either go public or deliver transformative capabilities within the investment horizon.",
+      "article": "The Linux Foundation's formation of the Agentic AI Foundation (AAIF) marks a major turning point for the Model Context Protocol. By accepting MCP as a founding contribution alongside the goose agent framework and AGENTS.md spec, the Foundation is positioning MCP as infrastructure-grade neutral standard rather than an Anthropic-owned protocol. Pinterest's production deployment of MCP at scale -- 66,000 monthly server invocations, 844 active users, 7,000 engineering hours saved monthly -- validates MCP as genuinely production-ready. However, the ecosystem is not without friction. Google's Agent2Agent protocol is gaining enterprise momentum, with some vendors including Perplexity reportedly preferring A2A. Security researchers have also flagged MCP's remote deployment model as a meaningful attack surface. The governance move may be timed to address both the competition and the trust deficit.",
+      "impact_tier": "adopt",
+      "category": "ai-agents",
+      "signal_score": 88,
+      "image": null,
+      "tags": ["mcp", "linux-foundation", "aaif", "agent-protocol", "open-source"],
+      "sources": [
+        {
+          "title": "Linux Foundation Announces the Formation of the Agentic AI Foundation (AAIF)",
+          "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation",
+          "source_name": "Linux Foundation",
+          "image": null,
+          "excerpt": "MCP, the goose framework, and AGENTS.md are founding contributions to the new Agentic AI Foundation, moving governance out of Anthropic's hands.",
+          "applicability_score": 92,
+          "factuality_score": 95,
+          "angle": "governance and neutralization of a key agent standard"
+        },
+        {
+          "title": "Pinterest Deploys Production-Scale Model Context Protocol Ecosystem for AI Agent Workflows",
+          "url": "https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/",
+          "source_name": "InfoQ",
+          "image": null,
+          "excerpt": "Pinterest's MCP ecosystem hits 66,000 monthly server invocations and saves 7,000 engineering hours monthly across 844 active internal users.",
+          "applicability_score": 85,
+          "factuality_score": 90,
+          "angle": "real-world enterprise-scale MCP deployment results"
+        },
+        {
+          "title": "MCP is Alive, but Faces Challenges",
+          "url": "https://aibusiness.com/agentic-ai/mcp-alive-faces-challenges",
+          "source_name": "AI Business",
+          "image": null,
+          "excerpt": "MCP faces growing competition from Google's A2A protocol and security concerns around its remote deployment architecture.",
+          "applicability_score": 80,
+          "factuality_score": 82,
+          "angle": "competitive pressure and security risks for MCP"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "vibe-coding-market-surge",
+      "title": "Vibe Coding Drives 84% App Store Surge and $12.8B Market",
+      "summary": "AI coding tools have reversed a decade-long decline in App Store submissions, with a 84% surge driven by vibe coding tools like Claude Code and OpenAI Codex. The AI coding market is now estimated at $12.8 billion, more than double its 2024 value.",
+      "key_takeaways": [
+        "App Store new submissions grew 30% to nearly 600,000 in 2025, reversing a 46% decline seen between 2016 and 2024",
+        "AI coding tools market estimated at $12.8 billion in 2026, up from $5.1 billion in 2024",
+        "Harvard researchers and educators are studying vibe coding's impact on developer skill, trust, and software quality",
+        "Fortune analysis identifies trust -- not capability -- as the primary bottleneck for broader AI coding adoption",
+        "Cursor 3 launched April 2 with native AI agent support, drawing praise from Fireship and cautious approval from ThePrimeagen"
+      ],
+      "article": "The numbers are hard to ignore: App Store submissions surged 84% in categories tied to AI-assisted development, with the overall new submission count reaching nearly 600,000 -- the highest in years. Analysts now peg the AI coding tools market at $12.8 billion for 2026, up from $5.1 billion just two years ago. Cursor 3, launched April 2, added native AI agent capabilities and sparked the loudest Claude Code vs. Codex debate yet, with Fireship calling it 'the first editor that makes AI feel native rather than bolted on.' Meanwhile, Harvard researchers are studying vibe coding's pedagogical implications, noting it may permanently restructure how developers think about authorship and trust. Fortune's analysis aligns: capability is no longer the limiting factor -- trust in AI-generated code is the real adoption ceiling, especially as security vulnerabilities from vibe-coded apps begin to surface.",
+      "impact_tier": "watch",
+      "category": "ai-coding",
+      "signal_score": 84,
+      "image": null,
+      "tags": ["vibe-coding", "cursor", "app-store", "ai-coding-market", "developer-tools"],
+      "sources": [
+        {
+          "title": "App Store sees 84% surge in new apps as AI coding tools take off",
+          "url": "https://9to5mac.com/2026/04/06/app-store-sees-84-surge-in-new-apps-as-ai-coding-tools-take-off/",
+          "source_name": "9to5Mac",
+          "image": null,
+          "excerpt": "AI coding tools are credited with reversing a multi-year App Store submission decline, with the market now worth an estimated $12.8 billion.",
+          "applicability_score": 88,
+          "factuality_score": 85,
+          "angle": "macro market impact of vibe coding on software distribution"
+        },
+        {
+          "title": "Vibe coding may offer insight into our AI future",
+          "url": "https://news.harvard.edu/gazette/story/2026/04/vibe-coding-may-offer-insight-into-our-ai-future/",
+          "source_name": "Harvard Gazette",
+          "image": null,
+          "excerpt": "Harvard educators are examining vibe coding as a lens into how AI tools are reshaping developer trust, creativity, and skill development.",
+          "applicability_score": 75,
+          "factuality_score": 90,
+          "angle": "academic perspective on long-term cognitive and skill implications"
+        },
+        {
+          "title": "Cursor 3 Launches AI Agents: Claude Code vs Codex Battle",
+          "url": "https://byteiota.com/cursor-3-launches-ai-agents-claude-code-vs-codex-battle/",
+          "source_name": "ByteIota",
+          "image": null,
+          "excerpt": "Fireship called Cursor 3 'the first editor that makes AI feel native,' while ThePrimeagen praised multi-file editing but warned against over-reliance.",
+          "applicability_score": 82,
+          "factuality_score": 78,
+          "angle": "developer community reaction to Cursor 3's native agent support"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "openai-gemini-competitive-moves",
+      "title": "OpenAI Retires GPT-4o; Gemini Steals Users with Chat Import",
+      "summary": "OpenAI has fully retired GPT-4o across all plans as of April 3, replacing it with a new GPT-5 model lineup. Google Gemini is simultaneously launching cross-platform chat import from ChatGPT and Claude, lowering the barrier to switching.",
+      "key_takeaways": [
+        "GPT-4o is fully retired as of April 3, 2026, replaced by GPT-5.3 Instant, GPT-5.4 Thinking, GPT-5.4 Pro, and GPT-5.4 mini",
+        "ChatGPT now supports hands-free CarPlay voice chats and opt-in location sharing for local recommendations",
+        "Gemini now lets users import full chat history and personal context from ChatGPT and Claude",
+        "Gemini's 'Personal Intelligence' feature adds persistent memory and deeper Gmail and Drive integration",
+        "Google's strategy prioritizes ecosystem lock-in through data portability -- lower friction switching in, harder to leave"
+      ],
+      "article": "Two major platform moves are reshaping the competitive landscape this week. OpenAI completed the retirement of GPT-4o on April 3, replacing its core model with a new four-tier GPT-5 lineup: Instant, Thinking, Pro, and mini -- a more differentiated pricing and capability stack. Meanwhile, Google took a counterintuitive step, making it easier to leave ChatGPT or Claude by offering seamless chat history import into Gemini. The move, paired with persistent memory and Gmail-Drive integration under the 'Personal Intelligence' umbrella, is a classic platform play: lower the cost of entry to grow the installed base, then monetize through deep ecosystem integration. New ChatGPT features including CarPlay voice and location-based recommendations signal OpenAI is doubling down on mobile-native use cases as the web interface matures.",
       "impact_tier": "watch",
       "category": "competitive-intel",
-      "signal_score": 78,
-      "image": "https://s.yimg.com/ny/api/res/1.2/zJyh4MDsdg8DZm_ujrJUOQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03Mzg-/https://d29szjachogqwa.cloudfront.net/images/user-uploaded/voice-mode_7816.jpeg",
-      "tags": ["openai", "funding", "chatgpt", "carplay", "valuation"],
+      "signal_score": 80,
+      "image": null,
+      "tags": ["openai", "gpt-5", "gemini", "google", "chatgpt", "model-retirement"],
       "sources": [
         {
-          "title": "OpenAI raises $122 billion to accelerate the next phase of AI",
-          "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
-          "source_name": "OpenAI",
+          "title": "OpenAI Release Notes -- April 2026 Latest Updates",
+          "url": "https://releasebot.io/updates/openai",
+          "source_name": "Releasebot",
           "image": null,
-          "excerpt": "OpenAI closed its latest funding round with $122 billion in committed capital at a post-money valuation of $852 billion.",
-          "applicability_score": 70,
-          "factuality_score": 95,
-          "angle": "Official announcement with OpenAI's own framing of the investment strategy"
-        },
-        {
-          "title": "OpenAI brings ChatGPT's Voice mode to CarPlay",
-          "url": "https://www.engadget.com/ai/openai-brings-chatgpts-voice-mode-to-carplay-191422297.html",
-          "source_name": "Engadget",
-          "image": "https://s.yimg.com/ny/api/res/1.2/zJyh4MDsdg8DZm_ujrJUOQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03Mzg-/https://d29szjachogqwa.cloudfront.net/images/user-uploaded/voice-mode_7816.jpeg",
-          "excerpt": "OpenAI launched ChatGPT Voice on Apple CarPlay in a surprise release. Users need iOS 26.4 and a compatible vehicle for hands-free AI conversations.",
-          "applicability_score": 60,
-          "factuality_score": 90,
-          "angle": "Product launch details with practical setup instructions and limitations"
-        },
-        {
-          "title": "OpenAI Brings ChatGPT to CarPlay for Hands-Free Voice Conversations",
-          "url": "https://www.macrumors.com/2026/03/31/openai-chatgpt-carplay/",
-          "source_name": "MacRumors",
-          "image": "https://images.macrumors.com/t/0YToMgH39tZB3KmNGTEPg8S-cJ0=/400x0/article-new/2026/03/carplay-chatgpt-1.jpg?lossy",
-          "excerpt": "ChatGPT compatibility with CarPlay requires iOS 26.4 or later. The system uses Apple's mandatory voice control template with up to four action buttons.",
-          "applicability_score": 55,
-          "factuality_score": 88,
-          "angle": "Apple ecosystem focus with CarPlay technical requirements and Apple's entitlement framework"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "mcp-2026-roadmap-enterprise-ready",
-      "title": "MCP 2026 Roadmap Pivots to Enterprise: Transport Scaling, Agent Tasks, and SSO Auth",
-      "summary": "The Model Context Protocol's 2026 roadmap reorganizes around four priority areas: transport scalability for remote deployments, agent communication primitives, governance maturation through Working Groups, and enterprise readiness with audit trails and SSO.",
-      "key_takeaways": [
-        "Streamable HTTP transport needs evolution for load balancing and horizontal scaling without maintaining state",
-        "The Tasks primitive (SEP-1686) adds retry semantics and expiry policies for reliable agent-to-agent communication",
-        "Working Groups now drive the protocol timeline independently, replacing milestone-based releases",
-        "Enterprise gaps being addressed: audit trails, SSO-integrated auth, gateway behavior, and configuration portability"
-      ],
-      "article": "If you are building with MCP servers in your creative or development workflows, the 2026 roadmap signals where the protocol is headed. The priorities have shifted from \"make it work\" to \"make it work at scale, securely, in production.\"\n\nThe biggest technical shift is transport evolution. Streamable HTTP unlocked remote MCP servers, but production deployments exposed problems: stateful sessions fight with load balancers, and horizontal scaling requires workarounds. The roadmap targets stateless transport patterns that work with standard infrastructure.\n\nAgent communication is maturing through the Tasks primitive, which gives agents a call-now, fetch-later pattern. Production use surfaced gaps in retry semantics when tasks fail and expiry policies for retained results. These fixes matter for anyone chaining multiple MCP tools in automated pipelines.\n\nGovernance moved to a Working Groups model, where domain experts drive proposals within their areas. This decentralizes the bottleneck of protocol decisions and accelerates feature delivery.\n\nFor enterprise adoption, the roadmap targets audit trails, SSO-integrated authentication, gateway behavior standardization, and configuration portability. These will be implemented as extensions rather than core spec changes, keeping the protocol lightweight while meeting compliance requirements.",
-      "impact_tier": "watch",
-      "category": "ai-agents",
-      "signal_score": 75,
-      "image": "https://blog.modelcontextprotocol.io/og-image.png",
-      "tags": ["mcp", "protocol", "enterprise", "agent-communication", "roadmap"],
-      "sources": [
-        {
-          "title": "The 2026 MCP Roadmap",
-          "url": "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/",
-          "source_name": "MCP Blog",
-          "image": "https://blog.modelcontextprotocol.io/og-image.png",
-          "excerpt": "The updated roadmap focuses on transport scalability, agent communication, governance maturation, and enterprise readiness. Working Groups now drive the timeline.",
-          "applicability_score": 88,
-          "factuality_score": 95,
-          "angle": "Official protocol roadmap from the MCP team with strategic priority breakdown"
-        },
-        {
-          "title": "MCP's biggest growing pains for production use will soon be solved",
-          "url": "https://thenewstack.io/model-context-protocol-roadmap-2026/",
-          "source_name": "The New Stack",
-          "image": null,
-          "excerpt": "Streamable HTTP needs evolution for horizontal scaling, and the Tasks primitive requires retry and expiry semantics for production reliability.",
-          "applicability_score": 82,
-          "factuality_score": 88,
-          "angle": "Developer-focused analysis of the production pain points being addressed"
-        },
-        {
-          "title": "2026: The Year for Enterprise-Ready MCP Adoption",
-          "url": "https://www.cdata.com/blog/2026-year-enterprise-ready-mcp-adoption",
-          "source_name": "CData",
-          "image": null,
-          "excerpt": "Enterprises deploying MCP are running into audit trails, SSO-integrated auth, gateway behavior, and configuration portability challenges.",
-          "applicability_score": 70,
-          "factuality_score": 82,
-          "angle": "Enterprise adoption perspective with focus on compliance and governance needs"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "ai-coding-tools-landscape-2026",
-      "title": "AI Coding Survey: 95% of Engineers Use AI Weekly, Claude Code Leads the Pack",
-      "summary": "The Pragmatic Engineer's 2026 survey shows 95% of developers use AI tools at least weekly, with Claude Code overtaking GitHub Copilot as the most-used AI coding tool. Staff+ engineers show the highest agent adoption at 63.5%.",
-      "key_takeaways": [
-        "Claude Code became the most-used AI coding tool within eight months of its May 2025 launch",
-        "75% of engineers use AI for half or more of their work, 56% report doing 70%+ with AI",
-        "55% now regularly use AI agents for code review, debugging, and automation",
-        "Smaller companies favor Claude Code (75% adoption) while large enterprises prefer GitHub Copilot due to Microsoft bundling"
-      ],
-      "article": "The Pragmatic Engineer's 2026 AI tooling survey paints a picture of an industry that has crossed the adoption threshold. Ninety-five percent of respondents use AI tools at least weekly. Over half perform the majority of their engineering work using AI assistance. This is no longer early adoption territory.\n\nClaude Code leads the pack as the most-used AI coding tool, overtaking GitHub Copilot in just eight months since its May 2025 launch. The tool dominance splits by company size: smaller companies favor Claude Code at 75% adoption, while enterprises with 10,000+ employees lean toward GitHub Copilot due to Microsoft bundling and enterprise procurement.\n\nThe agent adoption numbers are particularly striking. About 55% of engineers now regularly use AI agents for tasks like code review, debugging, and automation. Staff+ engineers lead at 63.5%, suggesting that the most experienced developers are the ones pushing agent capabilities hardest. Anthropic's Opus and Sonnet models received more mentions for coding tasks than all other models combined.\n\nFor creative directors who build with code, the takeaway is clear: AI coding tools are table stakes. The competitive advantage now comes from how effectively you integrate them into your creative pipeline, not whether you use them at all.",
-      "impact_tier": "adopt",
-      "category": "ai-coding",
-      "signal_score": 85,
-      "image": "https://cdn.prod.website-files.com/695be6d603b11be779b0b9b2/6980e773c961f617487fddbb_u2UOcGhBRPVpzM9Gw3JFYLnMsxMtfUyW4TvIohQGUQs.webp",
-      "tags": ["ai-coding", "claude-code", "survey", "developer-tools", "adoption"],
-      "sources": [
-        {
-          "title": "AI Tooling for Software Engineers in 2026",
-          "url": "https://newsletter.pragmaticengineer.com/p/ai-tooling-2026",
-          "source_name": "The Pragmatic Engineer",
-          "image": null,
-          "excerpt": "Claude Code has achieved dominance in just eight months, becoming the most-used AI coding tool. 95% of respondents use AI tools at least weekly.",
-          "applicability_score": 90,
-          "factuality_score": 92,
-          "angle": "Data-driven survey with adoption metrics across seniority levels and company sizes"
-        },
-        {
-          "title": "Best AI Coding Agents for 2026: Real-World Developer Reviews",
-          "url": "https://www.faros.ai/blog/best-ai-coding-agents-2026",
-          "source_name": "Faros AI",
-          "image": "https://cdn.prod.website-files.com/695be6d603b11be779b0b9b2/6980e773c961f617487fddbb_u2UOcGhBRPVpzM9Gw3JFYLnMsxMtfUyW4TvIohQGUQs.webp",
-          "excerpt": "Claude Code has the strongest coding brain. Developers trust it with the hardest problems: unraveling subtle bugs, reasoning about unfamiliar codebases, and design-level changes.",
-          "applicability_score": 85,
-          "factuality_score": 85,
-          "angle": "Comparative review positioning Claude Code as an escalation tool for complex architectural work"
-        },
-        {
-          "title": "Generative coding: 10 Breakthrough Technologies 2026",
-          "url": "https://www.technologyreview.com/2026/01/12/1130027/generative-coding-ai-software-2026-breakthrough-technology/",
-          "source_name": "MIT Technology Review",
-          "image": null,
-          "excerpt": "AI now writes as much as 30% of Microsoft's code and more than a quarter of Google's. AI tools increasingly act as autonomous agents that understand repositories.",
+          "excerpt": "GPT-4o is fully retired as of April 3; new GPT-5 lineup includes Instant, Thinking, Pro, and mini tiers across all OpenAI plans.",
           "applicability_score": 80,
-          "factuality_score": 95,
-          "angle": "MIT's breakthrough technology designation validates AI coding as a transformative shift, not a trend"
+          "factuality_score": 82,
+          "angle": "model versioning and product tier strategy"
+        },
+        {
+          "title": "You can now transfer your chats and personal information from other chatbots directly into Gemini",
+          "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
+          "source_name": "TechCrunch",
+          "image": null,
+          "excerpt": "Gemini's new import feature lets users bring full chat history from ChatGPT and Claude, alongside expanded Gmail and Drive memory integration.",
+          "applicability_score": 85,
+          "factuality_score": 90,
+          "angle": "Google's data portability strategy as a user acquisition tool"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "trust-bottleneck-ai-coding",
+      "title": "Trust, Not Capability, Is the New AI Coding Ceiling",
+      "summary": "As AI coding tools become ubiquitous, Fortune and Harvard researchers independently converge on the same conclusion: trust in AI-generated code -- not raw capability -- is the primary obstacle to deeper adoption in professional software development.",
+      "key_takeaways": [
+        "Fortune identifies trust as the core bottleneck for enterprise AI coding adoption, not raw model capability",
+        "AI-generated code introduces subtle bugs and security vulnerabilities that standard code review processes are not yet equipped to catch",
+        "Claude Code's latest version was reportedly written entirely by Claude Code itself -- raising questions about recursive quality assurance",
+        "Harvard course on vibe coding explores trust as a pedagogical and professional skill gap",
+        "Security incidents from vibe-coded consumer apps are beginning to surface, adding urgency to the trust problem"
+      ],
+      "article": "Two separate institutions -- Fortune and Harvard -- converged this week on the same uncomfortable insight: AI coding tools are no longer limited by capability. The bottleneck is trust. Fortune's analysis points to subtle bugs and security vulnerabilities that slip through AI-generated code undetected, particularly in teams that have adopted vibe coding without updating their review culture. A striking data point: Claude Code's latest major version was reportedly written entirely by Claude Code itself -- a recursive development loop that raises legitimate questions about whether quality signals degrade across generations. Harvard's GSE explored similar themes in a six-week course, noting that trust is now a teachable professional skill rather than a natural byproduct of understanding code. For engineering leaders, the implication is clear: the tools are ready; the review and governance processes around them are not.",
+      "impact_tier": "watch",
+      "category": "ai-coding",
+      "signal_score": 77,
+      "image": null,
+      "tags": ["trust", "vibe-coding", "security", "code-review", "ai-governance"],
+      "sources": [
+        {
+          "title": "AI coding tools are accelerating software development -- but trust is becoming the bottleneck",
+          "url": "https://fortune.com/2026/04/02/in-the-age-of-vibe-coding-trust-is-the-real-bottleneck/",
+          "source_name": "Fortune",
+          "image": null,
+          "excerpt": "While vibe coding enables unprecedented development pace, AI-generated code introduces subtle bugs and security vulnerabilities that current review processes cannot reliably catch.",
+          "applicability_score": 88,
+          "factuality_score": 86,
+          "angle": "enterprise adoption friction and governance gaps"
+        },
+        {
+          "title": "Vibe coding may offer insight into our AI future",
+          "url": "https://news.harvard.edu/gazette/story/2026/04/vibe-coding-may-offer-insight-into-our-ai-future/",
+          "source_name": "Harvard Gazette",
+          "image": null,
+          "excerpt": "A Harvard GSE professor taught a six-week vibe coding course, concluding that trust is now a teachable developer skill rather than an assumed byproduct of code comprehension.",
+          "applicability_score": 80,
+          "factuality_score": 90,
+          "angle": "educational framing of trust as a core developer competency"
         }
       ],
       "reddit_threads": []
     }
   ],
   "stats": {
-    "total_sources": 20,
-    "total_topics": 6,
+    "total_sources": 13,
+    "total_topics": 5,
     "adopt_count": 2,
     "watch_count": 3,
-    "ignore_count": 1
+    "ignore_count": 0
   },
-  "top_stories": [],
+  "top_stories": [
+    "anthropic-openclaw-billing",
+    "mcp-linux-foundation-governance",
+    "vibe-coding-market-surge"
+  ],
   "product_radar": [
     {
-      "name": "Claude Code v2.1.92",
-      "url": "https://releasebot.io/updates/anthropic/claude-code",
-      "description": "Policy controls, Bedrock wizard, per-model cost breakdowns, 60% faster diffs",
-      "tag": "UPDATE",
-      "category": "ai-coding",
-      "tags": ["claude-code", "release"]
+      "name": "Cursor 3",
+      "url": "https://byteiota.com/cursor-3-launches-ai-agents-claude-code-vs-codex-battle/",
+      "description": "Native AI agent support in the Cursor editor, enabling multi-file autonomous edits without leaving the IDE.",
+      "status": "launched"
     },
     {
-      "name": "ChatGPT on CarPlay",
-      "url": "https://www.engadget.com/ai/openai-brings-chatgpts-voice-mode-to-carplay-191422297.html",
-      "description": "Voice-first ChatGPT conversations directly from your car dashboard via iOS 26.4",
-      "tag": "NEW",
-      "category": "competitive-intel",
-      "tags": ["chatgpt", "carplay", "voice"]
+      "name": "Gemini Personal Intelligence",
+      "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
+      "description": "Cross-platform chat import and persistent memory for Gemini, with deeper Gmail and Drive integration.",
+      "status": "launched"
     },
     {
-      "name": "Microsoft Agent Framework RC 1.0",
-      "url": "https://devblogs.microsoft.com/foundry/introducing-microsoft-agent-framework-the-open-source-engine-for-agentic-ai-apps/",
-      "description": "Unified AutoGen + Semantic Kernel SDK for multi-agent systems with MCP support",
-      "tag": "UPDATE",
-      "category": "ai-agents",
-      "tags": ["microsoft", "agent-framework", "autogen"]
-    },
-    {
-      "name": "MCP 2026 Roadmap",
-      "url": "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/",
-      "description": "Enterprise-focused priorities: transport scaling, agent tasks, SSO auth, Working Groups",
-      "tag": "UPDATE",
-      "category": "ai-agents",
-      "tags": ["mcp", "roadmap", "enterprise"]
+      "name": "Agentic AI Foundation (AAIF)",
+      "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation",
+      "description": "Linux Foundation's new governance body for MCP, goose, and AGENTS.md open-source agent standards.",
+      "status": "announced"
     }
   ],
-  "watch_list": [],
-  "quick_hits": [
+  "watch_list": [
     {
-      "title": "Fireship merges with uidotdev, plans more Code Reports and 100 Seconds videos",
-      "url": "https://x.com/fireship_dev/status/2011513209321320671",
-      "description": "Jeff Delaney and Tyler McGinnis join forces after discussing a merger since 2021",
-      "category": "general",
-      "tags": ["fireship", "youtube", "developer-content"]
+      "topic": "MCP vs Agent2Agent (A2A)",
+      "reason": "Google's A2A protocol is gaining traction as a competing agent standard; Perplexity reportedly shifting away from MCP.",
+      "signal": "medium"
     },
     {
-      "title": "ThePrimeagen podcast covers AI agent security risks and hallucinated commands on GitHub",
-      "url": "https://creators.spotify.com/pod/profile/thestanduppod/episodes/How-WE-Use-AI-e3504eg",
-      "description": "The Standup crew discusses supply-chain nightmares from AI-generated code spreading across repos",
-      "category": "ai-agents",
-      "tags": ["theprimeagen", "security", "ai-agents"]
+      "topic": "Anthropic model roadmap: Capybara and Mythos",
+      "reason": "Leaked codenames from the accidental source code release suggest a significant next-gen model family in development.",
+      "signal": "high"
     },
     {
-      "title": "OpenAI now at 900M weekly active users and $2B monthly revenue",
-      "url": "https://openai.com/index/accelerating-the-next-phase-ai/",
-      "description": "Enterprise adoption makes up 40%+ of revenue, on track for consumer-enterprise parity by end of 2026",
-      "category": "competitive-intel",
-      "tags": ["openai", "revenue", "growth"]
-    },
-    {
-      "title": "Anthropic retiring 1M context window beta for Sonnet 4.5 and Sonnet 4 on April 30",
-      "url": "https://releasebot.io/updates/anthropic",
-      "description": "Users must migrate to Sonnet 4.6 or Opus 4.6 to continue using 1M context at standard pricing",
-      "category": "claude-anthropic",
-      "tags": ["anthropic", "context-window", "migration"]
+      "topic": "Vibe coding security incidents",
+      "reason": "Security vulnerabilities from AI-generated code are beginning to surface in consumer apps; enterprise review processes lagging.",
+      "signal": "medium"
     }
+  ],
+  "quick_hits": [
+    "GPT-4o fully retired April 3; GPT-5 lineup now covers Instant, Thinking, Pro, and mini tiers",
+    "Claude.ai suffered a platform-wide outage April 6 affecting login, voice, and chat",
+    "Pinterest MCP deployment saves 7,000 engineering hours per month at 66K monthly invocations",
+    "App Store new submissions hit ~600,000 -- highest in years -- driven by vibe coding tools"
   ],
   "creative_intel": [],
-  "knowledge_shelf": [],
+  "knowledge_shelf": [
+    {
+      "title": "MCP Security Attack Vectors",
+      "note": "Researchers have documented stealthy resource amplification loops and authentication gaps in remote MCP deployments -- worth reviewing before production use."
+    },
+    {
+      "title": "Recursive AI Development Quality Risk",
+      "note": "Claude Code's latest version was reportedly written by Claude Code itself -- raises open questions about quality degradation in self-referential AI development loops."
+    }
+  ],
   "hero_story_index": 0
 }
