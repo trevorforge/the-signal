@@ -1,234 +1,440 @@
 {
   "date": "2026-04-05",
-  "updated_at": "2026-04-05T08:00:00.000Z",
-  "story_count": 14,
+  "updated_at": "2026-04-05T14:00:00.000Z",
+  "version": 2,
+  "story_count": 6,
   "tldr": [
-    "Anthropic blocks third-party agent frameworks like OpenClaw from flat-rate Claude subscriptions, shifting to pay-as-you-go billing starting April 4",
-    "Google launches Veo 3.1 Lite for free AI video generation as OpenAI shuts down Sora after burning $15M/day with only $2.1M lifetime revenue",
-    "Claw Code, a clean-room open-source rewrite of the Claude Code agent harness, hits 72K GitHub stars in its first days after launch",
-    "Andrej Karpathy shares his 'LLM Knowledge Base' architecture that replaces traditional RAG with an LLM-maintained Markdown wiki in Obsidian"
+    "Anthropic's always-on agent platform Conway leaks via TestingCatalog, revealing a sidebar-based persistent agent with webhooks, Chrome integration, and a custom extension system",
+    "Anthropic registers AnthroPAC with the FEC on April 3 as AI industry midterm spending tops $300 million, amid an ongoing Pentagon lawsuit over a 'supply chain risk' designation",
+    "Apple pulls the $100M-valued vibe coding app Anything from the App Store, then restores it days later, as AI-generated submissions drive an 84% spike in quarterly app reviews",
+    "Microsoft ships Copilot Researcher Critique and Council modes where GPT generates reports and Claude reviews them, outperforming Perplexity Deep Research by 13.8% on accuracy benchmarks"
   ],
-  "top_stories": [
+  "topics": [
     {
-      "title": "Anthropic Blocks OpenClaw and Third-Party Tools from Flat-Rate Claude Subscriptions",
-      "url": "https://techcrunch.com/2026/04/04/anthropic-says-claude-code-subscribers-will-need-to-pay-extra-for-openclaw-support/",
-      "source": "TechCrunch",
-      "image": "https://techcrunch.com/wp-content/uploads/2026/01/GettyImages-1396827010.jpg",
-      "time_ago": "1 day ago",
-      "summary": "Anthropic has banned third-party AI agent frameworks, starting with OpenClaw, from accessing Claude Pro and Max subscriptions at flat-rate pricing. Effective April 4, affected users are shifted to pay-as-you-go billing, with some facing cost increases of up to 50x. Anthropic's head of Claude Code Boris Cherny said subscriptions 'weren't built for the usage patterns of these third-party tools.' A one-time credit equal to one month's plan cost is offered until April 17, and pre-purchased usage bundles come with up to 30% discounts.",
-      "bull_case": "This protects Anthropic's margins and ensures sustainable scaling. It also signals Claude's value is high enough that third-party ecosystems are building entire businesses on top of it. Cleaner pricing could attract enterprise buyers who want predictable costs.",
-      "bear_case": "Developers who built workflows around OpenClaw and similar tools feel blindsided. The 50x cost increase for power users could push the most innovative part of the community to open-source alternatives like Claw Code. Anthropic risks looking like it's pulling the ladder up behind early adopters.",
-      "the_signal": "If you've built agency workflows on top of Claude through third-party agent tools, audit your monthly spend immediately. The shift to usage-based billing means your costs will scale with volume. Start evaluating whether your automations justify the new pricing, or whether open-source agent harnesses like Claw Code give you enough control at lower cost.",
+      "id": "anthropic-conway-always-on-agent",
+      "title": "Anthropic's Always-On Agent Platform 'Conway' Leaks, Revealing Persistent Sidebar With Webhooks and Extensions",
+      "summary": "TestingCatalog published exclusive details on Conway, an internal Anthropic project that turns Claude into a persistent, always-on agent environment. The system features a standalone sidebar with search, chat, and system panels, webhook triggers for external services, Chrome browser integration, and a custom extension framework using .cnw.zip packages.",
+      "key_takeaways": [
+        "Conway runs as a standalone sidebar with three sections: Search, Chat, and System, separate from the standard Claude interface",
+        "Public webhook URLs let external services wake Conway instances, enabling event-driven automation without keeping a session open",
+        "An Extensions area supports custom tools, UI tabs, and context handlers via .cnw.zip packages, suggesting an app-store-like ecosystem",
+        "Claude in Chrome can connect directly to Conway instances, bridging browser context with the persistent agent environment"
+      ],
+      "article": "On April 1, TestingCatalog published an exclusive look at Conway, an internal Anthropic project that could reshape how Claude operates day to day. Instead of launching Claude for individual conversations, Conway positions the model as a persistent agent that lives in a sidebar and stays active across sessions.\n\nThe leaked interface reveals three core sections: Search (with experimental hotkeys), Chat (the primary conversation view), and System (configuration). But the real signal is in the infrastructure. Conway supports public webhook URLs that let external services trigger the agent, meaning it can respond to events from tools like GitHub, Slack, or custom APIs without a human opening a tab. Combined with Chrome browser connectivity, Conway could browse, research, and act on information autonomously.\n\nThe extension system is particularly telling. An Extensions area lets users install custom tools, UI tabs, and context handlers through .cnw.zip packages. References to an \"Epitaxy UI\" suggest a separate operator interface for managing Conway instances. This architecture points toward an ecosystem where third-party developers build specialized capabilities on top of a persistent Claude agent.\n\nFor creative directors and builders, Conway represents the shift from \"AI tool you open\" to \"AI agent that runs.\" If shipped, it would compete directly with OpenAI's super app vision while offering something different: an always-on agent layer that integrates into your existing browser and tool stack rather than replacing them.",
+      "impact_tier": "watch",
       "category": "claude-anthropic",
-      "signal_score": 82,
-      "tags": [
-        "claude-code",
-        "pricing",
-        "openclaw",
-        "agent-framework"
-      ]
+      "signal_score": 88,
+      "image": "https://www.testingcatalog.com/content/images/size/w1200/2026/04/Conway-Claude-04-02-2026_12_32_AM.jpg",
+      "tags": ["anthropic", "conway", "agent", "always-on", "extensions", "webhooks"],
+      "sources": [
+        {
+          "title": "Exclusive: Anthropic tests its own always-on 'Conway' agent",
+          "url": "https://www.testingcatalog.com/exclusive-anthropic-tests-its-own-always-on-conway-agent/",
+          "source_name": "TestingCatalog",
+          "image": "https://www.testingcatalog.com/content/images/size/w1200/2026/04/Conway-Claude-04-02-2026_12_32_AM.jpg",
+          "excerpt": "Conway introduces a standalone Claude agent environment with webhook integration, Chrome connectivity, and a custom extension framework using .cnw.zip packages.",
+          "applicability_score": 92,
+          "factuality_score": 82,
+          "angle": "First exclusive report with screenshots and technical architecture details of the leaked Conway interface"
+        },
+        {
+          "title": "Anthropic Tests Conway As A Persistent Agent Platform For Claude",
+          "url": "https://dataconomy.com/2026/04/03/anthropic-tests-conway-platform-for-continuous-claude/",
+          "source_name": "Dataconomy",
+          "image": null,
+          "excerpt": "Anthropic is testing a persistent agent platform called Conway that transforms Claude into an always-on autonomous environment with extension support.",
+          "applicability_score": 85,
+          "factuality_score": 80,
+          "angle": "Industry analysis of Conway's strategic implications for Anthropic's product roadmap"
+        },
+        {
+          "title": "Anthropic explores extension-based agent system with Conway",
+          "url": "https://techbriefly.com/2026/04/03/anthropic-explores-extension-based-agent-system-with-conway/",
+          "source_name": "TechBriefly",
+          "image": null,
+          "excerpt": "Conway's extension architecture suggests Anthropic is building toward a platform where third-party developers can add custom capabilities to persistent Claude agents.",
+          "applicability_score": 78,
+          "factuality_score": 78,
+          "angle": "Developer-focused analysis of the extension system and platform strategy"
+        },
+        {
+          "title": "Anthropic's Always-On AI Agent Conway Leaked: What Can It Do",
+          "url": "https://www.timesofai.com/news/anthropics-conway-being-tested/",
+          "source_name": "Times of AI",
+          "image": null,
+          "excerpt": "Conway signals a shift from chatbots to autonomous AI assistants that act on your behalf without needing a prompt, using webhooks and browser integration.",
+          "applicability_score": 72,
+          "factuality_score": 75,
+          "angle": "Broader context on how Conway fits into the industry-wide move toward persistent AI agents"
+        }
+      ],
+      "reddit_threads": []
     },
     {
-      "title": "Google Launches Free AI Video for Everyone as OpenAI Shuts Down Sora",
-      "url": "https://www.webanditnews.com/2026/04/04/google-bets-big-on-ai-video-for-the-masses-while-openai-quietly-retreats-from-sora/",
-      "source": "Web And IT News",
-      "time_ago": "1 day ago",
-      "summary": "Google launched Veo 3.1 Lite, integrating AI video generation directly into Google Vids with 10 free generations per month for personal users. Meanwhile, OpenAI announced Sora's app shutdown on April 26 and API shutdown on September 24, after the product burned an estimated $15 million per day while generating only $2.1 million in lifetime revenue. Google is also offering Veo 3.1 Lite on the Gemini API at below 50% of the Fast tier pricing, targeting high-volume developer use cases.",
-      "bull_case": "AI video becomes a free, embedded feature of tools billions already use. Creative teams gain a new zero-cost prototyping tool for storyboards, rough cuts, and social content. Google's API pricing makes AI video economically viable for production workflows at scale.",
-      "bear_case": "Free AI video will flood platforms with low-effort content, making it harder for quality creative work to stand out. Google controls the distribution and could change terms at any time. The 10 free generations per month is a teaser that will likely push users toward paid tiers.",
-      "the_signal": "For creative teams: AI video just moved from 'expensive experiment' to 'free commodity.' Start testing Veo 3.1 Lite through Google Vids for rapid concept visualization and social-first video drafts. This won't replace your production team, but it can compress the concepting-to-approval cycle from days to hours. If you were evaluating Sora, stop and redirect that budget.",
+      "id": "anthropic-anthropac-fec-pentagon",
+      "title": "Anthropic Launches AnthroPAC as AI Industry Pours $300M Into Midterms, Pentagon Lawsuit Escalates",
+      "summary": "Anthropic filed FEC paperwork on April 3 to establish AnthroPAC, an employee-funded political action committee backing candidates from both parties who engage with AI policy. The move follows a $20 million donation to Public First Action in February and comes amid a federal lawsuit against the Pentagon after Defense Secretary Hegseth labeled Anthropic a 'supply chain risk.'",
+      "key_takeaways": [
+        "AnthroPAC (FEC ID C00946111) is an employee-funded PAC with contributions capped at $5,000 per year, overseen by a bipartisan board",
+        "AI industry midterm spending has topped $300 million, exceeding the crypto sector's 2024 levels",
+        "Anthropic is suing the Pentagon after being designated a 'supply chain risk,' with a federal judge blocking punitive actions against the company",
+        "Competing PACs include Leading the Future ($125M from OpenAI co-founder Greg Brockman), while Google, Microsoft, Amazon, and Meta run similar employee PACs"
+      ],
+      "article": "Anthropic filed paperwork with the Federal Election Commission on April 3 to establish AnthroPAC, the company's first political action committee. The employee-funded PAC permits individual contributions up to $5,000 per year and will back current and emerging congressional candidates from both parties who demonstrate engagement with AI policy.\n\nThis is not Anthropic's first political move. In February, the company donated $20 million to Public First Action, a bipartisan 501(c)(4) focused on AI education and federal governance. Public First has since raised $75 million total backing pro-regulation candidates. The broader AI industry has collectively poured more than $300 million into 2026 midterm races, exceeding the crypto sector's spending in 2024.\n\nThe timing is loaded. Anthropic is locked in a federal lawsuit against the Department of Defense after Defense Secretary Pete Hegseth designated the company a \"supply chain risk\" in March. The Pentagon paused or canceled contracts including a reported $200 million opportunity, reportedly in response to Anthropic's restrictions on Claude's use in fully autonomous lethal weapons and mass surveillance. A federal judge issued a temporary block on punitive actions, framing the designation as potential First Amendment retaliation.\n\nFor anyone watching AI's intersection with government, the stakes are becoming clearer. Anthropic is simultaneously fighting for federal contracts, funding political candidates, and drawing ethical lines on military applications. AnthroPAC joins Google, Microsoft, Amazon, and Meta's existing employee PACs, while competing against Leading the Future, a $125 million fund backed by OpenAI co-founder Greg Brockman.",
+      "impact_tier": "watch",
+      "category": "claude-anthropic",
+      "signal_score": 75,
+      "image": "https://static.news.bitcoin.com/wp-content/uploads/2026/04/anthropic-registers-anthropac-with-fec-amid-pentagon-dispute.png",
+      "tags": ["anthropic", "pac", "politics", "pentagon", "midterms", "ai-policy"],
+      "sources": [
+        {
+          "title": "Anthropic ramps up its political activities with a new PAC",
+          "url": "https://techcrunch.com/2026/04/03/anthropic-ramps-up-its-political-activities-with-a-new-pac/",
+          "source_name": "TechCrunch",
+          "image": null,
+          "excerpt": "Anthropic filed documents to establish AnthroPAC as the 2026 midterm elections approach, expanding the AI company's political engagement.",
+          "applicability_score": 82,
+          "factuality_score": 92,
+          "angle": "Breaking news with context on Anthropic's escalating political strategy"
+        },
+        {
+          "title": "Anthropic Registers AnthroPAC With FEC Amid Pentagon Dispute",
+          "url": "https://news.bitcoin.com/anthropic-registers-anthropac-with-fec-amid-pentagon-dispute/",
+          "source_name": "Bitcoin News",
+          "image": "https://static.news.bitcoin.com/wp-content/uploads/2026/04/anthropic-registers-anthropac-with-fec-amid-pentagon-dispute.png",
+          "excerpt": "Anthropic filed FEC paperwork on April 3, establishing AnthroPAC with employee contributions capped at $5,000 annually, amid a legal battle with the Pentagon over a supply chain risk designation.",
+          "applicability_score": 80,
+          "factuality_score": 88,
+          "angle": "Detailed filing information with Pentagon lawsuit context and FEC registration specifics"
+        },
+        {
+          "title": "Anthropic Forms AnthroPAC as AI Midterm Spending Hits $300M",
+          "url": "https://www.implicator.ai/anthropic-files-to-form-anthropac-as-ai-midterm-spending-tops-300-million/",
+          "source_name": "Implicator",
+          "image": "https://www.implicator.ai/content/images/size/w1200/2026/04/2026-04-03-17.12.49-anthropic_pac_midterms@2x.webp",
+          "excerpt": "The AI industry has poured more than $300 million into 2026 midterms. Competing efforts include Leading the Future ($125M from OpenAI's Greg Brockman).",
+          "applicability_score": 85,
+          "factuality_score": 85,
+          "angle": "Industry spending analysis with comparison to competing tech PACs and the broader AI lobbying landscape"
+        },
+        {
+          "title": "Anthropic files to create PAC amid legal battle with Pentagon",
+          "url": "https://www.washingtonexaminer.com/policy/technology/4515310/anthropic-pac-legal-battle-pentagon-ai-contract/",
+          "source_name": "Washington Examiner",
+          "image": "https://www.washingtonexaminer.com/wp-content/uploads/2026/04/AP26092601761550.jpg",
+          "excerpt": "The AI company established AnthroPAC to support candidates from both parties who align with Anthropic's AI policy positions, amid an ongoing Pentagon dispute.",
+          "applicability_score": 75,
+          "factuality_score": 90,
+          "angle": "Policy and legal angle focusing on the Pentagon designation and its First Amendment implications"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "apple-vibe-coding-crackdown-anything",
+      "title": "Apple Pulls $100M Vibe Coding App From App Store as AI Submissions Surge 84%",
+      "summary": "Apple removed the AI-powered app builder Anything from the App Store on March 26, citing guideline 2.5.2 against apps executing unreviewed code. The app, valued at $100 million after an $11 million raise, was restored on April 3 after modifications. Vibe coding tools drove an 84% jump in quarterly App Store submissions, with review times ballooning from 24-48 hours to 7-30+ days.",
+      "key_takeaways": [
+        "Anything was pulled March 26 and restored April 3, after Apple cited guideline 2.5.2 prohibiting apps from executing code that changes functionality after review",
+        "Vibe coding drove an 84% quarterly jump in App Store submissions, with 557,000 new apps in 2025 (the most since 2016)",
+        "Review times ballooned from 24-48 hours to 7-30+ days at peak, straining Apple's review infrastructure",
+        "Vibe coding platforms are booming: Cursor at $2B+ revenue, Lovable at $200M revenue, Replit targeting $1B for 2026"
+      ],
+      "article": "Apple's escalating enforcement against vibe coding apps reached a peak in late March when it pulled Anything, a $100 million-valued app that lets users build software through natural language prompts, from the App Store entirely. The removal, citing guideline 2.5.2 against apps downloading or executing code that changes their functionality, came after months of tension.\n\nThe timeline tells the story. Anything launched on iOS without issues in November 2025. By December, Apple began blocking updates. On March 18, Apple started removing vibe coding apps broadly, targeting Replit and Vibecode among others. Co-founder Dhruv Amin tried to comply by updating the app to preview vibe-coded apps in a web browser rather than within the app itself. Apple rejected the workaround and pulled Anything on March 26. The app returned to the App Store on April 3 after further modifications.\n\nThe underlying numbers explain Apple's anxiety. Vibe coding drove an 84% jump in quarterly App Store submissions, pushing full-year 2025 to 557,000 new apps, the highest since 2016. December alone saw a 56% year-on-year spike in iOS app launches. Review times ballooned from 24-48 hours to 7-30+ days, straining the infrastructure that underpins Apple's quality control model.\n\nApple insists it is \"not targeting vibe coding as a category\" but enforcing existing guidelines. The distinction matters: educational coding apps are permitted if source code remains \"completely viewable and editable by the user.\" The line Apple is drawing is between tools that help users learn to code versus platforms that generate and execute code dynamically, bypassing the review process that keeps the App Store curated.",
+      "impact_tier": "watch",
+      "category": "ai-coding",
+      "signal_score": 80,
+      "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2026/04/vibe-coding-apple-app-store-surge-crackdown.png",
+      "tags": ["apple", "vibe-coding", "app-store", "anything", "replit", "enforcement"],
+      "sources": [
+        {
+          "title": "Vibe coding drove an 84% jump in App Store submissions. Apple is cracking down.",
+          "url": "https://thenextweb.com/news/vibe-coding-apple-app-store-surge-crackdown",
+          "source_name": "The Next Web",
+          "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2026/04/vibe-coding-apple-app-store-surge-crackdown.png",
+          "excerpt": "AI-powered vibe coding drove an 84% jump in quarterly App Store submissions and 557,000 new apps in 2025, with review times ballooning to 7-30+ days.",
+          "applicability_score": 90,
+          "factuality_score": 90,
+          "angle": "Data-driven analysis with Sensor Tower statistics on submission volumes and platform revenue figures"
+        },
+        {
+          "title": "Apple pulls vibe coding app 'Anything' from the App Store",
+          "url": "https://9to5mac.com/2026/03/30/apple-steps-up-crackdown-on-vibe-coding-apps-pulls-anything-from-the-app-store/",
+          "source_name": "9to5Mac",
+          "image": "https://9to5mac.com/wp-content/uploads/sites/6/2024/05/App-Store-fraud.webp",
+          "excerpt": "Apple removed Anything from the App Store citing guideline 2.5.2. Developer Dhruv Amin's web browser workaround was rejected before the full removal.",
+          "applicability_score": 85,
+          "factuality_score": 92,
+          "angle": "Developer-side narrative with details on Apple's rejection of compliance attempts"
+        },
+        {
+          "title": "Apple Pulls Vibe Coding App 'Anything' From App Store, Escalating Enforcement [Updated]",
+          "url": "https://www.macrumors.com/2026/03/30/apple-pulls-vibe-coding-app/",
+          "source_name": "MacRumors",
+          "image": "https://images.macrumors.com/t/1zLMxI7_bYZDeXzPxI36DcX9OVg=/1600x0/article-new/2022/01/iOS-App-Store-General-Feature-Black.jpg",
+          "excerpt": "Anything raised $11 million at a $100 million valuation in September 2025 and had enabled thousands of app publications before removal. The app returned April 3.",
+          "applicability_score": 82,
+          "factuality_score": 90,
+          "angle": "Complete timeline from launch through removal to restoration, with funding context"
+        },
+        {
+          "title": "Apple Cracks Down on 'Vibe Coding' Apps",
+          "url": "https://www.theinformation.com/articles/apple-cracks-vibe-coding-apps",
+          "source_name": "The Information",
+          "image": null,
+          "excerpt": "Apple has been blocking updates and removing vibe coding apps from the App Store, citing rules against apps executing unreviewed code.",
+          "applicability_score": 78,
+          "factuality_score": 88,
+          "angle": "Industry reporting on the broader pattern of Apple enforcement across multiple vibe coding platforms"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "meta-fully-automated-ai-ads",
+      "title": "Meta Rolls Out End-to-End AI Ad Campaigns: Give It a URL and Budget, AI Does the Rest",
+      "summary": "Meta's Advantage+ platform now handles full campaign automation: provide a business URL and budget, and AI generates creatives, targets audiences, optimizes placement, and manages bids. Sixty-five percent of advertisers have adopted Advantage+, seeing up to 32% CPA reduction. A new Image-to-Video tool converts product photos into multi-scene video ads.",
+      "key_takeaways": [
+        "End-to-end automation means advertisers provide only a URL and budget; AI handles creative generation, targeting, placement, and bidding",
+        "65% of advertisers now scale campaigns through Advantage+, with campaign consolidation delivering up to 32% CPA reduction",
+        "New Image-to-Video tool converts up to 20 product images into polished multi-scene video ads for Facebook and Instagram",
+        "Meta's AI video ad tools have reached a $10 billion annualized revenue run-rate"
+      ],
+      "article": "Meta's advertising platform has crossed a threshold that every creative team should understand. Advantage+ now offers end-to-end AI-automated campaigns where an advertiser provides nothing more than a business URL and a budget. The AI handles everything else: creative generation, audience targeting, placement optimization, and bid management.\n\nThe adoption numbers confirm this is not experimental. Sixty-five percent of advertisers are now scaling campaigns through Advantage+, and those who migrated from fragmented campaign structures saw up to 32% reduction in cost per acquisition. Meta's AI video ad tools have hit a $10 billion annualized revenue run-rate, signaling that automated creative is not just working but working at scale.\n\nThe latest addition is an Image-to-Video tool that converts up to 20 product images into polished multi-scene video ads optimized for Facebook and Instagram placements. Combined with AI dubbing, AI-generated music, and persona-based image generation, Meta is building a creative production pipeline inside the ad platform itself.\n\nFor creative directors and agencies, the strategic question is shifting. The competitive advantage no longer comes from manual campaign optimization or even media buying expertise. It comes from strategic input quality: the brief, the brand positioning, the first-party data you feed the system, and the creative asset diversity you provide as raw material. The humans who understand brand strategy and creative direction become more valuable as the execution layer automates. The humans who only knew how to push buttons in Ads Manager have a problem.",
+      "impact_tier": "adopt",
+      "category": "creative-advertising",
+      "signal_score": 85,
+      "image": "https://www.digitalapplied.com/og-image.png",
+      "tags": ["meta", "advantage-plus", "ai-advertising", "automation", "creative-production"],
+      "sources": [
+        {
+          "title": "Social Media AI Advertising: Meta and Google Updates",
+          "url": "https://www.digitalapplied.com/blog/social-media-ai-advertising-april-2026-meta-google",
+          "source_name": "Digital Applied",
+          "image": "https://www.digitalapplied.com/og-image.png",
+          "excerpt": "Meta is rolling out end-to-end AI-automated ad campaigns with 65% advertiser adoption, 32% CPA reduction, and a $10B annualized revenue run-rate for AI video tools.",
+          "applicability_score": 92,
+          "factuality_score": 88,
+          "angle": "Comprehensive platform analysis covering Meta, Google, and TikTok AI advertising developments"
+        },
+        {
+          "title": "Meta's AI Advertising Plans: What To Expect in 2026 and How To Prepare",
+          "url": "https://www.adtaxi.com/blog/metas-ai-advertising-plans-what-to-expect-in-2026-and-how-to-prepare/",
+          "source_name": "AdTaxi",
+          "image": null,
+          "excerpt": "Meta publicly expects to offer fully AI-automated ad campaigns by end of 2026, with pieces already in production across creative, targeting, and bidding.",
+          "applicability_score": 80,
+          "factuality_score": 85,
+          "angle": "Agency-focused preparation guide for adapting to Meta's automation trajectory"
+        },
+        {
+          "title": "Meta's AI Advertising Revolution: What Full Automation by 2026 Means for Marketers",
+          "url": "https://www.vxtx.co.uk/blog/meta-ai-ad-automation-2026",
+          "source_name": "VXTX",
+          "image": null,
+          "excerpt": "The shift from manual campaign management to AI-driven automation represents a fundamental change in how advertising budgets are deployed and optimized.",
+          "applicability_score": 75,
+          "factuality_score": 82,
+          "angle": "Marketing strategy perspective on the implications of full automation for agency business models"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "microsoft-copilot-critique-council-multi-model",
+      "title": "Microsoft Ships Copilot Researcher With Dual-Model Critique: GPT Generates, Claude Reviews",
+      "summary": "Microsoft's Copilot Researcher now features Critique mode where one AI model generates reports and another independently reviews them for accuracy, plus a Council mode where Claude and GPT each produce full reports and a third AI compares them. Internal benchmarks show Critique outperforms Perplexity Deep Research by 13.8% on accuracy.",
+      "key_takeaways": [
+        "Critique mode uses one model for generation and a second for independent review of accuracy, completeness, and source quality",
+        "Council mode has Claude and GPT each produce full reports, then a third AI highlights agreement, divergence, and unique insights",
+        "DRACO benchmark testing shows Critique outperformed Perplexity Deep Research by 13.8%, with the largest gains in analysis depth (+3.33 points)",
+        "Available through Microsoft's Frontier program for Enterprise, with some Business plan accounts already seeing Council options"
+      ],
+      "article": "Microsoft introduced a genuinely novel pattern for AI accuracy with its upgraded Copilot Researcher: instead of trusting a single model's output, it uses multiple AI models that check each other's work.\n\nCritique mode is the more practical of the two new features. One AI model generates the research report while a second independently reviews it, checking source reliability, whether the report fully addresses the request, and whether claims are supported by citations. Microsoft plans to make this the default when \"Auto\" is selected in the model picker. The reviewing model acts as a quality gate, catching hallucinations and gaps before the report reaches the user.\n\nCouncil mode goes further. Both an Anthropic Claude model and an OpenAI GPT model independently produce complete reports on the same topic. A third AI then compares the two, highlighting where they agree, where they diverge, and what unique insights each brings. This gives users a multi-perspective view rather than a single model's interpretation of a topic.\n\nThe benchmark results are compelling. Testing against the DRACO benchmark, which measures research accuracy, completeness, and objectivity across 100 complex tasks in 10 fields, Critique scored 13.8% higher than Perplexity Deep Research. The largest improvement was in breadth and depth of analysis (+3.33 points), followed by presentation quality (+3.04) and factual accuracy (+2.58).\n\nFor anyone producing research-heavy work, this multi-model pattern is worth watching. The idea that AI outputs should be reviewed by a different AI before delivery is a practical answer to the trust problem that has held back enterprise adoption.",
+      "impact_tier": "watch",
       "category": "competitive-intel",
-      "signal_score": 70,
-      "tags": [
-        "google",
-        "video-generation",
-        "openai",
-        "sora"
-      ]
+      "signal_score": 78,
+      "image": "https://office-watch.com/fredagg/uploads/2026/04/image-1.png",
+      "tags": ["microsoft", "copilot", "multi-model", "critique", "claude", "gpt", "research"],
+      "sources": [
+        {
+          "title": "Microsoft Copilot Researcher Gets a Two-Brain Upgrade: Critique and Council Explained",
+          "url": "https://office-watch.com/2026/microsoft-copilot-researcher-critique-council/",
+          "source_name": "Office Watch",
+          "image": "https://office-watch.com/fredagg/uploads/2026/04/image-1.png",
+          "excerpt": "Critique uses dual models for generation and review. Council has Claude and GPT independently produce reports, with a third AI comparing them for agreement and divergence.",
+          "applicability_score": 88,
+          "factuality_score": 90,
+          "angle": "Detailed feature walkthrough with benchmark results and availability information"
+        },
+        {
+          "title": "Microsoft adds multi-model AI to Copilot Researcher, raising accuracy stakes",
+          "url": "https://www.computerworld.com/article/4152323/microsoft-adds-multi-model-ai-to-copilot-researcher-raising-accuracy-stakes.html",
+          "source_name": "Computerworld",
+          "image": null,
+          "excerpt": "The multi-model approach creates a feedback loop that delivers higher-quality results across factual accuracy, analytical breadth, and presentation quality.",
+          "applicability_score": 82,
+          "factuality_score": 88,
+          "angle": "Enterprise analysis of how multi-model verification addresses the trust problem in AI-generated research"
+        },
+        {
+          "title": "Microsoft Is Going Multi-Model with Copilot. Does the Enterprise King Win Again?",
+          "url": "https://www.fool.com/investing/2026/04/04/microsoft-multi-model-copilot-enterprise-stock/",
+          "source_name": "The Motley Fool",
+          "image": null,
+          "excerpt": "Microsoft's Copilot upgrade allows multiple AI models including OpenAI's GPT and Anthropic's Claude to collaborate within a single workflow.",
+          "applicability_score": 70,
+          "factuality_score": 85,
+          "angle": "Investment perspective on how multi-model Copilot strengthens Microsoft's enterprise position"
+        },
+        {
+          "title": "Microsoft Copilot Cowork Combines AI from Anthropic and OpenAI in One Tool",
+          "url": "https://winbuzzer.com/2026/03/31/microsoft-copilot-cowork-claude-review-gpt-multi-model-xcxwbn/",
+          "source_name": "WinBuzzer",
+          "image": null,
+          "excerpt": "Copilot Cowork frontier preview brings multi-model AI workflows to Microsoft 365, with Claude reviewing GPT-generated outputs for accuracy.",
+          "applicability_score": 75,
+          "factuality_score": 82,
+          "angle": "Technical preview coverage with details on the Cowork platform and model collaboration mechanics"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "webflow-aeo-answer-engine-optimization",
+      "title": "Webflow Ships AI-Powered AEO Tools to Optimize Sites for LLM Discovery",
+      "summary": "Webflow rolled out Answer Engine Optimization features that automatically optimize site content for LLM consumption alongside traditional SEO. The AI-powered audit panel checks for missing schema markup, meta descriptions, and alt text across entire sites, then uses AI to generate contextually relevant content for those elements.",
+      "key_takeaways": [
+        "AEO (Answer Engine Optimization) tools automatically format site content for LLM consumption alongside traditional search engines",
+        "Site-wide audit panel checks all pages and assets for missing alt text, meta titles, descriptions, and schema markup in a single pass",
+        "Webflow AI generates contextually relevant metadata, alt text, and schema markup, with human review before publishing",
+        "Early adopters reported 330+ new citations and a 24% lift in impressions from FAQ automation and content refreshes"
+      ],
+      "article": "Webflow quietly shipped a set of tools that address a problem most websites have not even started thinking about: how your content appears when an LLM summarizes it instead of when a human reads it.\n\nThe new AEO (Answer Engine Optimization) capabilities sit alongside Webflow's existing SEO tools and focus on making your site discoverable by AI systems like ChatGPT, Claude, and Gemini when they answer user questions. The core feature is an audit panel that scans your entire site for missing elements that affect both SEO and AEO: image alt text, page titles, meta descriptions, and schema markup. It runs site-wide and page-level checks, catching issues across asset libraries, static pages, and CMS collection pages.\n\nThe AI assist layer is where it gets practical. Webflow AI can generate contextually relevant alt text, meta titles and descriptions, and schema markup across your site. For CMS-heavy sites, it can automatically define metadata from CMS fields. Everything goes through human review before publishing, keeping you in control of what represents your brand to both search engines and AI models.\n\nEarly adopters using Webflow's FAQ automation and content refreshes reported 330+ new citations and a 24% lift in impressions. Enterprise customers get additional governance capabilities to control AI feature usage on individual sites.\n\nFor creative directors managing client websites, AEO is becoming a deliverable, not a nice-to-have. As AI-powered search gains share from traditional Google results, the sites that are structured for LLM consumption will capture the citations and referrals that replace traditional blue links.",
+      "impact_tier": "adopt",
+      "category": "design-tools",
+      "signal_score": 72,
+      "image": "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/69021dbb3946d849908a97a5_Update_AI-SEO-Schema_1280x720.webp",
+      "tags": ["webflow", "aeo", "seo", "answer-engine", "schema-markup", "ai-discovery"],
+      "sources": [
+        {
+          "title": "Audit and improve SEO & AEO with Webflow AI",
+          "url": "https://webflow.com/updates/ai-seo-aeo",
+          "source_name": "Webflow",
+          "image": "https://cdn.prod.website-files.com/687e8d1b96312cc631cafec7/69021dbb3946d849908a97a5_Update_AI-SEO-Schema_1280x720.webp",
+          "excerpt": "Webflow AI helps audit and improve SEO and AEO elements including image alt text, meta titles, descriptions, and schema markup with AI-generated suggestions.",
+          "applicability_score": 90,
+          "factuality_score": 95,
+          "angle": "Official product announcement with feature details and availability information"
+        },
+        {
+          "title": "Audit and improve SEO & AEO with Webflow AI - Help Center",
+          "url": "https://help.webflow.com/hc/en-us/articles/45696502240147-Audit-and-improve-SEO-AEO-with-Webflow-AI",
+          "source_name": "Webflow Help Center",
+          "image": null,
+          "excerpt": "The audit panel supports site-wide and page-level checks for alt text, meta titles, descriptions, and schema markup, with AI-assisted content generation.",
+          "applicability_score": 85,
+          "factuality_score": 95,
+          "angle": "Technical documentation with step-by-step usage instructions and feature scope details"
+        },
+        {
+          "title": "AEO with Webflow: SEO is shifting. AEO is next.",
+          "url": "https://webflow.com/solutions/aeo",
+          "source_name": "Webflow",
+          "image": null,
+          "excerpt": "AEO optimizes content for AI-driven discovery alongside traditional SEO, with early adopters seeing 330+ new citations and 24% impression lifts.",
+          "applicability_score": 80,
+          "factuality_score": 90,
+          "angle": "Strategic positioning of AEO as the next evolution of SEO, with early adopter metrics"
+        },
+        {
+          "title": "AEO for Webflow: Optimizing Your Site for AI Search Engines in 2026",
+          "url": "https://www.webflower.co/blog/aeo-webflow-answer-engine-optimization-guide",
+          "source_name": "Webflower",
+          "image": null,
+          "excerpt": "Guide to implementing Answer Engine Optimization on Webflow sites, covering schema markup, structured content, and AI-friendly formatting strategies.",
+          "applicability_score": 72,
+          "factuality_score": 82,
+          "angle": "Practical implementation guide for agencies and freelancers building Webflow sites"
+        }
+      ],
+      "reddit_threads": []
     }
   ],
+  "stats": {
+    "total_sources": 23,
+    "total_topics": 6,
+    "adopt_count": 2,
+    "watch_count": 4,
+    "ignore_count": 0
+  },
+  "top_stories": [],
   "product_radar": [
     {
-      "name": "Claw Code",
-      "url": "https://claw-code.codes/",
-      "description": "Open-source AI coding agent framework (Python/Rust) born from the Claude Code source leak. Clean-room rewrite with 19 built-in tools, multi-agent orchestration, MCP integration, and provider-agnostic LLM support. 72K+ GitHub stars in its first days.",
+      "name": "Conway (Anthropic)",
+      "url": "https://www.testingcatalog.com/exclusive-anthropic-tests-its-own-always-on-conway-agent/",
+      "description": "Always-on Claude agent sidebar with webhooks, Chrome integration, and .cnw.zip extension system",
       "tag": "NEW",
       "category": "claude-anthropic",
-      "tags": [
-        "claw-code"
-      ]
+      "tags": ["anthropic", "conway", "agent"]
     },
     {
-      "name": "Google Veo 3.1 Lite",
-      "url": "https://winbuzzer.com/2026/04/01/google-launches-veo-3-1-lite-openai-shuts-down-sora-xcxwbn/",
-      "description": "Google's latest AI video model now built directly into Google Vids. Free tier includes 10 video generations per month. Also available on the Gemini API at below 50% of Fast tier pricing for developer use cases.",
+      "name": "Copilot Researcher Critique & Council",
+      "url": "https://office-watch.com/2026/microsoft-copilot-researcher-critique-council/",
+      "description": "Dual-model research where GPT generates and Claude reviews, plus Council mode comparing two full reports",
       "tag": "NEW",
       "category": "competitive-intel",
-      "tags": [
-        "google-veo-3.1-lite"
-      ]
+      "tags": ["microsoft", "copilot", "multi-model"]
     },
     {
-      "name": "Gemini Cross-Platform Chat Import",
-      "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
-      "description": "Google Gemini now lets you transfer chat history and personal context from ChatGPT, Claude, and other chatbot platforms directly into Gemini. Includes memory migration so Gemini picks up where your previous assistant left off.",
-      "tag": "UPDATE",
-      "category": "competitive-intel",
-      "tags": [
-        "gemini-cross-platform-chat-import"
-      ]
-    },
-    {
-      "name": "Meta Advantage+ Image-to-Video",
+      "name": "Meta Image-to-Video Ads",
       "url": "https://www.digitalapplied.com/blog/social-media-ai-advertising-april-2026-meta-google",
-      "description": "Meta's new creative tool converts up to 20 product images into polished multi-scene video ads optimized for Facebook and Instagram. Also adds AI Dubbing, AI-generated music, and persona-based image generation to the Advantage+ creative suite.",
-      "tag": "UPDATE",
+      "description": "Converts up to 20 product images into polished multi-scene video ads for Facebook and Instagram",
+      "tag": "NEW",
       "category": "creative-advertising",
-      "tags": [
-        "meta-advantage+-image-to-video"
-      ]
+      "tags": ["meta", "video-ads", "ai-creative"]
     },
     {
-      "name": "Claude API 300K Output Tokens",
-      "url": "https://releasebot.io/updates/anthropic",
-      "description": "Anthropic raised the max_tokens cap to 300K on the Message Batches API for Claude Opus 4.6 and Sonnet 4.6, enabling much longer single-turn outputs. Requires the output-300k-2026-03-24 beta header.",
-      "tag": "UPDATE",
-      "category": "claude-anthropic",
-      "tags": [
-        "claude-api-300k-output-tokens"
-      ]
+      "name": "Webflow AEO Tools",
+      "url": "https://webflow.com/updates/ai-seo-aeo",
+      "description": "AI-powered audit and generation of schema markup, alt text, and metadata for LLM discovery",
+      "tag": "NEW",
+      "category": "design-tools",
+      "tags": ["webflow", "aeo", "seo"]
     }
   ],
-  "creative_intel": [
-    {
-      "title": "AI-Generated Ads Now Outperform Human-Created Ads on Meta by 12% CTR",
-      "url": "https://www.digitalapplied.com/blog/ai-ad-creative-benchmark-2026-ctr-roas-data",
-      "source": "Digital Applied",
-      "summary": "New benchmark data shows AI-generated ads achieve roughly 12% higher click-through rates on Meta platforms compared to human-created ads targeting the same audiences with the same budgets. Advertisers using first-party data with AI-based contextual targeting are seeing up to 2x higher return on ad spend versus third-party targeting. Meta's vision for 2026: advertisers provide a business URL and budget, and AI handles everything else. Nearly 90% of advertisers now use generative AI in their creative workflow, up from 55% at the start of 2025.",
-      "category": "creative-advertising",
-      "signal_score": 65,
-      "tags": [
-        "advertising",
-        "campaign",
-        "ai-creative"
-      ]
-    },
-    {
-      "title": "9 AI Marketing Campaigns Pushing Creative Boundaries in 2026",
-      "url": "https://www.superside.com/blog/ai-marketing-campaigns",
-      "source": "Superside",
-      "summary": "Roundup of standout AI-powered campaigns including Coca-Cola's holiday ads, Nike's A.I.R. campaign, H&M's digital twins, and Roku's personalized ads. AI-generated video now accounts for an estimated 40% of all digital ad creative, driven by quality improvements in Veo and platform-native generation tools. The creative bar is rising fast as brands move from 'we used AI' novelty to genuine production integration.",
-      "category": "creative-advertising",
-      "signal_score": 65,
-      "tags": [
-        "advertising",
-        "campaign",
-        "ai-creative"
-      ]
-    }
-  ],
-  "knowledge_shelf": [
-    {
-      "title": "Karpathy's LLM Knowledge Base: A Markdown-First Alternative to RAG",
-      "url": "https://www.techbuddies.io/2026/04/04/inside-karpathys-llm-knowledge-base-a-markdown-first-alternative-to-rag-for-autonomous-archives/",
-      "source": "TechBuddies",
-      "summary": "Andrej Karpathy shared his 'LLM Knowledge Base' architecture on April 3. Instead of traditional RAG with vector databases, the LLM acts as a research librarian that compiles, lints, and interlinks Markdown files in Obsidian. Three stages: raw data ingest (using Obsidian Web Clipper), LLM compilation into a structured wiki with backlinks, and active maintenance 'health checks.' Works at ~100 articles and ~400K words. Philosophy: files outlast apps, Markdown is the universal format.",
-      "category": "rag-knowledge",
-      "tags": [
-        "rag",
-        "knowledge-base",
-        "obsidian"
-      ]
-    },
-    {
-      "title": "AI Agent Frameworks in 2026: 8 SDKs and the Trade-Offs Nobody Talks About",
-      "url": "https://www.morphllm.com/ai-agent-framework",
-      "source": "MorphLLM",
-      "summary": "Comprehensive comparison of the 8 major AI agent frameworks: Claude Agent SDK, OpenAI Agents SDK, Google ADK, LangGraph, CrewAI, Smolagents, Pydantic AI, and Autogen. Covers the real trade-offs between proprietary and open-source options, when to use repository-level agents like Cursor or Claude Code versus orchestration frameworks, and how the agent harness layer is becoming the critical differentiator as LLMs commoditize.",
-      "category": "rag-knowledge",
-      "tags": [
-        "rag",
-        "knowledge-base",
-        "obsidian"
-      ]
-    }
-  ],
-  "watch_list": [
-    {
-      "title": "CLAUDE CODE FULL COURSE 4 HOURS: Build & Sell (2026)",
-      "url": "https://www.youtube.com/watch?v=QoQBzR1NIqI",
-      "video_id": "QoQBzR1NIqI",
-      "channel": "Nick Saraev",
-      "duration": "4h 0m",
-      "summary": "Comprehensive free Claude Code masterclass covering agent teams, Git worktrees, cloud deployment, and how to build and sell AI-powered products. 772K+ views in one month. Goes deep on the technical side with real production workflows.",
-      "category": "claude-anthropic",
-      "tags": [
-        "claude-code",
-        "tutorial"
-      ]
-    },
-    {
-      "title": "800+ Hours of Learning Claude Code in 8 Minutes",
-      "url": "https://www.youtube.com/watch?v=Ffh9OeJ7yxw",
-      "video_id": "Ffh9OeJ7yxw",
-      "channel": "Edmund Yong",
-      "summary": "Distilled lessons from 800+ hours of Claude Code usage into an 8-minute overview. Covers the most important patterns, shortcuts, and mental models that make the difference between fighting the tool and flowing with it. Great for experienced users looking to level up fast.",
-      "category": "claude-anthropic",
-      "tags": [
-        "claude-code",
-        "tutorial"
-      ]
-    },
-    {
-      "title": "Introducing Cowork: Claude Code for the Rest of Your Work",
-      "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
-      "video_id": "UAmKyyZ-b9E",
-      "channel": "Anthropic",
-      "summary": "Official Anthropic walkthrough of Cowork, the feature that extends Claude Code beyond coding into general knowledge work. Shows how to use Claude Code for research, writing, project management, and creative workflows with the same agentic loop that powers the coding experience.",
-      "category": "claude-anthropic",
-      "tags": [
-        "claude-code",
-        "tutorial"
-      ]
-    }
-  ],
+  "watch_list": [],
   "quick_hits": [
     {
-      "title": "GPT-4o Fully Retired from All OpenAI Plans",
-      "url": "https://releasebot.io/updates/openai",
-      "description": "As of April 3, GPT-4o is gone from all plans. The current lineup is GPT-5.3 Instant, GPT-5.4 Thinking, GPT-5.4 Pro, and GPT-5.4 mini. Developers on older models need to migrate now.",
-      "category": "competitive-intel",
-      "tags": [
-        "update"
-      ]
+      "title": "Vibe coding platforms hitting massive scale: Cursor at $2B+ revenue, Lovable at $200M, Replit targeting $1B for 2026",
+      "url": "https://thenextweb.com/news/vibe-coding-apple-app-store-surge-crackdown",
+      "description": "The Next Web reports on the financial scale of vibe coding platforms amid Apple's App Store enforcement",
+      "category": "ai-coding",
+      "tags": ["cursor", "lovable", "replit", "vibe-coding", "revenue"]
     },
     {
-      "title": "Claude 1M Context Window Beta Retiring April 30",
-      "url": "https://releasebot.io/updates/anthropic",
-      "description": "Anthropic is retiring the 1M token context beta for Claude Sonnet 4.5 and Sonnet 4. After April 30, the context-1m-2025-08-07 beta header will have no effect and requests over 200K tokens will error.",
-      "category": "claude-anthropic",
-      "tags": [
-        "update"
-      ]
+      "title": "AI industry has poured $300M+ into 2026 midterm races, exceeding crypto sector's 2024 spending",
+      "url": "https://www.implicator.ai/anthropic-files-to-form-anthropac-as-ai-midterm-spending-tops-300-million/",
+      "description": "AnthroPAC joins Google, Microsoft, Amazon, and Meta employee PACs; Leading the Future PAC has $125M from OpenAI's Brockman",
+      "category": "general",
+      "tags": ["ai-policy", "midterms", "pac", "lobbying"]
     },
     {
-      "title": "ChatGPT Adds Hands-Free CarPlay Voice Chats",
-      "url": "https://releasebot.io/updates/openai/chatgpt",
-      "description": "ChatGPT now supports hands-free voice conversations through Apple CarPlay on iOS 26.4+. Also: large pastes (5K+ characters) are auto-converted to attachments for Plus, Pro, and Business users.",
-      "category": "competitive-intel",
-      "tags": [
-        "update"
-      ]
+      "title": "TikTok Symphony AI creative suite claims 70% reduction in content production time",
+      "url": "https://www.digitalapplied.com/blog/social-media-ai-advertising-april-2026-meta-google",
+      "description": "Image-to-Video, Text-to-Video, and AI avatar tools generating platform-native content at scale",
+      "category": "creative-advertising",
+      "tags": ["tiktok", "symphony", "ai-creative", "video"]
     },
     {
-      "title": "Google Enforces Mandatory Spending Caps on Gemini API",
-      "url": "https://findskill.ai/blog/gemini-api-pricing-guide/",
-      "description": "As of April 1, Google enforced mandatory spending caps across all Gemini API billing tiers, restricted Pro models behind a paywall for free users, and introduced prepaid billing for new accounts.",
-      "category": "competitive-intel",
-      "tags": [
-        "update"
-      ]
+      "title": "YouTube CEO Neal Mohan: 1M+ channels use AI tools daily, anti-slop measures are a 2026 priority",
+      "url": "https://variety.com/2026/digital/news/youtube-channels-using-ai-tools-reduce-slop-neal-mohan-letter-1236636548/",
+      "description": "YouTube building on spam and clickbait systems to combat low-quality AI content while expanding creator AI features",
+      "category": "general",
+      "tags": ["youtube", "ai-slop", "creators", "moderation"]
     }
   ],
+  "creative_intel": [],
+  "knowledge_shelf": [],
   "hero_story_index": 0
 }
