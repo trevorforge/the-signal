@@ -62,7 +62,7 @@ export default async function TopicDetailPage({
               month: "short",
               day: "numeric",
             });
-            const isInternal = story.url.startsWith("/");
+            const isInternal = story.url?.startsWith("/") ?? false;
             const cardClass = "block bg-surface border border-border rounded-xl p-5 md:p-6 hover:border-signal-orange/30 transition-colors group";
             const cardContent = (
               <div className="flex items-start justify-between gap-4">
