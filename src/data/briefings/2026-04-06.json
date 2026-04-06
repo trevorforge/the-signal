@@ -14,7 +14,7 @@
       "title": "Claude Now Reads Your Microsoft 365 Data on Every Plan, Including Free",
       "url": "https://www.uctoday.com/productivity-automation/anthropic-expands-claude-microsoft-365-integration-for-all-user-plans/",
       "source": "UC Today",
-      "image": "https://www.uctoday.com/wp-content/uploads/2026/04/Anthropic-Claude-Microsoft-365.jpg",
+      "image": "http://www.uctoday.com/wp-content/uploads/2026/04/IMAGE-FORMAT-UC-TODAY-30.jpg",
       "time_ago": "today",
       "summary": "Anthropic expanded its Microsoft 365 connector from enterprise-only to every Claude plan, including Free. The read-only integration lets Claude search and reference Outlook emails, Teams chats, SharePoint documents, OneDrive files, and calendar events during conversations. Organizations authenticate through Microsoft Entra, and users enable it in Claude settings.",
       "bull_case": "Context-aware AI assistants that can pull from your actual work data are a massive productivity unlock. Making this free democratizes the kind of deep-context workflows that were previously gated behind enterprise contracts. This positions Claude as the workplace AI layer, not just a chat window.",
@@ -22,13 +22,18 @@
       "the_signal": "If your agency runs on Microsoft 365, this is worth testing immediately. Claude can now search your Outlook threads, reference shared documents, and pull meeting context without you manually copying anything. Set it up on a test account first to evaluate what data flows through, then pitch it to your team as a research accelerator for client briefs and internal knowledge retrieval.",
       "category": "claude-anthropic",
       "signal_score": 78,
-      "tags": ["claude", "microsoft-365", "enterprise", "integration"]
+      "tags": [
+        "claude",
+        "microsoft-365",
+        "enterprise",
+        "integration"
+      ]
     },
     {
       "title": "Pinterest Deploys Production-Scale MCP Ecosystem, Saves 7,000 Hours Monthly",
       "url": "https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/",
       "source": "InfoQ",
-      "image": "https://imgopt.infoq.com/fit-in/1200x2400/filters:quality(80)/news/2026/04/pinterest-mcp-ecosystem/en/headerimage/pinterest-mcp-header-1743790517128.jpg",
+      "image": "https://res.infoq.com/news/2026/04/pinterest-mcp-ecosystem/en/headerimage/pininterestarch-1774143632607.jpeg",
       "time_ago": "3 days ago",
       "summary": "Pinterest engineering built a fleet of domain-specific MCP servers for Presto, Spark, and Airflow connected through a central registry with mandatory human-in-the-loop approval. At 66,000 monthly invocations across 844 active users, the system saves roughly 7,000 hours per month. Two-layer authorization enforces access via end-user JWTs and service mesh identities, with every MCP server passing Security, Legal/Privacy, and GenAI review before production.",
       "bull_case": "This is the first major public case study of MCP at enterprise production scale. Pinterest's architecture (domain-specific servers + central registry + human approval) is a replicable blueprint for any org with 500+ engineers. It validates MCP as the standard for AI tool integration, not just a protocol experiment.",
@@ -36,7 +41,12 @@
       "the_signal": "If you're building internal tools or workflows with MCP servers, study Pinterest's three-layer architecture: domain-specific servers that limit context bloat, a central registry for discovery and governance, and mandatory human approval for sensitive operations. This is the pattern that will separate production MCP deployments from hobby projects.",
       "category": "ai-agents",
       "signal_score": 85,
-      "tags": ["mcp", "pinterest", "enterprise", "agent-architecture"]
+      "tags": [
+        "mcp",
+        "pinterest",
+        "enterprise",
+        "agent-architecture"
+      ]
     }
   ],
   "product_radar": [
@@ -46,7 +56,11 @@
       "description": "macOS-native multi-agent orchestration workspace now in public beta. A coordinator agent breaks tasks into a living spec, fans work to parallel implementor agents in isolated git worktrees, then a verifier checks results. Works with Claude Code, Codex, and OpenCode alongside Augment's native agents.",
       "tag": "NEW",
       "category": "ai-coding",
-      "tags": ["multi-agent", "orchestration", "coding"]
+      "tags": [
+        "multi-agent",
+        "orchestration",
+        "coding"
+      ]
     },
     {
       "name": "Cursor Composer 2",
@@ -54,7 +68,11 @@
       "description": "Cursor's third-generation proprietary coding model built on Kimi K2.5 with custom reinforcement learning. Scores 61.3 on CursorBench and 73.7 on SWE-bench Multilingual, beating Claude Opus 4.6 on coding benchmarks. Priced at $0.50/M input tokens, roughly one-third the cost of frontier alternatives.",
       "tag": "NEW",
       "category": "ai-coding",
-      "tags": ["cursor", "coding-model", "composer-2"]
+      "tags": [
+        "cursor",
+        "coding-model",
+        "composer-2"
+      ]
     },
     {
       "name": "NVIDIA Agent Toolkit + OpenShell",
@@ -62,7 +80,12 @@
       "description": "Open-source enterprise AI agent platform with OpenShell (policy-based security runtime), AI-Q (agent blueprint for enterprise knowledge), and Nemotron models. Adopted by Adobe, Atlassian, Salesforce, SAP, ServiceNow, and 12 more partners. Available now on build.nvidia.com.",
       "tag": "NEW",
       "category": "ai-agents",
-      "tags": ["nvidia", "agent-toolkit", "openshell", "enterprise"]
+      "tags": [
+        "nvidia",
+        "agent-toolkit",
+        "openshell",
+        "enterprise"
+      ]
     },
     {
       "name": "Claude Code /powerup Lessons",
@@ -70,7 +93,11 @@
       "description": "New interactive /powerup command in Claude Code that provides animated demos and lessons without leaving the terminal. Covers skills, hooks, MCP integration, and advanced features. Part of Claude Code v2.1.90+ updates that also added cost breakdowns by model and interactive release notes.",
       "tag": "UPDATE",
       "category": "claude-anthropic",
-      "tags": ["claude-code", "tutorial", "interactive"]
+      "tags": [
+        "claude-code",
+        "tutorial",
+        "interactive"
+      ]
     },
     {
       "name": "Framer 2026 AI Upgrades",
@@ -78,7 +105,11 @@
       "description": "Framer's 2026 upgrades auto-map Figma Variants (hover, pressed, animated states) to Framer's interaction system. Designers can import Figma frames and instantly generate responsive sections, optimized content, SEO copy, CMS collections, and working navigation. Teams report 70% shorter production time versus previous workflows.",
       "tag": "UPDATE",
       "category": "design-tools",
-      "tags": ["framer", "figma", "design-to-code"]
+      "tags": [
+        "framer",
+        "figma",
+        "design-to-code"
+      ]
     }
   ],
   "creative_intel": [
@@ -89,7 +120,12 @@
       "summary": "BarkleyOKRP used Google's Gemini, Imagen, and Veo to create 'The Fizz FM' for Slice: 40 original AI-generated songs, synthetic DJ hosts, and a month of live FM broadcasting in Los Angeles. The 700-person independent agency's standard: AI earns its place only when it makes the work better. Their win signals that the industry is rewarding AI-augmented creativity when it serves the concept, not when it replaces the team.",
       "category": "creative-advertising",
       "signal_score": 72,
-      "tags": ["agency-of-the-year", "ai-creative", "radio", "google-ai"]
+      "tags": [
+        "agency-of-the-year",
+        "ai-creative",
+        "radio",
+        "google-ai"
+      ]
     },
     {
       "title": "Kalshi's NBA Finals Commercial: $2,000 Budget, 72 Hours, AI-Generated",
@@ -98,7 +134,12 @@
       "summary": "Prediction market platform Kalshi produced a surreal NBA Finals broadcast commercial in under 72 hours for $2,000 using AI-generated visuals, storyboards, and character animations. The ad featured farmers, aliens, and cowboys in a dreamlike montage that generated widespread attention. This is the clearest proof point yet that AI-generated ads can punch above their weight class in traditional broadcast moments.",
       "category": "creative-advertising",
       "signal_score": 68,
-      "tags": ["ai-ads", "broadcast", "production", "budget"]
+      "tags": [
+        "ai-ads",
+        "broadcast",
+        "production",
+        "budget"
+      ]
     }
   ],
   "knowledge_shelf": [
@@ -108,7 +149,12 @@
       "source": "VentureBeat",
       "summary": "VentureBeat's 6 data predictions argue RAG won't disappear but will be surpassed by contextual/agentic memory for adaptive AI workflows. Traditional RAG stays useful for static data retrieval, but agentic memory is critical for assistants that learn from feedback, maintain state, and adapt over time. Meanwhile, PostgreSQL at 40 years old has become the go-to database for GenAI solutions, narrowing use cases for purpose-built vector databases.",
       "category": "rag-knowledge",
-      "tags": ["rag", "agentic-memory", "vector-database", "postgresql"]
+      "tags": [
+        "rag",
+        "agentic-memory",
+        "vector-database",
+        "postgresql"
+      ]
     },
     {
       "title": "MCP Security in April 2026: Tool Poisoning Attacks and Infrastructure-Level Threats",
@@ -116,7 +162,12 @@
       "source": "Adversa AI",
       "summary": "Adversa AI's April roundup documents a shift from theoretical MCP risks to active infrastructure threats. Invariant Labs published reproducible 'tool poisoning attacks' on April 1. The report catalogs stealthy resource amplification loops, authentication vulnerabilities in remote deployments, and fragile client configurations. As MCP crosses 97 million installs and becomes default agent infrastructure, security is no longer optional.",
       "category": "rag-knowledge",
-      "tags": ["mcp", "security", "tool-poisoning", "agent-safety"]
+      "tags": [
+        "mcp",
+        "security",
+        "tool-poisoning",
+        "agent-safety"
+      ]
     }
   ],
   "watch_list": [
@@ -128,7 +179,11 @@
       "duration": "8:00",
       "summary": "Distilled lessons from 800+ hours of Claude Code into the patterns, shortcuts, and mental models that separate fighting the tool from flowing with it. Pure signal, no fluff. Ranked as a top-5 must-watch in a review of 25 Claude Code videos.",
       "category": "claude-anthropic",
-      "tags": ["claude-code", "advanced", "workflow"]
+      "tags": [
+        "claude-code",
+        "advanced",
+        "workflow"
+      ]
     },
     {
       "title": "Introducing Cowork: Claude Code for the Rest of Your Work",
@@ -138,7 +193,11 @@
       "duration": "12:00",
       "summary": "Official Anthropic walkthrough of Cowork, extending Claude Code beyond coding into research, writing, and project management. Shows how the same agentic loop powering developer workflows applies to creative and knowledge work.",
       "category": "claude-anthropic",
-      "tags": ["claude-code", "cowork", "knowledge-work"]
+      "tags": [
+        "claude-code",
+        "cowork",
+        "knowledge-work"
+      ]
     },
     {
       "title": "Self-Healing n8n Workflows with Claude Code",
@@ -148,7 +207,12 @@
       "duration": "22:00",
       "summary": "Demonstrates a self-healing automation system where n8n error workflows automatically trigger Claude Code to audit broken workflows, diagnose root causes, and implement fixes in real time. Practical case study of AI agent automation in production.",
       "category": "ai-agents",
-      "tags": ["n8n", "claude-code", "automation", "self-healing"]
+      "tags": [
+        "n8n",
+        "claude-code",
+        "automation",
+        "self-healing"
+      ]
     }
   ],
   "quick_hits": [
@@ -157,28 +221,45 @@
       "url": "https://lynnwoodtimes.com/2026/04/04/claude/",
       "description": "Anthropic accidentally exposed 512,000 lines of Claude Code TypeScript source during a routine update on March 31. No customer data or model internals compromised. Over 8,000 GitHub repos removed via DMCA takedowns. The incident spawned clean-room open-source rewrites.",
       "category": "claude-anthropic",
-      "tags": ["claude-code", "security", "leak"]
+      "tags": [
+        "claude-code",
+        "security",
+        "leak"
+      ]
     },
     {
       "title": "Anthropic Pricing Update: Third-Party Tools Now Pay-as-You-Go",
       "url": "https://dataconomy.com/2026/04/06/claude-subscriptions-will-no-longer-cover-third-party-tools/",
       "description": "As of April 4, Claude subscribers can no longer apply subscription limits to third-party tools like OpenClaw. Usage billed separately on consumption basis. Full refunds offered to affected subscribers unaware the usage was unsupported.",
       "category": "claude-anthropic",
-      "tags": ["claude-code", "pricing", "openclaw"]
+      "tags": [
+        "claude-code",
+        "pricing",
+        "openclaw"
+      ]
     },
     {
       "title": "GPT-5.5 'Spud' Has Finished Pretraining, Q2 Announcement Likely",
       "url": "https://renovateqr.com/blog/ai-models-april-2026",
       "description": "OpenAI's next frontier model codenamed Spud has completed pretraining. Public announcement expected Q2 2026. Meanwhile GPT-4o was fully retired from all plans on April 3.",
       "category": "competitive-intel",
-      "tags": ["openai", "gpt-5.5", "model-release"]
+      "tags": [
+        "openai",
+        "gpt-5.5",
+        "model-release"
+      ]
     },
     {
       "title": "Linux Foundation Launches Agentic AI Foundation with MCP as Anchor Project",
       "url": "https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation",
       "description": "The Linux Foundation formed the Agentic AI Foundation (AAIF) with Model Context Protocol, goose, and AGENTS.md as founding project contributions. Signals MCP's transition from Anthropic-led standard to vendor-neutral open governance.",
       "category": "ai-agents",
-      "tags": ["mcp", "linux-foundation", "open-source", "governance"]
+      "tags": [
+        "mcp",
+        "linux-foundation",
+        "open-source",
+        "governance"
+      ]
     }
   ]
 }
