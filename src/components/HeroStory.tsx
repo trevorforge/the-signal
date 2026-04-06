@@ -15,7 +15,7 @@ export function HeroStory({ story, briefingDate }: HeroStoryProps) {
   return (
     <article className="bg-surface border border-border rounded-xl overflow-hidden">
       {story.image && (
-        <a href={story.url} target="_blank" rel="noopener noreferrer">
+        <a href={story.url} target="_blank" rel="noopener noreferrer" aria-hidden="true" tabIndex={-1}>
           <img
             src={story.image}
             alt={story.title}
@@ -37,7 +37,7 @@ export function HeroStory({ story, briefingDate }: HeroStoryProps) {
             <span className="text-[10px] text-text-muted">{story.time_ago}</span>
           </div>
           <StoryActions
-            storyRef={{ date: briefingDate, section: "top_stories", index: 0, title: story.title }}
+            storyRef={{ date: briefingDate, section: "top_stories", index: 0, title: story.title, url: story.url }}
             shareUrl={story.url}
           />
         </div>
@@ -67,6 +67,7 @@ export function HeroStory({ story, briefingDate }: HeroStoryProps) {
           bull_case={story.bull_case}
           bear_case={story.bear_case}
           the_signal={story.the_signal}
+          defaultOpen
         />
 
         <a

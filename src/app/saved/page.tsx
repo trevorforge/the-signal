@@ -99,12 +99,14 @@ export default function SavedPage() {
                 className="bg-surface border border-border rounded-xl p-4 flex items-start justify-between gap-3"
               >
                 <div className="min-w-0">
-                  <Link
-                    href={`/archive/${ref.date}`}
+                  <a
+                    href={ref.url || `/archive/${ref.date}`}
+                    target={ref.url ? "_blank" : undefined}
+                    rel={ref.url ? "noopener noreferrer" : undefined}
                     className="font-semibold text-sm text-text-primary hover:text-signal-orange transition-colors leading-snug"
                   >
                     {ref.title}
-                  </Link>
+                  </a>
                   <p className="text-[11px] text-text-muted mt-1">
                     From {new Date(ref.date + "T12:00:00").toLocaleDateString("en-US", {
                       month: "long",

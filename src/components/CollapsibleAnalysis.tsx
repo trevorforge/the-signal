@@ -6,16 +6,18 @@ interface CollapsibleAnalysisProps {
   bull_case: string;
   bear_case: string;
   the_signal: string;
+  defaultOpen?: boolean;
 }
 
-export function CollapsibleAnalysis({ bull_case, bear_case, the_signal }: CollapsibleAnalysisProps) {
-  const [open, setOpen] = useState(false);
+export function CollapsibleAnalysis({ bull_case, bear_case, the_signal, defaultOpen = false }: CollapsibleAnalysisProps) {
+  const [open, setOpen] = useState(defaultOpen);
 
   return (
     <div className="mt-4">
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center gap-2 text-xs font-semibold text-text-muted hover:text-signal-orange transition-colors"
+        aria-expanded={open}
       >
         <svg
           width="12"

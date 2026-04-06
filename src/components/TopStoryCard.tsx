@@ -38,7 +38,7 @@ export function TopStoryCard({ story, briefingDate, storyIndex }: TopStoryCardPr
             <span className="text-[10px] text-text-muted">{story.time_ago}</span>
           </div>
           <StoryActions
-            storyRef={{ date: briefingDate, section: "top_stories", index: storyIndex, title: story.title }}
+            storyRef={{ date: briefingDate, section: "top_stories", index: storyIndex, title: story.title, url: story.url }}
             shareUrl={story.url}
           />
         </div>

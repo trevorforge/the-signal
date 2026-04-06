@@ -8,7 +8,7 @@ export function SignalMeter({ score }: SignalMeterProps) {
   const color = `hsl(${hue}, 70%, 45%)`;
 
   return (
-    <div className="flex items-center gap-2 text-[11px]">
+    <div className="flex items-center gap-2 text-[11px]" role="meter" aria-valuenow={score} aria-valuemin={0} aria-valuemax={100} aria-label={`Signal score: ${score} out of 100`}>
       <span className="text-text-muted font-medium shrink-0">Hype</span>
       <div className="flex-1 h-1.5 rounded-full bg-border overflow-hidden relative">
         <div

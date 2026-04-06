@@ -75,9 +75,9 @@ export default async function TopicDetailPage({
                 >
                   <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
-                      <h3 className="font-semibold text-sm text-text-primary group-hover:text-signal-orange transition-colors leading-snug">
+                      <h2 className="font-semibold text-sm text-text-primary group-hover:text-signal-orange transition-colors leading-snug">
                         {story.title}
-                      </h3>
+                      </h2>
                       <p className="mt-1.5 text-sm text-text-secondary line-clamp-2">
                         {story.summary || story.description}
                       </p>

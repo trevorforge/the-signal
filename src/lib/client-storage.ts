@@ -5,6 +5,7 @@ export interface StoryRef {
   section: string;
   index: number;
   title: string;
+  url?: string;
 }
 
 const SAVED_KEY = "signal-saved-stories";

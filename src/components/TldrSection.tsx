@@ -14,6 +14,7 @@ export function TldrSection({ items }: TldrProps) {
       <button
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between w-full text-left"
+        aria-expanded={open}
       >
         <span className="inline-block px-2.5 py-1 rounded text-[11px] font-bold tracking-wider uppercase bg-signal-orange/15 text-signal-orange">
           Morning Brief
