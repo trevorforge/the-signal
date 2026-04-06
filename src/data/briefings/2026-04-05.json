@@ -18,7 +18,15 @@
       "summary": "Anthropic has banned third-party AI agent frameworks, starting with OpenClaw, from accessing Claude Pro and Max subscriptions at flat-rate pricing. Effective April 4, affected users are shifted to pay-as-you-go billing, with some facing cost increases of up to 50x. Anthropic's head of Claude Code Boris Cherny said subscriptions 'weren't built for the usage patterns of these third-party tools.' A one-time credit equal to one month's plan cost is offered until April 17, and pre-purchased usage bundles come with up to 30% discounts.",
       "bull_case": "This protects Anthropic's margins and ensures sustainable scaling. It also signals Claude's value is high enough that third-party ecosystems are building entire businesses on top of it. Cleaner pricing could attract enterprise buyers who want predictable costs.",
       "bear_case": "Developers who built workflows around OpenClaw and similar tools feel blindsided. The 50x cost increase for power users could push the most innovative part of the community to open-source alternatives like Claw Code. Anthropic risks looking like it's pulling the ladder up behind early adopters.",
-      "the_signal": "If you've built agency workflows on top of Claude through third-party agent tools, audit your monthly spend immediately. The shift to usage-based billing means your costs will scale with volume. Start evaluating whether your automations justify the new pricing, or whether open-source agent harnesses like Claw Code give you enough control at lower cost."
+      "the_signal": "If you've built agency workflows on top of Claude through third-party agent tools, audit your monthly spend immediately. The shift to usage-based billing means your costs will scale with volume. Start evaluating whether your automations justify the new pricing, or whether open-source agent harnesses like Claw Code give you enough control at lower cost.",
+      "category": "claude-anthropic",
+      "signal_score": 82,
+      "tags": [
+        "claude-code",
+        "pricing",
+        "openclaw",
+        "agent-framework"
+      ]
     },
     {
       "title": "Google Launches Free AI Video for Everyone as OpenAI Shuts Down Sora",
@@ -28,7 +36,15 @@
       "summary": "Google launched Veo 3.1 Lite, integrating AI video generation directly into Google Vids with 10 free generations per month for personal users. Meanwhile, OpenAI announced Sora's app shutdown on April 26 and API shutdown on September 24, after the product burned an estimated $15 million per day while generating only $2.1 million in lifetime revenue. Google is also offering Veo 3.1 Lite on the Gemini API at below 50% of the Fast tier pricing, targeting high-volume developer use cases.",
       "bull_case": "AI video becomes a free, embedded feature of tools billions already use. Creative teams gain a new zero-cost prototyping tool for storyboards, rough cuts, and social content. Google's API pricing makes AI video economically viable for production workflows at scale.",
       "bear_case": "Free AI video will flood platforms with low-effort content, making it harder for quality creative work to stand out. Google controls the distribution and could change terms at any time. The 10 free generations per month is a teaser that will likely push users toward paid tiers.",
-      "the_signal": "For creative teams: AI video just moved from 'expensive experiment' to 'free commodity.' Start testing Veo 3.1 Lite through Google Vids for rapid concept visualization and social-first video drafts. This won't replace your production team, but it can compress the concepting-to-approval cycle from days to hours. If you were evaluating Sora, stop and redirect that budget."
+      "the_signal": "For creative teams: AI video just moved from 'expensive experiment' to 'free commodity.' Start testing Veo 3.1 Lite through Google Vids for rapid concept visualization and social-first video drafts. This won't replace your production team, but it can compress the concepting-to-approval cycle from days to hours. If you were evaluating Sora, stop and redirect that budget.",
+      "category": "competitive-intel",
+      "signal_score": 70,
+      "tags": [
+        "google",
+        "video-generation",
+        "openai",
+        "sora"
+      ]
     }
   ],
   "product_radar": [
@@ -36,31 +52,51 @@
       "name": "Claw Code",
       "url": "https://claw-code.codes/",
       "description": "Open-source AI coding agent framework (Python/Rust) born from the Claude Code source leak. Clean-room rewrite with 19 built-in tools, multi-agent orchestration, MCP integration, and provider-agnostic LLM support. 72K+ GitHub stars in its first days.",
-      "tag": "NEW"
+      "tag": "NEW",
+      "category": "claude-anthropic",
+      "tags": [
+        "claw-code"
+      ]
     },
     {
       "name": "Google Veo 3.1 Lite",
       "url": "https://winbuzzer.com/2026/04/01/google-launches-veo-3-1-lite-openai-shuts-down-sora-xcxwbn/",
       "description": "Google's latest AI video model now built directly into Google Vids. Free tier includes 10 video generations per month. Also available on the Gemini API at below 50% of Fast tier pricing for developer use cases.",
-      "tag": "NEW"
+      "tag": "NEW",
+      "category": "competitive-intel",
+      "tags": [
+        "google-veo-3.1-lite"
+      ]
     },
     {
       "name": "Gemini Cross-Platform Chat Import",
       "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatbots-directly-into-gemini/",
       "description": "Google Gemini now lets you transfer chat history and personal context from ChatGPT, Claude, and other chatbot platforms directly into Gemini. Includes memory migration so Gemini picks up where your previous assistant left off.",
-      "tag": "UPDATE"
+      "tag": "UPDATE",
+      "category": "competitive-intel",
+      "tags": [
+        "gemini-cross-platform-chat-import"
+      ]
     },
     {
       "name": "Meta Advantage+ Image-to-Video",
       "url": "https://www.digitalapplied.com/blog/social-media-ai-advertising-april-2026-meta-google",
       "description": "Meta's new creative tool converts up to 20 product images into polished multi-scene video ads optimized for Facebook and Instagram. Also adds AI Dubbing, AI-generated music, and persona-based image generation to the Advantage+ creative suite.",
-      "tag": "UPDATE"
+      "tag": "UPDATE",
+      "category": "creative-advertising",
+      "tags": [
+        "meta-advantage+-image-to-video"
+      ]
     },
     {
       "name": "Claude API 300K Output Tokens",
       "url": "https://releasebot.io/updates/anthropic",
       "description": "Anthropic raised the max_tokens cap to 300K on the Message Batches API for Claude Opus 4.6 and Sonnet 4.6, enabling much longer single-turn outputs. Requires the output-300k-2026-03-24 beta header.",
-      "tag": "UPDATE"
+      "tag": "UPDATE",
+      "category": "claude-anthropic",
+      "tags": [
+        "claude-api-300k-output-tokens"
+      ]
     }
   ],
   "creative_intel": [
@@ -68,13 +104,27 @@
       "title": "AI-Generated Ads Now Outperform Human-Created Ads on Meta by 12% CTR",
       "url": "https://www.digitalapplied.com/blog/ai-ad-creative-benchmark-2026-ctr-roas-data",
       "source": "Digital Applied",
-      "summary": "New benchmark data shows AI-generated ads achieve roughly 12% higher click-through rates on Meta platforms compared to human-created ads targeting the same audiences with the same budgets. Advertisers using first-party data with AI-based contextual targeting are seeing up to 2x higher return on ad spend versus third-party targeting. Meta's vision for 2026: advertisers provide a business URL and budget, and AI handles everything else. Nearly 90% of advertisers now use generative AI in their creative workflow, up from 55% at the start of 2025."
+      "summary": "New benchmark data shows AI-generated ads achieve roughly 12% higher click-through rates on Meta platforms compared to human-created ads targeting the same audiences with the same budgets. Advertisers using first-party data with AI-based contextual targeting are seeing up to 2x higher return on ad spend versus third-party targeting. Meta's vision for 2026: advertisers provide a business URL and budget, and AI handles everything else. Nearly 90% of advertisers now use generative AI in their creative workflow, up from 55% at the start of 2025.",
+      "category": "creative-advertising",
+      "signal_score": 65,
+      "tags": [
+        "advertising",
+        "campaign",
+        "ai-creative"
+      ]
     },
     {
       "title": "9 AI Marketing Campaigns Pushing Creative Boundaries in 2026",
       "url": "https://www.superside.com/blog/ai-marketing-campaigns",
       "source": "Superside",
-      "summary": "Roundup of standout AI-powered campaigns including Coca-Cola's holiday ads, Nike's A.I.R. campaign, H&M's digital twins, and Roku's personalized ads. AI-generated video now accounts for an estimated 40% of all digital ad creative, driven by quality improvements in Veo and platform-native generation tools. The creative bar is rising fast as brands move from 'we used AI' novelty to genuine production integration."
+      "summary": "Roundup of standout AI-powered campaigns including Coca-Cola's holiday ads, Nike's A.I.R. campaign, H&M's digital twins, and Roku's personalized ads. AI-generated video now accounts for an estimated 40% of all digital ad creative, driven by quality improvements in Veo and platform-native generation tools. The creative bar is rising fast as brands move from 'we used AI' novelty to genuine production integration.",
+      "category": "creative-advertising",
+      "signal_score": 65,
+      "tags": [
+        "advertising",
+        "campaign",
+        "ai-creative"
+      ]
     }
   ],
   "knowledge_shelf": [
@@ -82,13 +132,25 @@
       "title": "Karpathy's LLM Knowledge Base: A Markdown-First Alternative to RAG",
       "url": "https://www.techbuddies.io/2026/04/04/inside-karpathys-llm-knowledge-base-a-markdown-first-alternative-to-rag-for-autonomous-archives/",
       "source": "TechBuddies",
-      "summary": "Andrej Karpathy shared his 'LLM Knowledge Base' architecture on April 3. Instead of traditional RAG with vector databases, the LLM acts as a research librarian that compiles, lints, and interlinks Markdown files in Obsidian. Three stages: raw data ingest (using Obsidian Web Clipper), LLM compilation into a structured wiki with backlinks, and active maintenance 'health checks.' Works at ~100 articles and ~400K words. Philosophy: files outlast apps, Markdown is the universal format."
+      "summary": "Andrej Karpathy shared his 'LLM Knowledge Base' architecture on April 3. Instead of traditional RAG with vector databases, the LLM acts as a research librarian that compiles, lints, and interlinks Markdown files in Obsidian. Three stages: raw data ingest (using Obsidian Web Clipper), LLM compilation into a structured wiki with backlinks, and active maintenance 'health checks.' Works at ~100 articles and ~400K words. Philosophy: files outlast apps, Markdown is the universal format.",
+      "category": "rag-knowledge",
+      "tags": [
+        "rag",
+        "knowledge-base",
+        "obsidian"
+      ]
     },
     {
       "title": "AI Agent Frameworks in 2026: 8 SDKs and the Trade-Offs Nobody Talks About",
       "url": "https://www.morphllm.com/ai-agent-framework",
       "source": "MorphLLM",
-      "summary": "Comprehensive comparison of the 8 major AI agent frameworks: Claude Agent SDK, OpenAI Agents SDK, Google ADK, LangGraph, CrewAI, Smolagents, Pydantic AI, and Autogen. Covers the real trade-offs between proprietary and open-source options, when to use repository-level agents like Cursor or Claude Code versus orchestration frameworks, and how the agent harness layer is becoming the critical differentiator as LLMs commoditize."
+      "summary": "Comprehensive comparison of the 8 major AI agent frameworks: Claude Agent SDK, OpenAI Agents SDK, Google ADK, LangGraph, CrewAI, Smolagents, Pydantic AI, and Autogen. Covers the real trade-offs between proprietary and open-source options, when to use repository-level agents like Cursor or Claude Code versus orchestration frameworks, and how the agent harness layer is becoming the critical differentiator as LLMs commoditize.",
+      "category": "rag-knowledge",
+      "tags": [
+        "rag",
+        "knowledge-base",
+        "obsidian"
+      ]
     }
   ],
   "watch_list": [
@@ -98,43 +160,75 @@
       "video_id": "QoQBzR1NIqI",
       "channel": "Nick Saraev",
       "duration": "4h 0m",
-      "summary": "Comprehensive free Claude Code masterclass covering agent teams, Git worktrees, cloud deployment, and how to build and sell AI-powered products. 772K+ views in one month. Goes deep on the technical side with real production workflows."
+      "summary": "Comprehensive free Claude Code masterclass covering agent teams, Git worktrees, cloud deployment, and how to build and sell AI-powered products. 772K+ views in one month. Goes deep on the technical side with real production workflows.",
+      "category": "claude-anthropic",
+      "tags": [
+        "claude-code",
+        "tutorial"
+      ]
     },
     {
       "title": "800+ Hours of Learning Claude Code in 8 Minutes",
       "url": "https://www.youtube.com/watch?v=Ffh9OeJ7yxw",
       "video_id": "Ffh9OeJ7yxw",
       "channel": "Edmund Yong",
-      "summary": "Distilled lessons from 800+ hours of Claude Code usage into an 8-minute overview. Covers the most important patterns, shortcuts, and mental models that make the difference between fighting the tool and flowing with it. Great for experienced users looking to level up fast."
+      "summary": "Distilled lessons from 800+ hours of Claude Code usage into an 8-minute overview. Covers the most important patterns, shortcuts, and mental models that make the difference between fighting the tool and flowing with it. Great for experienced users looking to level up fast.",
+      "category": "claude-anthropic",
+      "tags": [
+        "claude-code",
+        "tutorial"
+      ]
     },
     {
       "title": "Introducing Cowork: Claude Code for the Rest of Your Work",
       "url": "https://www.youtube.com/watch?v=UAmKyyZ-b9E",
       "video_id": "UAmKyyZ-b9E",
       "channel": "Anthropic",
-      "summary": "Official Anthropic walkthrough of Cowork, the feature that extends Claude Code beyond coding into general knowledge work. Shows how to use Claude Code for research, writing, project management, and creative workflows with the same agentic loop that powers the coding experience."
+      "summary": "Official Anthropic walkthrough of Cowork, the feature that extends Claude Code beyond coding into general knowledge work. Shows how to use Claude Code for research, writing, project management, and creative workflows with the same agentic loop that powers the coding experience.",
+      "category": "claude-anthropic",
+      "tags": [
+        "claude-code",
+        "tutorial"
+      ]
     }
   ],
   "quick_hits": [
     {
       "title": "GPT-4o Fully Retired from All OpenAI Plans",
       "url": "https://releasebot.io/updates/openai",
-      "description": "As of April 3, GPT-4o is gone from all plans. The current lineup is GPT-5.3 Instant, GPT-5.4 Thinking, GPT-5.4 Pro, and GPT-5.4 mini. Developers on older models need to migrate now."
+      "description": "As of April 3, GPT-4o is gone from all plans. The current lineup is GPT-5.3 Instant, GPT-5.4 Thinking, GPT-5.4 Pro, and GPT-5.4 mini. Developers on older models need to migrate now.",
+      "category": "competitive-intel",
+      "tags": [
+        "update"
+      ]
     },
     {
       "title": "Claude 1M Context Window Beta Retiring April 30",
       "url": "https://releasebot.io/updates/anthropic",
-      "description": "Anthropic is retiring the 1M token context beta for Claude Sonnet 4.5 and Sonnet 4. After April 30, the context-1m-2025-08-07 beta header will have no effect and requests over 200K tokens will error."
+      "description": "Anthropic is retiring the 1M token context beta for Claude Sonnet 4.5 and Sonnet 4. After April 30, the context-1m-2025-08-07 beta header will have no effect and requests over 200K tokens will error.",
+      "category": "claude-anthropic",
+      "tags": [
+        "update"
+      ]
     },
     {
       "title": "ChatGPT Adds Hands-Free CarPlay Voice Chats",
       "url": "https://releasebot.io/updates/openai/chatgpt",
-      "description": "ChatGPT now supports hands-free voice conversations through Apple CarPlay on iOS 26.4+. Also: large pastes (5K+ characters) are auto-converted to attachments for Plus, Pro, and Business users."
+      "description": "ChatGPT now supports hands-free voice conversations through Apple CarPlay on iOS 26.4+. Also: large pastes (5K+ characters) are auto-converted to attachments for Plus, Pro, and Business users.",
+      "category": "competitive-intel",
+      "tags": [
+        "update"
+      ]
     },
     {
       "title": "Google Enforces Mandatory Spending Caps on Gemini API",
       "url": "https://findskill.ai/blog/gemini-api-pricing-guide/",
-      "description": "As of April 1, Google enforced mandatory spending caps across all Gemini API billing tiers, restricted Pro models behind a paywall for free users, and introduced prepaid billing for new accounts."
+      "description": "As of April 1, Google enforced mandatory spending caps across all Gemini API billing tiers, restricted Pro models behind a paywall for free users, and introduced prepaid billing for new accounts.",
+      "category": "competitive-intel",
+      "tags": [
+        "update"
+      ]
     }
-  ]
+  ],
+  "hero_story_index": 0
 }

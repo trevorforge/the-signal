@@ -15,7 +15,7 @@ export function TldrSection({ items }: TldrProps) {
         onClick={() => setOpen(!open)}
         className="flex items-center justify-between w-full text-left"
       >
-        <span className="inline-block px-2.5 py-1 rounded text-[11px] font-bold tracking-wider uppercase bg-amber-500/15 text-amber-600">
+        <span className="inline-block px-2.5 py-1 rounded text-[11px] font-bold tracking-wider uppercase bg-signal-orange/15 text-signal-orange">
           Morning Brief
         </span>
         <svg

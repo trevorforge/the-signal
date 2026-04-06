@@ -24,7 +24,7 @@ export function QuickHits({ items }: { items: QuickHit[] }) {
               >
                 {item.title}
               </a>
-              <span className="text-text-secondary"> &mdash; {item.description}</span>
+              <span className="text-text-secondary"> &middot; {item.description}</span>
             </div>
           </li>
         ))}

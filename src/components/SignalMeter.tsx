@@ -15,7 +15,7 @@ export function SignalMeter({ score }: SignalMeterProps) {
           className="absolute inset-y-0 left-0 rounded-full transition-all duration-500"
           style={{
             width: `${score}%`,
-            background: `linear-gradient(90deg, #ef4444 0%, #eab308 50%, #22c55e 100%)`,
+            background: `linear-gradient(90deg, var(--color-bear-red) 0%, #eab308 50%, var(--color-bull-green) 100%)`,
           }}
         />
         <div

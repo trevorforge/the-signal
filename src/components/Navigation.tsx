@@ -32,12 +32,12 @@ export function Navigation() {
           </Link>
 
           {/* Tabs */}
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-0.5 sm:gap-1 overflow-x-auto">
             {tabs.map((tab) => (
               <Link
                 key={tab.href}
                 href={tab.href}
-                className={`px-3 py-1.5 text-xs font-medium rounded-md transition-colors ${
+                className={`px-2 sm:px-3 py-1.5 text-[11px] sm:text-xs font-medium rounded-md transition-colors whitespace-nowrap ${
                   isActive(tab.href)
                     ? "text-signal-orange bg-signal-orange/10"
                     : "text-text-muted hover:text-white"
