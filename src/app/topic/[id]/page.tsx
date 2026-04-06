@@ -2,6 +2,7 @@ import { getAllTopics, getTopicById, getRelatedTopics } from "@/lib/storage";
 import { getCategoryConfig } from "@/lib/categories";
 import { getImpactLabel } from "@/lib/types";
 import { StoryImage } from "@/components/StoryImage";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -79,7 +80,17 @@ export default async function TopicDetailPage({ params }: { params: Promise<{ id
           {topic.summary}
         </p>
 
-        <p className="text-sm text-text-muted mt-4">{new Date(briefingDate + "T12:00:00").toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })} · {topic.sources.length} sources</p>
+        <div className="flex items-center gap-3 mt-4">
+          <p className="text-sm text-text-muted">{new Date(briefingDate + "T12:00:00").toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" })} · {topic.sources.length} sources</p>
+          <BookmarkButton
+            title={topic.title}
+            date={briefingDate}
+            section="topic"
+            index={0}
+            topicId={topic.id}
+            size={16}
+          />
+        </div>
       </header>
 
       {/* ═══ TWO-COLUMN: ARTICLE + SIDEBAR ═══ */}

@@ -62,15 +62,15 @@
 
 /* ═══ DARK MODE ═══ */
 .dark {
-  --color-bg: #0F0F0F;
-  --color-surface: #1A1A1A;
-  --color-surface-elevated: #242424;
-  --color-surface-inset: #141414;
-  --color-border: #2A2A2A;
-  --color-border-subtle: #1F1F1F;
+  --color-bg: #141414;
+  --color-surface: #1C1C1C;
+  --color-surface-elevated: #262626;
+  --color-surface-inset: #181818;
+  --color-border: #303030;
+  --color-border-subtle: #232323;
   --color-text-primary: #EDEDEC;
   --color-text-secondary: #A0A0A0;
-  --color-text-muted: #5A5A5A;
+  --color-text-muted: #666666;
   --color-bull-green-bg: #2D8F6F18;
   --color-bear-red-bg: #C44B4B18;
   --color-signal-bg: #E8652E18;

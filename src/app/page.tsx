@@ -2,6 +2,7 @@ import { getLatestTopics, getAllProductRadar, getAllQuickHits } from "@/lib/stor
 import { getCategoryConfig } from "@/lib/categories";
 import { getImpactLabel } from "@/lib/types";
 import { StoryImage, HeroImage } from "@/components/StoryImage";
+import { BookmarkButton } from "@/components/BookmarkButton";
 import Link from "next/link";
 
 export default async function Home() {
@@ -32,8 +33,8 @@ export default async function Home() {
 
       {/* ═══ HERO STORY ═══ */}
       <section className="mb-10">
-        <Link href={`/topic/${hero.topic.id}`} className="block group">
-          <div className="relative rounded-xl overflow-hidden">
+        <div className="relative rounded-xl overflow-hidden">
+          <Link href={`/topic/${hero.topic.id}`} className="block group">
             <HeroImage
               src={hero.topic.image}
               alt={hero.topic.title}
@@ -71,18 +72,29 @@ export default async function Home() {
                 </span>
               </div>
             </div>
+          </Link>
+          <div className="absolute top-4 right-4 z-10">
+            <BookmarkButton
+              title={hero.topic.title}
+              date={hero.briefingDate}
+              section="topic"
+              index={0}
+              topicId={hero.topic.id}
+              className="bg-black/40 backdrop-blur-sm text-white/80 hover:text-white"
+              size={16}
+            />
           </div>
-        </Link>
+        </div>
       </section>
 
       {/* ═══ FEATURED GRID ═══ */}
       {featured.length > 0 && (
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-            {featured.map(({ topic }) => (
-              <Link key={topic.id} href={`/topic/${topic.id}`} className="block group">
-                <article>
-                  <div className="relative rounded-lg overflow-hidden mb-4">
+            {featured.map(({ topic, briefingDate }, i) => (
+              <article key={topic.id}>
+                <div className="relative rounded-lg overflow-hidden mb-4">
+                  <Link href={`/topic/${topic.id}`} className="block group">
                     <StoryImage
                       src={topic.image}
                       alt={topic.title}
@@ -90,10 +102,23 @@ export default async function Home() {
                       className="w-full h-[220px] md:h-[240px] object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                       fallbackClassName="w-full h-[220px] md:h-[240px]"
                     />
-                    <span className="absolute top-3 left-3 text-[10px] font-semibold text-white bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded uppercase tracking-wider">
-                      {getCategoryConfig(topic.category).label}
-                    </span>
+                  </Link>
+                  <span className="absolute top-3 left-3 text-[10px] font-semibold text-white bg-black/50 backdrop-blur-sm px-2.5 py-1 rounded uppercase tracking-wider">
+                    {getCategoryConfig(topic.category).label}
+                  </span>
+                  <div className="absolute top-3 right-3">
+                    <BookmarkButton
+                      title={topic.title}
+                      date={briefingDate}
+                      section="topic"
+                      index={i + 1}
+                      topicId={topic.id}
+                      className="bg-black/40 backdrop-blur-sm text-white/80 hover:text-white"
+                      size={14}
+                    />
                   </div>
+                </div>
+                <Link href={`/topic/${topic.id}`} className="block group">
                   <div className="flex items-center gap-2 mb-2">
                     <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold ${
                       topic.impact_tier === 'adopt' ? 'bg-adopt-bg text-adopt' :
@@ -110,8 +135,8 @@ export default async function Home() {
                   <p className="text-sm text-text-secondary leading-relaxed line-clamp-2">
                     {topic.summary}
                   </p>
-                </article>
-              </Link>
+                </Link>
+              </article>
             ))}
           </div>
         </section>
@@ -126,38 +151,50 @@ export default async function Home() {
             <section>
               <h2 className="font-display text-2xl font-bold text-text-primary mb-6 tracking-tight">More Coverage</h2>
               <div className="divide-y divide-border">
-                {remaining.map(({ topic }) => (
-                  <Link key={topic.id} href={`/topic/${topic.id}`} className="flex gap-5 py-5 first:pt-0 group">
-                    <div className="shrink-0 hidden sm:block rounded-lg overflow-hidden">
-                      <StoryImage
-                        src={topic.image}
-                        alt={topic.title}
-                        fallbackLabel={getCategoryConfig(topic.category).label}
-                        className="w-[160px] h-[110px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                        fallbackClassName="w-[160px] h-[110px]"
+                {remaining.map(({ topic, briefingDate }, i) => (
+                  <div key={topic.id} className="flex gap-5 py-5 first:pt-0 items-start">
+                    <Link href={`/topic/${topic.id}`} className="flex gap-5 min-w-0 flex-1 group">
+                      <div className="shrink-0 hidden sm:block rounded-lg overflow-hidden">
+                        <StoryImage
+                          src={topic.image}
+                          alt={topic.title}
+                          fallbackLabel={getCategoryConfig(topic.category).label}
+                          className="w-[160px] h-[110px] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                          fallbackClassName="w-[160px] h-[110px]"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <div className="flex items-center gap-2 mb-1.5">
+                          <span className="text-xs font-medium" style={{ color: getCategoryConfig(topic.category).color }}>
+                            {getCategoryConfig(topic.category).label}
+                          </span>
+                          <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold ${
+                            topic.impact_tier === 'adopt' ? 'bg-adopt-bg text-adopt' :
+                            topic.impact_tier === 'watch' ? 'bg-watch-bg text-watch' :
+                            'bg-ignore-bg text-ignore'
+                          }`}>
+                            {getImpactLabel(topic.impact_tier)}
+                          </span>
+                        </div>
+                        <h3 className="font-display text-lg font-bold text-text-primary leading-snug group-hover:text-signal-orange transition-colors mb-1.5">
+                          {topic.title}
+                        </h3>
+                        <p className="text-sm text-text-muted leading-relaxed line-clamp-2">
+                          {topic.summary}
+                        </p>
+                      </div>
+                    </Link>
+                    <div className="shrink-0 self-center">
+                      <BookmarkButton
+                        title={topic.title}
+                        date={briefingDate}
+                        section="topic"
+                        index={i + 4}
+                        topicId={topic.id}
+                        size={14}
                       />
                     </div>
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2 mb-1.5">
-                        <span className="text-xs font-medium" style={{ color: getCategoryConfig(topic.category).color }}>
-                          {getCategoryConfig(topic.category).label}
-                        </span>
-                        <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold ${
-                          topic.impact_tier === 'adopt' ? 'bg-adopt-bg text-adopt' :
-                          topic.impact_tier === 'watch' ? 'bg-watch-bg text-watch' :
-                          'bg-ignore-bg text-ignore'
-                        }`}>
-                          {getImpactLabel(topic.impact_tier)}
-                        </span>
-                      </div>
-                      <h3 className="font-display text-lg font-bold text-text-primary leading-snug group-hover:text-signal-orange transition-colors mb-1.5">
-                        {topic.title}
-                      </h3>
-                      <p className="text-sm text-text-muted leading-relaxed line-clamp-2">
-                        {topic.summary}
-                      </p>
-                    </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </section>
