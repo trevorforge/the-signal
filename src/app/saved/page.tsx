@@ -21,6 +21,7 @@ export default function SavedPage() {
   }
 
   function handleClearAll() {
+    if (!window.confirm("Clear all saved stories? This can't be undone.")) return;
     localStorage.removeItem("signal-saved-stories");
     setSaved([]);
   }
@@ -92,39 +93,54 @@ export default function SavedPage() {
         </div>
       ) : (
         <div className="space-y-2">
-          {saved.map((ref, i) => (
-            <div
-              key={i}
-              className="bg-surface border border-border rounded-xl p-4 flex items-start justify-between gap-3"
-            >
-              <div className="min-w-0">
-                <a
-                  href={ref.url || `/archive/${ref.date}`}
-                  target={ref.url ? "_blank" : undefined}
-                  rel={ref.url ? "noopener noreferrer" : undefined}
-                  className="font-display font-semibold text-sm text-text-primary hover:text-signal-orange transition-colors leading-snug"
-                >
-                  {ref.title}
-                </a>
-                <p className="text-[11px] text-text-muted mt-1">
-                  From {new Date(ref.date + "T12:00:00").toLocaleDateString("en-US", {
-                    month: "long",
-                    day: "numeric",
-                    year: "numeric",
-                  })} &middot; {ref.section.replace("_", " ")}
-                </p>
-              </div>
-              <button
-                onClick={() => handleRemove(ref)}
-                className="shrink-0 p-1.5 rounded-md text-text-muted hover:text-bear-red transition-colors"
-                title="Remove"
+          {saved.map((ref, i) => {
+            const isInternal = ref.url?.startsWith("/");
+            const href = ref.url || `/archive/${ref.date}`;
+            const sectionLabel = ref.section === "topic" ? "Topic" : ref.section.replace("_", " ");
+
+            return (
+              <div
+                key={i}
+                className="bg-surface border border-border rounded-xl p-4 flex items-start justify-between gap-3"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
-                </svg>
-              </button>
-            </div>
-          ))}
+                <div className="min-w-0">
+                  {isInternal || !ref.url ? (
+                    <Link
+                      href={href}
+                      className="font-display font-semibold text-sm text-text-primary hover:text-signal-orange transition-colors leading-snug"
+                    >
+                      {ref.title}
+                    </Link>
+                  ) : (
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-display font-semibold text-sm text-text-primary hover:text-signal-orange transition-colors leading-snug"
+                    >
+                      {ref.title}
+                    </a>
+                  )}
+                  <p className="text-[11px] text-text-muted mt-1">
+                    From {new Date(ref.date + "T12:00:00").toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    })} &middot; {sectionLabel}
+                  </p>
+                </div>
+                <button
+                  onClick={() => handleRemove(ref)}
+                  className="shrink-0 p-1.5 rounded-md text-text-muted hover:text-bear-red transition-colors"
+                  title="Remove"
+                >
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+            );
+          })}
         </div>
       )}
     </main>
