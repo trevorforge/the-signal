@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { getThemePreference, setThemePreference, type ThemePreference } from "@/lib/client-storage";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<ThemePreference>("dark");
+  const [theme, setTheme] = useState<ThemePreference>("light");
 
   useEffect(() => {
     setTheme(getThemePreference());
@@ -20,7 +20,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={cycle}
-      className="w-8 h-8 flex items-center justify-center rounded-md text-text-muted hover:text-white transition-colors"
+      className="w-10 h-10 flex items-center justify-center rounded-md text-text-muted hover:text-text-primary transition-colors"
       title={`Theme: ${theme}`}
       aria-label={`Current theme: ${theme}. Click to change.`}
     >

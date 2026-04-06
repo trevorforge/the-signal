@@ -19,7 +19,7 @@ export function ProductRadar({ items }: { items: ProductItem[] }) {
 
   return (
     <section className="bg-surface border border-border rounded-xl p-5 sm:p-6">
-      <h2 className="font-[Georgia,serif] text-xl font-bold text-text-primary">
+      <h2 className="font-display text-xl font-bold text-text-primary">
         Product Radar
       </h2>
       <p className="text-xs text-text-muted mt-1">New releases & updates</p>

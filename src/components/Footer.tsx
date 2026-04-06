@@ -3,7 +3,7 @@ export function Footer({ sourceCount }: { sourceCount: number }) {
     <footer className="bg-chrome rounded-xl mt-3 px-6 py-7 text-center">
       <div className="flex items-center justify-center gap-2">
         <div className="w-1 h-5 bg-signal-orange rounded-sm" />
-        <span className="font-[Georgia,serif] text-sm font-bold text-white">
+        <span className="font-display text-sm font-bold text-white">
           THE SIGNAL
         </span>
       </div>

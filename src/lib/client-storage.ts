@@ -47,8 +47,8 @@ export function isStorySaved(ref: StoryRef): boolean {
 export type ThemePreference = "dark" | "light" | "system";
 
 export function getThemePreference(): ThemePreference {
-  if (typeof window === "undefined") return "dark";
-  return (localStorage.getItem(THEME_KEY) as ThemePreference) || "dark";
+  if (typeof window === "undefined") return "light";
+  return (localStorage.getItem(THEME_KEY) as ThemePreference) || "light";
 }
 
 export function setThemePreference(pref: ThemePreference): void {

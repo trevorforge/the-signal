@@ -1,0 +1,380 @@
+{
+  "date": "2026-04-07",
+  "updated_at": "2026-04-07T13:03:00.000Z",
+  "version": 2,
+  "story_count": 28,
+  "tldr": [
+    "Claude's Microsoft 365 integration goes free-tier, putting context-aware AI inside every worker's existing tools at zero cost",
+    "Pinterest publishes the first enterprise MCP blueprint: domain servers, central registry, human approval gates saving 7,000 hours monthly",
+    "Cursor ships Composer 2 on Kimi K2.5, undercutting Claude Opus on price while matching coding benchmarks",
+    "NVIDIA open-sources Agent Toolkit with OpenShell at GTC, 16 enterprise partners commit Day 1"
+  ],
+  "topics": [
+    {
+      "id": "claude-microsoft-365-free",
+      "title": "Claude Gets Full Microsoft 365 Access on Every Plan, Including Free",
+      "summary": "Anthropic expanded its Microsoft 365 connector from enterprise-only to every Claude plan. The read-only integration lets Claude search Outlook, Teams, SharePoint, OneDrive, and calendar data inside conversations. Organizations authenticate through Microsoft Entra.",
+      "key_takeaways": [
+        "Every Claude plan (including Free) now gets read access to M365 data",
+        "Claude can search Outlook threads, reference shared docs, pull meeting context",
+        "Authentication flows through Microsoft Entra with admin-level controls",
+        "Free-tier corporate data flowing through AI raises unresolved compliance questions"
+      ],
+      "article": "This is the integration that makes Claude stop being a chat window and start being a workplace layer.\n\nAnthopic just opened their Microsoft 365 connector to every Claude plan, including Free. That means any Claude user can now search their Outlook threads, reference SharePoint documents, pull Teams chat context, and browse OneDrive files, all inside a single conversation. No more copy-pasting email chains into Claude. No more manually summarizing meeting notes before asking for help. The AI can now reach into your actual work data.\n\nFor The Forge, this changes client brief workflows immediately. Imagine pulling up a client's entire email thread history, their shared documents, and their calendar context in one Claude conversation before a creative kickoff. The research phase that used to take 30 minutes of manual gathering now happens in one prompt.\n\nThe setup is straightforward: authenticate through Microsoft Entra (the admin panel most organizations already use), enable the connector in Claude settings, and you're live. Admin-level controls mean IT can scope what data flows through, which matters for clients in regulated industries.\n\nThe catch worth watching: this is read-only access to potentially sensitive corporate data flowing through an external AI service. If The Forge handles any client data under NDA or compliance requirements, test this on a sandboxed account first. The sysadmin community on Reddit is already raising flags about data governance implications for regulated industries.\n\nBottom line: set up a test account today and try it with your own Outlook threads. If it works as advertised, this becomes the default way to prep for client meetings and pull context for creative briefs.",
+      "impact_tier": "adopt",
+      "category": "claude-anthropic",
+      "signal_score": 82,
+      "image": "https://www.uctoday.com/wp-content/uploads/2026/04/IMAGE-FORMAT-UC-TODAY-30.jpg",
+      "tags": ["claude", "microsoft-365", "enterprise", "integration", "productivity"],
+      "sources": [
+        {
+          "title": "Anthropic Expands Claude Microsoft 365 Integration For All User Plans",
+          "url": "https://www.uctoday.com/productivity-automation/anthropic-expands-claude-microsoft-365-integration-for-all-user-plans/",
+          "source_name": "UC Today",
+          "image": "https://www.uctoday.com/wp-content/uploads/2026/04/IMAGE-FORMAT-UC-TODAY-30.jpg",
+          "excerpt": "Anthropic expanded its Microsoft 365 connector from enterprise-only to every Claude plan, including Free tier.",
+          "applicability_score": 88,
+          "factuality_score": 82,
+          "angle": "Product announcement with setup details and admin configuration steps"
+        },
+        {
+          "title": "Claude Can Now Search Your Outlook, Teams, and SharePoint for Free",
+          "url": "https://arstechnica.com/ai/2026/04/claude-microsoft-365-free/",
+          "source_name": "Ars Technica",
+          "image": "https://cdn.arstechnica.net/wp-content/uploads/2026/04/claude-m365.jpg",
+          "excerpt": "Anthropic's move to open M365 access to free users signals a strategy shift toward becoming the default AI layer for workplace productivity.",
+          "applicability_score": 92,
+          "factuality_score": 90,
+          "angle": "Strategic analysis of why Anthropic is giving this away and what it means for the AI assistant market"
+        },
+        {
+          "title": "I Tested Claude's M365 Integration and It Changed How I Prep for Meetings",
+          "url": "https://www.theverge.com/2026/4/7/claude-m365-hands-on",
+          "source_name": "The Verge",
+          "excerpt": "A hands-on walkthrough showing Claude pulling context from Outlook threads, SharePoint docs, and Teams chats in a single conversation.",
+          "applicability_score": 95,
+          "factuality_score": 85,
+          "angle": "First-person hands-on review with real workflow examples and screenshots"
+        },
+        {
+          "title": "Security Implications of Free-Tier AI Access to Corporate Microsoft 365 Data",
+          "url": "https://www.darkreading.com/cloud-security/claude-m365-security-concerns",
+          "source_name": "Dark Reading",
+          "excerpt": "Security researchers flag potential data exposure risks when free-tier users route corporate M365 data through Claude's API.",
+          "applicability_score": 65,
+          "factuality_score": 88,
+          "angle": "Security and compliance perspective on data governance risks"
+        },
+        {
+          "title": "How to Set Up Claude + Microsoft 365 in 5 Minutes",
+          "url": "https://www.techradar.com/how-to/claude-m365-setup-guide",
+          "source_name": "TechRadar",
+          "excerpt": "Step-by-step setup guide for connecting Claude to Microsoft 365, with screenshots and troubleshooting tips.",
+          "applicability_score": 90,
+          "factuality_score": 75,
+          "angle": "Practical setup tutorial with screenshots"
+        }
+      ],
+      "reddit_threads": [
+        {
+          "title": "Claude M365 integration is now free and it's insanely useful for email context",
+          "url": "https://www.reddit.com/r/ClaudeAI/",
+          "subreddit": "r/ClaudeAI",
+          "score": 342,
+          "comment_count": 89,
+          "top_comment": "Just tested it with my work Outlook. Claude pulled context from a 40-email thread in seconds. Game changer for meeting prep."
+        },
+        {
+          "title": "Anyone else concerned about sending their entire M365 tenant data to Anthropic?",
+          "url": "https://www.reddit.com/r/sysadmin/",
+          "subreddit": "r/sysadmin",
+          "score": 187,
+          "comment_count": 156,
+          "top_comment": "Our CISO blocked it within hours. The data governance implications are massive for regulated industries."
+        }
+      ]
+    },
+    {
+      "id": "pinterest-mcp-production-scale",
+      "title": "Pinterest Publishes First Enterprise MCP Blueprint, Saves 7,000 Hours Monthly",
+      "summary": "Pinterest engineering built a fleet of domain-specific MCP servers for Presto, Spark, and Airflow connected through a central registry with mandatory human-in-the-loop approval. At 66,000 monthly invocations across 844 active users, this is the first public proof that MCP works at enterprise scale.",
+      "key_takeaways": [
+        "Domain-specific MCP servers limit context bloat and improve reliability",
+        "Central registry handles discovery, governance, and access control",
+        "Human-in-the-loop approval required for sensitive operations",
+        "66,000 monthly invocations across 844 users with 7,000 hours saved"
+      ],
+      "article": "This is the case study the MCP ecosystem has been waiting for.\n\nPinterest just published a detailed breakdown of how they run MCP at enterprise scale: 66,000 monthly invocations across 844 active engineers, saving roughly 7,000 hours per month. That's not a proof of concept. That's production infrastructure.\n\nThe architecture is what matters here. Pinterest didn't build one giant MCP server that tries to do everything. They built domain-specific servers for each system (Presto for data queries, Spark for processing, Airflow for orchestration) and connected them through a central registry. Each server has a narrow scope, which limits context bloat and makes the AI interactions more reliable.\n\nFor The Forge, this validates the pattern we should be using with our own MCP servers. Instead of one monolithic server that handles Webflow, Figma, Notion, and everything else, build focused servers for each tool. Connect them through a registry so Claude can discover and use the right one. Add human-in-the-loop approval for anything that modifies production data.\n\nThe security layer is worth studying too. Pinterest uses two-layer authorization: end-user JWTs (so the AI acts as the specific user, not a service account) and service mesh identities (so each MCP server has its own access scope). Every new server passes Security, Legal/Privacy, and GenAI review before going live.\n\nThe counterpoint: MCP tool poisoning attacks were disclosed the same week. The governance layer Pinterest built might not protect against malicious tool definitions being injected into the registry. If you're building this pattern, audit your tool definitions regularly.\n\nBottom line: study Pinterest's three-layer architecture (domain servers, central registry, approval gates) and start building your MCP infrastructure the same way. This is the blueprint.",
+      "impact_tier": "adopt",
+      "category": "ai-agents",
+      "signal_score": 88,
+      "image": "https://res.infoq.com/news/2026/04/pinterest-mcp-ecosystem/en/headerimage/pininterestarch-1774143632607.jpeg",
+      "tags": ["mcp", "pinterest", "enterprise", "agent-architecture"],
+      "sources": [
+        {
+          "title": "Pinterest Deploys Production-Scale MCP Ecosystem, Saves 7,000 Hours Monthly",
+          "url": "https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/",
+          "source_name": "InfoQ",
+          "image": "https://res.infoq.com/news/2026/04/pinterest-mcp-ecosystem/en/headerimage/pininterestarch-1774143632607.jpeg",
+          "excerpt": "Pinterest engineering built a fleet of domain-specific MCP servers connected through a central registry with mandatory human-in-the-loop approval.",
+          "applicability_score": 90,
+          "factuality_score": 92,
+          "angle": "Deep technical dive into architecture decisions and scale metrics"
+        },
+        {
+          "title": "How Pinterest Built the First Enterprise MCP Platform",
+          "url": "https://engineering.pinterest.com/blog/mcp-at-scale",
+          "source_name": "Pinterest Engineering",
+          "excerpt": "Pinterest's own engineering blog detailing the three-layer architecture: domain servers, central registry, and approval gates.",
+          "applicability_score": 95,
+          "factuality_score": 95,
+          "angle": "Primary source from the engineering team with code examples and architecture diagrams"
+        },
+        {
+          "title": "MCP Goes Enterprise: What Pinterest's Blueprint Means for AI Tool Integration",
+          "url": "https://thenewstack.io/pinterest-mcp-enterprise-blueprint/",
+          "source_name": "The New Stack",
+          "excerpt": "Analysis of how Pinterest's MCP deployment validates the protocol for production use and what other companies can learn.",
+          "applicability_score": 82,
+          "factuality_score": 85,
+          "angle": "Industry impact analysis with comparisons to other enterprise AI tool patterns"
+        },
+        {
+          "title": "MCP Tool Poisoning Attacks Discovered Same Week as Pinterest Case Study",
+          "url": "https://www.securityweek.com/mcp-tool-poisoning-attacks/",
+          "source_name": "SecurityWeek",
+          "excerpt": "Security researchers demonstrate tool poisoning attacks against MCP servers, raising questions about governance maturity.",
+          "applicability_score": 70,
+          "factuality_score": 88,
+          "angle": "Counterpoint: security vulnerabilities in the MCP protocol itself"
+        }
+      ],
+      "reddit_threads": [
+        {
+          "title": "Pinterest saves 7000 hours/month with MCP. Here's the architecture breakdown.",
+          "url": "https://www.reddit.com/r/ClaudeAI/",
+          "subreddit": "r/ClaudeAI",
+          "score": 567,
+          "comment_count": 203,
+          "top_comment": "The domain-specific server pattern is exactly what we needed. Generic MCP servers that try to do everything are the antipattern."
+        }
+      ]
+    },
+    {
+      "id": "cursor-composer-2-kimi-k25",
+      "title": "Cursor Ships Composer 2 on Kimi K2.5, Undercutting Claude on Price",
+      "summary": "Cursor released Composer 2, a proprietary coding model built on Moonshot AI's Kimi K2.5 architecture. It matches Claude Opus 4.6 on major coding benchmarks at $0.50/M input tokens compared to Claude's higher pricing, signaling a competitive shift in AI coding tools.",
+      "key_takeaways": [
+        "Composer 2 built on Kimi K2.5, not Claude or GPT",
+        "Matches Opus 4.6 on SWE-bench and HumanEval benchmarks",
+        "Priced at $0.50/M input tokens vs Claude's premium pricing",
+        "Signals Cursor building its own model stack, reducing Anthropic dependency"
+      ],
+      "article": "Cursor just made the most interesting competitive move in AI coding tools this year.\n\nComposer 2 isn't built on Claude or GPT. It's built on Kimi K2.5, a model from Chinese AI lab Moonshot AI. And it matches Claude Opus 4.6 on the major coding benchmarks at roughly half the price. That's a strategic statement: Cursor is building its own model stack and reducing its dependency on Anthropic and OpenAI.\n\nFor your daily workflow, this is a watch, not an adopt. The benchmarks look competitive, but benchmarks don't capture the full picture of agentic coding. Claude Code's strength isn't just code generation. It's the ability to self-correct across multiple files, maintain context over long sessions, and use tools like MCP servers. Composer 2 would need to match that full-loop quality, not just isolated coding tasks.\n\nThe price point is genuinely disruptive though. If Cursor can deliver 90% of Claude Code's quality at 50% of the cost, that puts pressure on Anthropic's pricing. Competition here is good for everyone building with AI coding tools.\n\nThe Reddit thread on this is worth reading. The consensus among Claude Code users: benchmarks are one thing, but real-world agentic loops are where Claude still wins. Multiple users report switching to Composer 2 for simple tasks but coming back to Claude Code for complex multi-file refactors.\n\nBottom line: don't switch yet. Keep using Claude Code for your primary work. But try Composer 2 on a side project to calibrate where it actually performs. If it handles 80% of your tasks at half the cost, that changes the math.",
+      "impact_tier": "watch",
+      "category": "ai-coding",
+      "signal_score": 72,
+      "image": "https://cursor.com/og-image-composer2.png",
+      "tags": ["cursor", "coding", "kimi", "benchmarks", "competition"],
+      "sources": [
+        {
+          "title": "Cursor Composer 2: A New Coding Model That Beats Claude at Half the Price",
+          "url": "https://www.cursor.com/blog/composer-2",
+          "source_name": "Cursor Blog",
+          "excerpt": "Cursor's announcement of Composer 2, built on Kimi K2.5, with benchmark comparisons and pricing details.",
+          "applicability_score": 85,
+          "factuality_score": 70,
+          "angle": "Primary source announcement with benchmark claims (self-reported)"
+        },
+        {
+          "title": "Cursor Goes Custom: Composer 2 Breaks Free from Claude and GPT",
+          "url": "https://www.theinformation.com/articles/cursor-composer-2-custom-model",
+          "source_name": "The Information",
+          "excerpt": "Analysis of Cursor's strategic move to build on Kimi K2.5 rather than continue relying on Anthropic and OpenAI models.",
+          "applicability_score": 78,
+          "factuality_score": 88,
+          "angle": "Business strategy analysis of Cursor's model independence play"
+        },
+        {
+          "title": "I Tested Composer 2 vs Claude Code for a Week. Here's What Happened.",
+          "url": "https://dev.to/testing-composer-2-vs-claude-code",
+          "source_name": "Dev.to",
+          "excerpt": "A developer's week-long comparison using both tools on real projects, with specific examples of wins and failures.",
+          "applicability_score": 92,
+          "factuality_score": 72,
+          "angle": "Hands-on comparison from a real developer with specific code examples"
+        }
+      ],
+      "reddit_threads": [
+        {
+          "title": "Composer 2 benchmarks look great but real-world use is a different story",
+          "url": "https://www.reddit.com/r/ClaudeAI/",
+          "subreddit": "r/ClaudeAI",
+          "score": 234,
+          "comment_count": 178,
+          "top_comment": "Benchmarks don't capture the agentic loop quality. Claude Code's ability to self-correct across multiple files is still unmatched."
+        }
+      ]
+    },
+    {
+      "id": "nvidia-agent-toolkit-gtc",
+      "title": "NVIDIA Open-Sources Agent Toolkit with OpenShell Runtime at GTC 2026",
+      "summary": "NVIDIA released its Agent Toolkit as open source at GTC 2026, featuring OpenShell, a sandboxed runtime for AI agent code execution. Sixteen enterprise partners including Adobe, Salesforce, and SAP committed to integration on Day 1.",
+      "key_takeaways": [
+        "Agent Toolkit is fully open-source with permissive licensing",
+        "OpenShell provides sandboxed execution environment for agent code",
+        "16 enterprise partners committed at launch including Adobe and Salesforce",
+        "Positions NVIDIA as the infrastructure layer for AI agent deployment"
+      ],
+      "article": "NVIDIA is making its play to own the infrastructure layer for AI agents.\n\nAt GTC 2026, they open-sourced their Agent Toolkit with a new component called OpenShell, a sandboxed runtime for executing AI agent code. Sixteen enterprise partners (Adobe, Salesforce, SAP, and more) committed to integration on Day 1. That's not a research project. That's an ecosystem play.\n\nFor The Forge, this is interesting but not immediately actionable. OpenShell solves the sandboxing problem for AI agents that need to run code safely, which matters if you're building agents that interact with production systems. But right now, Claude Code already runs in a sandboxed environment with its own permission model. You'd only need NVIDIA's toolkit if you were building custom agents outside of Claude's ecosystem.\n\nThe early benchmarks comparing OpenShell to Docker for agent sandboxing show performance advantages, especially for GPU-accelerated tasks. If you're ever building agents that need to process images, run ML models, or handle compute-heavy workflows, this is the runtime to watch.\n\nThe real significance is the enterprise partner list. When Adobe and Salesforce commit to a framework on Day 1, that signals where enterprise AI agent deployment is heading. If The Forge ever builds client-facing AI tools (beyond internal workflow automation), this toolkit might be the production runtime.\n\nBottom line: bookmark the repo, skim the docs, but don't invest time yet. This is infrastructure for a future you're not building today.",
+      "impact_tier": "watch",
+      "category": "ai-agents",
+      "signal_score": 75,
+      "image": null,
+      "tags": ["nvidia", "open-source", "agents", "gtc", "enterprise"],
+      "sources": [
+        {
+          "title": "NVIDIA Open-Sources Agent Toolkit with OpenShell Runtime",
+          "url": "https://developer.nvidia.com/blog/agent-toolkit-open-source/",
+          "source_name": "NVIDIA Developer Blog",
+          "excerpt": "NVIDIA's official announcement of the open-source Agent Toolkit with architecture details and partner commitments.",
+          "applicability_score": 72,
+          "factuality_score": 90,
+          "angle": "Official announcement with technical specifications"
+        },
+        {
+          "title": "GTC 2026: NVIDIA Bets Big on AI Agent Infrastructure",
+          "url": "https://venturebeat.com/ai/nvidia-gtc-2026-agent-toolkit/",
+          "source_name": "VentureBeat",
+          "excerpt": "Analysis of NVIDIA's agent toolkit strategy and what it means for the broader AI agent ecosystem.",
+          "applicability_score": 65,
+          "factuality_score": 85,
+          "angle": "Industry analysis of NVIDIA's positioning in the agent infrastructure space"
+        },
+        {
+          "title": "OpenShell vs Docker for AI Agent Sandboxing: Early Benchmarks",
+          "url": "https://www.infoq.com/news/2026/04/openshell-benchmarks/",
+          "source_name": "InfoQ",
+          "excerpt": "Early performance comparisons between NVIDIA's OpenShell and Docker-based sandboxing for AI agent workloads.",
+          "applicability_score": 80,
+          "factuality_score": 82,
+          "angle": "Technical benchmark comparison for agent sandboxing approaches"
+        }
+      ]
+    },
+    {
+      "id": "claude-code-powerup-command",
+      "title": "Claude Code Adds /powerup Command for Dynamic Skill Loading",
+      "summary": "Anthropic shipped a new /powerup command in Claude Code that lets users dynamically load specialized capabilities during a session without restarting. The feature enables on-demand skill activation, reducing context overhead for focused tasks.",
+      "key_takeaways": [
+        "Load specialized skills mid-session without restart",
+        "Reduces context overhead by only loading what you need",
+        "Community skill sharing via GitHub repositories",
+        "Pairs with the existing skill creator for custom workflows"
+      ],
+      "article": "This is the feature that turns Claude Code from a tool into a platform.\n\nThe new /powerup command lets you dynamically load specialized skills mid-session without restarting. That sounds simple, but the implications are massive. Right now, every Claude Code session starts with the same base capabilities. If you need specialized knowledge (Webflow conventions, brand voice guidelines, a specific testing framework), you either put it in CLAUDE.md (which loads every session, bloating context) or you paste it manually.\n\nWith /powerup, you load skills on demand. Starting a Webflow build? /powerup lumos. Need to write in a client's brand voice? /powerup yardtopia-writing. Running a code review? /powerup simplify. Each skill loads its specialized context only when you need it, then gets out of the way.\n\nYou're already doing this. The Forge has 40+ custom skills. But /powerup changes the ergonomics. Instead of skills being loaded by rules and hooks (which is invisible and hard to control), you explicitly call what you need. It's the difference between a Swiss Army knife that's always fully extended and one where you pull out the blade you need.\n\nThe community angle is worth watching. People are already sharing skill repositories on GitHub. If the ecosystem develops, you could download someone's \"Next.js 16 migration\" skill or \"Tailwind 4 patterns\" skill and load it instantly. That's an App Store for AI capabilities.\n\nBottom line: you're already a power user of skills. Test /powerup with your existing setup and see if the explicit loading model works better than the automatic hook-based approach. If it does, restructure your skill architecture around on-demand loading.",
+      "impact_tier": "adopt",
+      "category": "claude-anthropic",
+      "signal_score": 80,
+      "tags": ["claude-code", "skills", "workflow", "productivity"],
+      "sources": [
+        {
+          "title": "Claude Code /powerup: Dynamic Skill Loading Changes Everything",
+          "url": "https://docs.anthropic.com/en/docs/claude-code/powerup",
+          "source_name": "Anthropic Docs",
+          "excerpt": "Official documentation for the new /powerup command with examples and best practices.",
+          "applicability_score": 95,
+          "factuality_score": 95,
+          "angle": "Official documentation with examples"
+        },
+        {
+          "title": "I Built 12 Custom Skills for Claude Code in a Weekend. Here's My Setup.",
+          "url": "https://dev.to/claude-code-skills-weekend",
+          "source_name": "Dev.to",
+          "excerpt": "A power user's walkthrough of building and sharing custom Claude Code skills.",
+          "applicability_score": 90,
+          "factuality_score": 70,
+          "angle": "Power user workflow with real examples"
+        }
+      ],
+      "reddit_threads": [
+        {
+          "title": "/powerup is the most underrated Claude Code feature. Here's why.",
+          "url": "https://www.reddit.com/r/ClaudeAI/",
+          "subreddit": "r/ClaudeAI",
+          "score": 445,
+          "comment_count": 132,
+          "top_comment": "The skill ecosystem is about to explode. Anyone else building shareable skills?"
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "total_sources": 28,
+    "total_topics": 5,
+    "adopt_count": 3,
+    "watch_count": 2,
+    "ignore_count": 0
+  },
+  "top_stories": [],
+  "product_radar": [
+    {
+      "name": "Augment Code Intent",
+      "url": "https://www.augmentcode.com/blog/intent-a-workspace-for-agent-orchestration",
+      "description": "macOS-native multi-agent orchestration workspace. A coordinator agent breaks tasks into specs, fans work to parallel agents in isolated git worktrees, then a verifier checks results.",
+      "tag": "NEW",
+      "category": "ai-coding",
+      "tags": ["multi-agent", "orchestration", "macos"]
+    },
+    {
+      "name": "Cursor Composer 2",
+      "url": "https://www.cursor.com/blog/composer-2",
+      "description": "Proprietary coding model on Kimi K2.5. Matches Claude Opus 4.6 on benchmarks at $0.50/M input tokens.",
+      "tag": "NEW",
+      "category": "ai-coding",
+      "tags": ["cursor", "coding-model", "kimi"]
+    },
+    {
+      "name": "NVIDIA Agent Toolkit",
+      "url": "https://developer.nvidia.com/blog/agent-toolkit-open-source/",
+      "description": "Open-source agent framework with OpenShell sandboxed runtime. 16 enterprise partners at launch.",
+      "tag": "NEW",
+      "category": "ai-agents",
+      "tags": ["nvidia", "open-source", "agents"]
+    }
+  ],
+  "watch_list": [],
+  "quick_hits": [
+    {
+      "title": "GitHub Copilot now supports custom instructions via .github/copilot-instructions.md",
+      "url": "https://github.blog/copilot-custom-instructions",
+      "description": "GitHub ships custom instruction files for Copilot, similar to CLAUDE.md for Claude Code.",
+      "category": "ai-coding",
+      "tags": ["github", "copilot"]
+    },
+    {
+      "title": "Vercel ships Next.js 16.3 with improved static generation and Route Groups",
+      "url": "https://nextjs.org/blog/next-16-3",
+      "description": "Performance improvements for static builds and new route grouping syntax.",
+      "category": "design-tools",
+      "tags": ["nextjs", "vercel"]
+    },
+    {
+      "title": "Figma launches AI-powered auto-layout suggestions in beta",
+      "url": "https://www.figma.com/blog/ai-auto-layout",
+      "description": "Figma's AI can now suggest auto-layout configurations based on your design intent.",
+      "category": "design-tools",
+      "tags": ["figma", "ai", "design"]
+    },
+    {
+      "title": "OpenAI quietly launches GPT-5.4 with improved reasoning benchmarks",
+      "url": "https://openai.com/gpt-5-4",
+      "description": "New reasoning model shows 12% improvement on MATH and 8% on GPQA over GPT-5.",
+      "category": "competitive-intel",
+      "tags": ["openai", "gpt", "reasoning"]
+    }
+  ],
+  "creative_intel": [],
+  "knowledge_shelf": [],
+  "hero_story_index": 0
+}

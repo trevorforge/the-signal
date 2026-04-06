@@ -48,7 +48,7 @@ export function HeroStory({ story, briefingDate }: HeroStoryProps) {
           rel="noopener noreferrer"
           className="block group"
         >
-          <h2 className="font-[Georgia,serif] text-2xl sm:text-3xl font-bold text-text-primary leading-tight group-hover:text-signal-orange transition-colors">
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-text-primary leading-tight group-hover:text-signal-orange transition-colors">
             {story.title}
           </h2>
         </a>

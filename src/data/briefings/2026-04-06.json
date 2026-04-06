@@ -14,7 +14,7 @@
       "title": "Claude Now Reads Your Microsoft 365 Data on Every Plan, Including Free",
       "url": "https://www.uctoday.com/productivity-automation/anthropic-expands-claude-microsoft-365-integration-for-all-user-plans/",
       "source": "UC Today",
-      "image": "http://www.uctoday.com/wp-content/uploads/2026/04/IMAGE-FORMAT-UC-TODAY-30.jpg",
+      "image": "https://www.uctoday.com/wp-content/uploads/2026/04/IMAGE-FORMAT-UC-TODAY-30.jpg",
       "time_ago": "today",
       "summary": "Anthropic expanded its Microsoft 365 connector from enterprise-only to every Claude plan, including Free. The read-only integration lets Claude search and reference Outlook emails, Teams chats, SharePoint documents, OneDrive files, and calendar events during conversations. Organizations authenticate through Microsoft Entra, and users enable it in Claude settings.",
       "bull_case": "Context-aware AI assistants that can pull from your actual work data are a massive productivity unlock. Making this free democratizes the kind of deep-context workflows that were previously gated behind enterprise contracts. This positions Claude as the workplace AI layer, not just a chat window.",
@@ -197,21 +197,6 @@
         "claude-code",
         "cowork",
         "knowledge-work"
-      ]
-    },
-    {
-      "title": "Self-Healing n8n Workflows with Claude Code",
-      "url": "https://www.youtube.com/watch?v=nateherk-n8n-claude",
-      "video_id": "nateherk-n8n-claude",
-      "channel": "Nate Herk",
-      "duration": "22:00",
-      "summary": "Demonstrates a self-healing automation system where n8n error workflows automatically trigger Claude Code to audit broken workflows, diagnose root causes, and implement fixes in real time. Practical case study of AI agent automation in production.",
-      "category": "ai-agents",
-      "tags": [
-        "n8n",
-        "claude-code",
-        "automation",
-        "self-healing"
       ]
     }
   ],

@@ -16,7 +16,7 @@ export function IntelSection({ title, subtitle, items, variant }: IntelSectionPr
 
   return (
     <section className={`bg-surface border rounded-xl p-5 sm:p-6 ${accent}`}>
-      <h2 className="font-[Georgia,serif] text-xl font-bold text-text-primary">
+      <h2 className="font-display text-xl font-bold text-text-primary">
         {title}
       </h2>
       {subtitle && <p className="text-xs text-text-muted mt-1">{subtitle}</p>}

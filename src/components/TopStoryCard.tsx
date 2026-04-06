@@ -49,7 +49,7 @@ export function TopStoryCard({ story, briefingDate, storyIndex }: TopStoryCardPr
           rel="noopener noreferrer"
           className="block group"
         >
-          <h3 className="font-[Georgia,serif] text-lg font-bold text-text-primary leading-snug group-hover:text-signal-orange transition-colors">
+          <h3 className="font-display text-lg font-bold text-text-primary leading-snug group-hover:text-signal-orange transition-colors">
             {story.title}
           </h3>
         </a>

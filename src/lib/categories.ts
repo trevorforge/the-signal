@@ -10,7 +10,7 @@ interface CategoryConfig {
 export const CATEGORY_CONFIG: Record<StoryCategory, CategoryConfig> = {
   "claude-anthropic": {
     label: "Claude / Anthropic",
-    color: "#06b6d4",
+    color: "#2BA5B5",
     bgClass: "bg-cat-claude/15",
     textClass: "text-cat-claude",
   },

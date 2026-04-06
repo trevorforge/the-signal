@@ -1,4 +1,4 @@
-import { Briefing, StoryCategory } from "./types";
+import { Briefing, StoryCategory, Topic, isV2Briefing } from "./types";
 import fs from "fs";
 import path from "path";
 
@@ -77,6 +77,22 @@ export async function getStoriesByCategory(category: StoryCategory): Promise<Fla
     const matches = (itemCat: StoryCategory | undefined, defaultCat?: StoryCategory) =>
       (itemCat || defaultCat || "general") === category;
 
+    // V2: aggregate topics matching this category
+    if (isV2Briefing(b) && b.topics) {
+      for (const t of b.topics) {
+        if ((t.category || "general") === category) {
+          stories.push({
+            type: "top_story",
+            title: t.title,
+            url: `/topic/${t.id}`,
+            summary: t.summary,
+            category: t.category,
+            date: b.date,
+          });
+        }
+      }
+    }
+
     for (const s of b.top_stories) {
       if (matches(s.category)) {
         stories.push({ type: "top_story", title: s.title, url: s.url, source: s.source, summary: s.summary, category: s.category, date: b.date });
@@ -117,6 +133,12 @@ export async function getCategoryCounts(): Promise<Record<string, number>> {
   const counts: Record<string, number> = {};
 
   for (const b of briefings) {
+    if (isV2Briefing(b) && b.topics) {
+      for (const t of b.topics) {
+        const key = t.category || "general";
+        counts[key] = (counts[key] || 0) + 1;
+      }
+    }
     const allItems = [
       ...b.top_stories.map((s) => s.category),
       ...b.product_radar.map((s) => s.category),
@@ -132,4 +154,99 @@ export async function getCategoryCounts(): Promise<Record<string, number>> {
   }
 
   return counts;
+}
+
+// ═══ V2: TOPIC-BASED QUERIES ═══
+
+export async function getTopicById(topicId: string): Promise<{ topic: Topic; briefingDate: string } | null> {
+  const briefings = await getAllBriefings();
+  for (const b of briefings) {
+    if (isV2Briefing(b) && b.topics) {
+      const topic = b.topics.find(t => t.id === topicId);
+      if (topic) return { topic, briefingDate: b.date };
+    }
+  }
+  return null;
+}
+
+export async function getAllTopics(): Promise<Array<{ topic: Topic; briefingDate: string }>> {
+  const briefings = await getAllBriefings();
+  const results: Array<{ topic: Topic; briefingDate: string }> = [];
+  for (const b of briefings) {
+    if (isV2Briefing(b) && b.topics) {
+      for (const topic of b.topics) {
+        results.push({ topic, briefingDate: b.date });
+      }
+    }
+  }
+  return results;
+}
+
+export async function getRelatedTopics(currentId: string, category: StoryCategory, tags: string[], limit = 4): Promise<Array<{ topic: Topic; briefingDate: string }>> {
+  const all = await getAllTopics();
+  return all
+    .filter(({ topic }) => topic.id !== currentId)
+    .map(({ topic, briefingDate }) => {
+      let score = 0;
+      if (topic.category === category) score += 3;
+      for (const tag of topic.tags) {
+        if (tags.includes(tag)) score += 1;
+      }
+      return { topic, briefingDate, score };
+    })
+    .filter(({ score }) => score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit)
+    .map(({ topic, briefingDate }) => ({ topic, briefingDate }));
+}
+
+export async function getLatestTopics(limit = 20): Promise<Array<{ topic: Topic; briefingDate: string }>> {
+  const all = await getAllTopics();
+  return all.slice(0, limit);
+}
+
+export async function getAllProductRadar(): Promise<Array<{ item: import("./types").ProductItem; briefingDate: string }>> {
+  const briefings = await getAllBriefings();
+  const results: Array<{ item: import("./types").ProductItem; briefingDate: string }> = [];
+  const seen = new Set<string>();
+  for (const b of briefings) {
+    for (const item of b.product_radar) {
+      const key = item.name.toLowerCase();
+      if (!seen.has(key)) {
+        seen.add(key);
+        results.push({ item, briefingDate: b.date });
+      }
+    }
+  }
+  return results;
+}
+
+export async function getAllQuickHits(): Promise<Array<{ item: import("./types").QuickHit; briefingDate: string }>> {
+  const briefings = await getAllBriefings();
+  const results: Array<{ item: import("./types").QuickHit; briefingDate: string }> = [];
+  const seen = new Set<string>();
+  for (const b of briefings) {
+    for (const item of b.quick_hits) {
+      if (!seen.has(item.url)) {
+        seen.add(item.url);
+        results.push({ item, briefingDate: b.date });
+      }
+    }
+  }
+  return results;
+}
+
+export async function getAllVideos(): Promise<Array<{ item: import("./types").VideoItem; briefingDate: string }>> {
+  const briefings = await getAllBriefings();
+  const results: Array<{ item: import("./types").VideoItem; briefingDate: string }> = [];
+  const seen = new Set<string>();
+  for (const b of briefings) {
+    for (const item of b.watch_list) {
+      if (!seen.has(item.url)) {
+        seen.add(item.url);
+        results.push({ item, briefingDate: b.date });
+      }
+    }
+  }
+  return results;
 }

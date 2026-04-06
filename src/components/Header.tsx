@@ -17,7 +17,7 @@ export function Header({ date, storyCount, updatedAt }: HeaderProps) {
 
   return (
     <div className="px-1 py-5 sm:py-7">
-      <h1 className="font-[Georgia,serif] text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
+      <h1 className="font-display text-2xl sm:text-3xl font-bold text-text-primary tracking-tight">
         {displayDate}
       </h1>
       <div className="mt-2 flex items-center gap-3">

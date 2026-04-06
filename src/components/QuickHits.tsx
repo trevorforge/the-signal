@@ -5,7 +5,7 @@ export function QuickHits({ items }: { items: QuickHit[] }) {
 
   return (
     <section className="bg-surface border border-border rounded-xl p-5 sm:p-6">
-      <h2 className="font-[Georgia,serif] text-xl font-bold text-text-primary mb-4">
+      <h2 className="font-display text-xl font-bold text-text-primary mb-4">
         Quick Hits
       </h2>
       <ul className="space-y-2.5">
