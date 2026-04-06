@@ -3,6 +3,7 @@ import { getCategoryConfig } from "@/lib/categories";
 import { getImpactLabel } from "@/lib/types";
 import { StoryImage, HeroImage } from "@/components/StoryImage";
 import { BookmarkButton } from "@/components/BookmarkButton";
+import { ScrollReveal } from "@/components/ScrollReveal";
 import Link from "next/link";
 
 export default async function Home() {
@@ -89,7 +90,7 @@ export default async function Home() {
 
       {/* ═══ FEATURED GRID ═══ */}
       {featured.length > 0 && (
-        <section className="mb-16">
+        <ScrollReveal className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
             {featured.map(({ topic, briefingDate }, i) => (
               <article key={topic.id}>
@@ -139,11 +140,11 @@ export default async function Home() {
               </article>
             ))}
           </div>
-        </section>
+        </ScrollReveal>
       )}
 
       {/* ═══ CONTENT + SIDEBAR ═══ */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
+      <ScrollReveal className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12">
 
         {/* Main column */}
         <div>
@@ -247,7 +248,7 @@ export default async function Home() {
             </div>
           )}
         </aside>
-      </div>
+      </ScrollReveal>
     </main>
   );
 }

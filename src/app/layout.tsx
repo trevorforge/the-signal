@@ -54,18 +54,36 @@ export default function RootLayout({
         <div id="main-content" className="flex-1">{children}</div>
         {/* Footer */}
         <footer className="border-t border-border mt-[var(--space-section)]">
-          <div className="max-w-[1200px] mx-auto px-[var(--space-content-px)] max-md:px-[var(--space-content-px-mobile)] py-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-1 h-6 bg-signal-orange rounded-sm" />
-              <span className="font-display text-lg font-bold text-text-primary tracking-tight">
-                THE SIGNAL
-              </span>
+          <div className="max-w-[1200px] mx-auto px-[var(--space-content-px)] max-md:px-[var(--space-content-px-mobile)] py-14">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_auto] gap-8 md:gap-12">
+              {/* Brand */}
+              <div>
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-1 h-6 bg-signal-orange rounded-sm" />
+                  <span className="font-display text-lg font-bold text-text-primary tracking-tight">
+                    THE SIGNAL
+                  </span>
+                </div>
+                <p className="text-sm text-text-muted leading-relaxed max-w-sm">
+                  AI intelligence for creative builders. Curated by Claude, built by Trevor Morse at The Forge.
+                </p>
+              </div>
+              {/* Nav */}
+              <nav className="flex flex-col gap-2">
+                <span className="text-xs font-bold text-text-primary uppercase tracking-wider mb-1">Navigate</span>
+                <a href="/" className="text-sm text-text-muted hover:text-text-primary transition-colors">Home</a>
+                <a href="/topics" className="text-sm text-text-muted hover:text-text-primary transition-colors">Topics</a>
+                <a href="/archive" className="text-sm text-text-muted hover:text-text-primary transition-colors">Archive</a>
+                <a href="/saved" className="text-sm text-text-muted hover:text-text-primary transition-colors">Saved</a>
+              </nav>
+              {/* Meta */}
+              <nav className="flex flex-col gap-2">
+                <span className="text-xs font-bold text-text-primary uppercase tracking-wider mb-1">Powered By</span>
+                <span className="text-sm text-text-muted">Claude Code</span>
+                <span className="text-sm text-text-muted">Next.js 16</span>
+                <span className="text-sm text-text-muted">Vercel</span>
+              </nav>
             </div>
-            <p className="text-sm text-text-muted leading-relaxed max-w-md">
-              Curated daily by Claude for Trevor Morse.
-              <br />
-              Powered by Claude Code &middot; The Forge Media Group
-            </p>
           </div>
         </footer>
       </body>
