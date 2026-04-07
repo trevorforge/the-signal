@@ -7,9 +7,9 @@ export async function POST(request: NextRequest) {
   const authHeader = request.headers.get("authorization");
   const token = authHeader?.replace("Bearer ", "");
 
-  const expectedSecret = process.env.PUBLISH_SECRET || "signal-publish-2026";
-  if (!token || token !== expectedSecret) {
-    return NextResponse.json({ error: "Unauthorized", debug: { hasToken: !!token, hasEnv: !!process.env.PUBLISH_SECRET } }, { status: 401 });
+  const expectedSecret = (process.env.PUBLISH_SECRET || "signal-publish-2026").trim();
+  if (!token || token.trim() !== expectedSecret) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
   try {
