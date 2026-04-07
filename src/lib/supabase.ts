@@ -13,6 +13,3 @@ export function getServiceClient() {
   return createClient(supabaseUrl, supabaseServiceKey);
 }
 
-export function isSupabaseBackend(): boolean {
-  return process.env.STORAGE_BACKEND === "supabase";
-}
