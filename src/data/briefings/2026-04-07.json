@@ -1,427 +1,243 @@
 {
   "date": "2026-04-07",
-  "updated_at": "2026-04-07T14:30:00.000Z",
+  "updated_at": "2026-04-07T12:00:00Z",
   "version": 2,
-  "story_count": 7,
+  "story_count": 5,
   "tldr": [
-    "Google drops Gemma 4 under Apache 2.0 with four model sizes from edge to workstation, marking its first fully open license for the Gemma family",
-    "Vibe coding hits mainstream consciousness as Bloomberg, Fortune, and Harvard all publish deep dives on the trust gap and AI FOMO it creates for creative professionals",
-    "AI agent security reports reveal 88% of organizations have already experienced security incidents, while 97% expect a major one within 12 months",
-    "Figma Make gets context-aware design system prototyping with Make Kits and Attachments, closing the gap between AI-generated prototypes and production code"
+    "Claude Code TypeScript source leaked via npm source map exposing 512k+ lines and unreleased internal features",
+    "MCP faces security gaps and vendor pullback four months after Linux Foundation handoff",
+    "Enterprises average 12 AI agents but half operate in complete isolation without coordination"
   ],
   "topics": [
     {
-      "id": "google-gemma-4-apache-open-models",
-      "title": "Google Releases Gemma 4 Under Apache 2.0: Four Open Models From Phone to Workstation",
-      "summary": "Google DeepMind launched Gemma 4 on April 2, a family of four open-weight models ranging from 2B edge to 31B dense, all under Apache 2.0 for the first time. The 31B Dense variant ranks third on the Arena AI leaderboard with 256K context windows, native vision and audio, and 140+ language support.",
+      "id": "claude-code-source-leak",
+      "title": "Claude Code Source Code Leaked via NPM Source Map",
+      "summary": "Anthropic's Claude Code TypeScript source accidentally exposed 512,000+ lines via an npm source map, revealing unreleased features including an autonomous agent system codenamed KAIROS. The r/ClaudeAI community used Claude itself to analyze the leaked codebase.",
       "key_takeaways": [
-        "Four model sizes: E2B and E4B for edge devices, 26B Mixture-of-Experts for speed, and 31B Dense ranked third on Arena AI text leaderboard",
-        "Apache 2.0 license is a first for Google's Gemma family, removing all commercial restrictions for enterprise and indie developers",
-        "Edge models run completely offline with near-zero latency on phones, Raspberry Pi, and NVIDIA Jetson Orin Nano",
-        "Available immediately on Hugging Face, Kaggle, Ollama, Google AI Studio, and AI Edge Gallery"
+        "512,000+ lines of Claude Code TypeScript source exposed via npm source map",
+        "Community discovered an unreleased autonomous agent system codenamed KAIROS",
+        "AMD's AI director publicly criticized Claude Code for becoming less capable after a recent update",
+        "Anthropic revising subscription policies for third-party agent framework access"
       ],
-      "article": "Google DeepMind released Gemma 4 on April 2, and the licensing change alone makes it worth paying attention. For the first time, Google shipped Gemma models under Apache 2.0, giving developers full commercial freedom with no restrictions. That is a significant shift from the custom Gemma licenses that previously limited how you could deploy and monetize.\n\nThe model family spans four sizes designed for different hardware realities. The E2B and E4B edge models activate just 2 and 4 billion parameters during inference, preserving RAM and battery life while running entirely offline on phones and IoT devices. The 26B Mixture-of-Experts model prioritizes speed for mid-range hardware. And the 31B Dense model is the headline act, ranking third on Arena AI's text leaderboard with 256K context windows, native vision and audio processing, and fluency in over 140 languages.\n\nFor creative directors building with AI, the edge models open up possibilities for offline prototyping and on-device processing that do not require API calls or cloud costs. The Apache 2.0 licensing means you can embed these models in client deliverables, internal tools, or production apps without legal overhead. This is Google's most developer-friendly open model release to date.",
-      "impact_tier": "watch",
-      "category": "competitive-intel",
-      "signal_score": 82,
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-4_blog_keyword_meta-dark.width-1300.png",
-      "tags": ["google", "gemma-4", "open-source", "apache-2", "edge-ai", "on-device"],
+      "article": "A significant data exposure rocked the Claude developer community this week when Anthropic's Claude Code TypeScript source -- over 512,000 lines -- was accidentally exposed via an npm source map. The r/ClaudeAI community quickly mobilized, using Claude itself to analyze the leaked codebase. Developers uncovered what appears to be an unreleased autonomous agent system codenamed KAIROS, along with undocumented architectural decisions about how the tool manages context and tool calls. The leak comes at an awkward moment: AMD's AI director separately criticized a recent Claude Code update, claiming the model had become noticeably less capable and more passive in its coding assistance. Anthropic has not officially addressed the leak but did announce subscription policy changes affecting third-party agent framework access for Pro and Max subscribers.",
+      "impact_tier": "adopt",
+      "category": "claude-anthropic",
+      "signal_score": 92,
+      "image": null,
+      "tags": ["claude-code", "anthropic", "security", "leak", "npm", "source-map"],
       "sources": [
         {
-          "title": "Gemma 4: Byte for byte, the most capable open models",
-          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
-          "source_name": "Google Blog",
-          "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemma-4_blog_keyword_meta-dark.width-1300.png",
-          "excerpt": "Google released Gemma 4 as its most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows under Apache 2.0.",
-          "applicability_score": 85,
-          "factuality_score": 95,
-          "angle": "Official announcement with full model specs and licensing details"
-        },
-        {
-          "title": "Google launches Gemma 4: four open-weight models from smartphones to workstations",
-          "url": "https://thenextweb.com/news/google-gemma-4-open-models-apache-2-launch",
-          "source_name": "The Next Web",
-          "image": "https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2026/04/Gemma-4.png",
-          "excerpt": "The shift to Apache 2.0 licensing removes previous restrictions, significantly broadening enterprise adoption possibilities for the four-model family.",
-          "applicability_score": 82,
-          "factuality_score": 90,
-          "angle": "Industry analysis of the licensing shift and competitive positioning against Llama and Mistral"
-        },
-        {
-          "title": "Announcing Gemma 4 in the AICore Developer Preview",
-          "url": "https://android-developers.googleblog.com/2026/04/AI-Core-Developer-Preview.html",
-          "source_name": "Android Developers Blog",
+          "title": "Claude Code's source code just leaked -- so I had Claude analyze it",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1s8xfwt/claude_codes_source_code_just_leaked_so_i_had/",
+          "source_name": "Reddit r/ClaudeAI",
           "image": null,
-          "excerpt": "Gemma 4 serves as the foundation for the next generation of Gemini Nano, with on-device AI capabilities available through the AICore Developer Preview.",
-          "applicability_score": 70,
-          "factuality_score": 92,
-          "angle": "Android developer perspective on edge deployment and on-device integration"
+          "excerpt": "Top r/ClaudeAI thread where developers used Claude to analyze the accidentally exposed 512k+ line Claude Code TypeScript source",
+          "applicability_score": 90,
+          "factuality_score": 80,
+          "angle": "community-driven analysis of leaked internal code"
+        },
+        {
+          "title": "Claude Code source code has been leaked via a source map",
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1s8ifm6/claude_code_source_code_has_been_leaked_via_a_map/",
+          "source_name": "Reddit r/ClaudeAI",
+          "image": null,
+          "excerpt": "Community thread documenting the Claude Code npm source map exposure and initial findings from the leaked repository",
+          "applicability_score": 88,
+          "factuality_score": 80,
+          "angle": "breaking documentation of the source exposure"
         }
       ],
-      "reddit_threads": []
+      "reddit_threads": [
+        {
+          "url": "https://www.reddit.com/r/ClaudeAI/comments/1s8xfwt/claude_codes_source_code_just_leaked_so_i_had/",
+          "title": "Claude Code's source code just leaked -- so I had Claude analyze it",
+          "upvotes": 1800,
+          "comment_count": null
+        }
+      ]
     },
     {
-      "id": "vibe-coding-trust-gap-ai-fomo",
-      "title": "Vibe Coding Hits the Mainstream: Bloomberg, Fortune, and Harvard Examine the Trust Gap and AI FOMO",
-      "summary": "Bloomberg, Fortune, and Harvard all published pieces in the same week examining vibe coding's rapid spread beyond tech into creative industries, the trust bottleneck it creates for enterprises, and the AI FOMO it fuels among professionals. The consensus: speed is real, but verification and burnout are the hidden costs.",
+      "id": "ai-coding-tools-2026",
+      "title": "AI Code Editor Wars: The 2026 Landscape",
+      "summary": "Cursor, Windsurf, and Claude Code are converging on similar pricing and capabilities as Windsurf crosses one million users. New Claude Sonnet 4.6 benchmarks are reshaping head-to-head comparisons across all three major tools.",
       "key_takeaways": [
-        "Fortune reports enterprises like Walmart, Nvidia, and Ford are adopting AI coding but hitting a trust bottleneck where verification takes longer than generation",
-        "Bloomberg calls vibe coding the source of a new AI FOMO that may drive burnout instead of productivity gains for creative professionals",
-        "Harvard professor Karen Brennan argues vibe coding democratizes creation but warns that imagination and critical evaluation skills become essential",
-        "Qodo raised $70M Series B to build the 'trust layer' for AI-generated code, signaling investor confidence in the verification market"
+        "Windsurf has surpassed 1 million users and is now a genuine Cursor alternative",
+        "All major AI code editors converging on roughly $20 per month pricing",
+        "Claude Sonnet 4.6 integration is driving fresh tool comparisons and benchmark updates",
+        "Differentiation is shifting from raw capability to workflow integration"
       ],
-      "article": "Vibe coding, the term Andrej Karpathy coined in February 2025 to describe building software by chatting with AI, has officially crossed from developer culture into mainstream consciousness. In a single week, Bloomberg, Fortune, and Harvard all published deep examinations of what happens when the ability to generate code outpaces the ability to trust it.\n\nFortune's April 2 piece frames the core problem clearly: enterprises want to move faster, but \"don't have the freedom to change their codebases unless they can be sure that code will remain trustworthy.\" Qodo CEO Itamar Friedman, whose clients include Walmart, Nvidia, and Ford, says the industry \"overestimates how much these tools can be trusted in the short term\" and announced a $70 million Series B to build what he calls the verification layer.\n\nBloomberg's April 5 newsletter went further, examining how vibe coding is fueling \"a new kind of FOMO\" that extends well beyond engineering. People in creative industries like writing, marketing, and advertising are posting about using AI to quickly build tools, but the pressure to keep up is creating anxiety rather than relief. Bloomberg's senior tech editor suggests AI productivity tools may cause more burnout before they deliver on their promise.\n\nFor creative directors who build with AI, this is the tension to navigate: you gain speed but inherit responsibility for verification. The tools get better every month, but the judgment to know when AI output is production-ready remains a human skill.",
+      "article": "The AI code editor market has matured rapidly heading into mid-2026. Windsurf crossed one million users, establishing itself as a credible challenger to Cursor. Claude Code continues to grow as a standalone terminal-first tool. New benchmarks incorporating Claude Sonnet 4.6 across all three platforms show performance gaps narrowing considerably. Pricing has standardized around $20 per month across the competitive set, moving the differentiation battleground to workflow integration, model responsiveness, and ecosystem depth. Cursor still leads on plugin breadth and multi-file context management, but Windsurf's iteration pace is closing the gap. For developers choosing a primary AI coding environment, the decision increasingly comes down to personal workflow fit rather than any decisive raw capability advantage.",
       "impact_tier": "adopt",
       "category": "ai-coding",
-      "signal_score": 88,
-      "image": "https://fortune.com/img-assets/wp-content/uploads/2026/04/upscaled_image-e1775146839426.jpg",
-      "tags": ["vibe-coding", "trust", "ai-fomo", "enterprise", "verification", "burnout"],
-      "sources": [
-        {
-          "title": "In the age of vibe coding, trust is the real bottleneck",
-          "url": "https://fortune.com/2026/04/02/in-the-age-of-vibe-coding-trust-is-the-real-bottleneck/",
-          "source_name": "Fortune",
-          "image": "https://fortune.com/img-assets/wp-content/uploads/2026/04/upscaled_image-e1775146839426.jpg",
-          "excerpt": "Qodo CEO Itamar Friedman argues enterprises need 'official wisdom' to govern AI-generated code, with clients including Walmart, Nvidia, and Ford investing in verification layers.",
-          "applicability_score": 92,
-          "factuality_score": 90,
-          "angle": "Enterprise trust and verification as the real bottleneck, with $70M funding signal"
-        },
-        {
-          "title": "What Is Vibe Coding? The AI Trend Fueling a New Kind of FOMO",
-          "url": "https://www.bloomberg.com/news/newsletters/2026-04-05/what-is-vibe-coding-the-ai-trend-fueling-a-new-kind-of-fomo",
-          "source_name": "Bloomberg",
-          "image": null,
-          "excerpt": "Bloomberg examines how vibe coding is spreading beyond tech into creative industries, fueling AI anxiety and potential burnout rather than productivity gains.",
-          "applicability_score": 88,
-          "factuality_score": 88,
-          "angle": "Cultural impact of vibe coding on creative professionals and the FOMO it generates"
-        },
-        {
-          "title": "Vibe coding may offer insight into our AI future",
-          "url": "https://news.harvard.edu/gazette/story/2026/04/vibe-coding-may-offer-insight-into-our-ai-future/",
-          "source_name": "Harvard Gazette",
-          "image": "https://news.harvard.edu/wp-content/uploads/2026/03/032526_Karen_Brennan_Portrait_041.jpg",
-          "excerpt": "Harvard professor Karen Brennan argues vibe coding democratizes creation but makes imagination, clear communication, and critical evaluation essential life skills.",
-          "applicability_score": 78,
-          "factuality_score": 92,
-          "angle": "Academic perspective on vibe coding as a lens into AI's broader impact on creative work"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "ai-agent-security-crisis-2026",
-      "title": "88% of Companies Have Experienced AI Agent Security Incidents, and 97% Expect More",
-      "summary": "Two major reports from Gravitee and Arkose Labs reveal that AI agent adoption has vastly outpaced security controls. 88% of organizations report confirmed or suspected agent security incidents, while 97% of enterprise leaders expect a material agent-driven incident within 12 months.",
-      "key_takeaways": [
-        "88% of organizations report confirmed or suspected AI agent security incidents, rising to 92.7% in healthcare",
-        "81% of organizations have deployed AI agents into production, but only 14.4% have full security and IT approval",
-        "97% of enterprise leaders expect a material AI-agent-driven security or fraud incident within 12 months",
-        "82% of executives believe existing policies protect them, but only 21% have visibility into what their agents can access"
-      ],
-      "article": "Two independent security reports published this week paint an alarming picture of the gap between AI agent deployment speed and security readiness. Gravitee's State of AI Agent Security 2026 report, surveying 900+ executives, found that 88% of organizations have experienced confirmed or suspected security incidents tied to AI agents. In healthcare, that number climbs to 92.7%.\n\nThe disconnect between confidence and reality is striking. Gravitee found that 82% of executives believe their existing policies protect them from unauthorized agent actions. But only 21% have actual visibility into what their agents can access, which tools they call, or what data they touch. Meanwhile, 81% of teams have pushed agents past planning into active testing or production, but only 14.4% did so with full security and IT approval.\n\nArkose Labs' parallel research found that 97% of enterprise leaders expect a material AI-agent-driven security or fraud incident within the next 12 months, with nearly half anticipating one within six months. Despite this, only 6% of security budgets address agentic AI risks.\n\nFor anyone building agent workflows with Claude Code, MCP servers, or custom pipelines, these numbers are a reality check. Agent identity management, access scoping, and human-in-the-loop approval patterns are not optional. They are the difference between a useful automation and a security incident waiting to happen.",
-      "impact_tier": "watch",
-      "category": "ai-agents",
       "signal_score": 80,
-      "image": "https://www.gravitee.io/hubfs/State_of_AA_Sec_Blog_Feature.png",
-      "tags": ["ai-agents", "security", "enterprise", "governance", "risk"],
-      "sources": [
-        {
-          "title": "State of AI Agent Security 2026 Report: When Adoption Outpaces Control",
-          "url": "https://www.gravitee.io/blog/state-of-ai-agent-security-2026-report-when-adoption-outpaces-control",
-          "source_name": "Gravitee",
-          "image": "https://www.gravitee.io/hubfs/State_of_AA_Sec_Blog_Feature.png",
-          "excerpt": "Gravitee's survey of 900+ executives reveals 88% of organizations experienced AI agent security incidents, but only 14.4% deployed agents with full security approval.",
-          "applicability_score": 85,
-          "factuality_score": 88,
-          "angle": "Primary research report with granular data on the security-adoption gap across industries"
-        },
-        {
-          "title": "97% of Enterprises Expect a Major AI Agent Security Incident Within the Year",
-          "url": "https://www.arkoselabs.com/blog/agentic-ai-security-risk-enterprise-readiness/",
-          "source_name": "Arkose Labs",
-          "image": "https://www.arkoselabs.com/wp-content/uploads/Screenshot-2026-03-31-at-3.52.46-PM.png",
-          "excerpt": "97% of enterprise leaders expect a material AI-agent-driven security or fraud incident within 12 months, but only 6% of security budgets address agentic AI risks.",
-          "applicability_score": 82,
-          "factuality_score": 85,
-          "angle": "Enterprise readiness assessment with budget allocation data showing the investment gap"
-        },
-        {
-          "title": "State of AI Cybersecurity 2026: 92% of Security Pros Concerned About AI Agents",
-          "url": "https://www.darktrace.com/blog/state-of-ai-cybersecurity-2026-92-of-security-professionals-concerned-about-the-impact-of-ai-agents",
-          "source_name": "Darktrace",
-          "image": "https://cdn.prod.website-files.com/626ff4d25aca2edf4325ff97/69c5520c9d1712138bd6052c_697c969f934bd6d7f65b1d0f_e103b837e3480007557bef8e6eb5d206_Chapter%201.jpg",
-          "excerpt": "92% of security leaders express concern about AI agent deployment, while only 37% of organizations have implemented formal AI governance frameworks.",
-          "applicability_score": 78,
-          "factuality_score": 90,
-          "angle": "Security professional sentiment data showing the governance gap between concern and action"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "chatgpt-model-simplification-gpt5-4",
-      "title": "OpenAI Simplifies ChatGPT to Three Modes and Fully Retires GPT-4o Across All Plans",
-      "summary": "OpenAI completed the GPT-4o retirement on April 3, removing it from all plans including Business and Enterprise. Simultaneously, ChatGPT's model picker was simplified to three options: Instant, Thinking, and Pro, with GPT-5.4 Thinking as the new flagship reasoning model.",
-      "key_takeaways": [
-        "GPT-4o fully retired from all ChatGPT plans on April 3, ending a phased removal that began in February",
-        "ChatGPT model picker simplified to three modes: Instant for quick tasks, Thinking for reasoning, Pro for highest-end work",
-        "GPT-5.4 Thinking shows an upfront plan while working, letting users correct direction mid-response instead of waiting",
-        "New File Library feature lets users save and reuse documents across conversations, turning ChatGPT into a persistent workspace"
-      ],
-      "article": "OpenAI completed the full retirement of GPT-4o from ChatGPT on April 3, closing out a gradual sunset that started in February. Business, Enterprise, and Edu customers who still had access through Custom GPTs lost it on that date, making GPT-5.2 and GPT-5.4 the only model options going forward.\n\nThe more consequential change is how OpenAI restructured the user experience. The model picker now presents three clear modes instead of a confusing list of version numbers. Instant handles quick questions and light tasks. Thinking uses GPT-5.4's reasoning capabilities for planning, research, and complex analysis. Pro delivers the highest-tier reasoning for users who need it. This simplification is designed to lower the cognitive load of choosing the right model.\n\nGPT-5.4 Thinking is the star of the lineup. It shows an upfront plan while working, which means you can course-correct mid-response instead of waiting for a complete output and starting over. For anyone running creative research or multi-step analysis, that is a meaningful workflow improvement.\n\nThe new File Library rounds out the workspace evolution, letting users save documents once and reference them across multiple conversations. Combined with updated integrations for Box, Notion, Linear, and Dropbox, ChatGPT is clearly positioning itself as a persistent AI workspace rather than a conversation-first chatbot.",
-      "impact_tier": "watch",
-      "category": "competitive-intel",
-      "signal_score": 74,
-      "image": "https://imidef.com/images/2026-04-05-chatgpt-new-features-april-2026/main.jpg",
-      "tags": ["openai", "chatgpt", "gpt-5.4", "model-picker", "gpt-4o-retirement"],
-      "sources": [
-        {
-          "title": "ChatGPT New Features in April 2026: GPT-5.4 Thinking, File Library, and More",
-          "url": "https://imidef.com/en/2026-04-05-chatgpt-new-features-april-2026",
-          "source_name": "Imidef",
-          "image": "https://imidef.com/images/2026-04-05-chatgpt-new-features-april-2026/main.jpg",
-          "excerpt": "ChatGPT introduced a simplified model picker with three main options and GPT-5.4 Thinking as its flagship reasoning model, alongside File Library for document reuse.",
-          "applicability_score": 80,
-          "factuality_score": 88,
-          "angle": "Comprehensive feature walkthrough of all April 2026 ChatGPT updates"
-        },
-        {
-          "title": "Retiring GPT-4o, GPT-4.1, GPT-4.1 mini, and OpenAI o4-mini in ChatGPT",
-          "url": "https://openai.com/index/retiring-gpt-4o-and-older-models/",
-          "source_name": "OpenAI",
-          "image": null,
-          "excerpt": "OpenAI retired GPT-4o from all ChatGPT plans on April 3, completing a phased removal as usage shifted overwhelmingly to GPT-5.2 and GPT-5.4.",
-          "applicability_score": 72,
-          "factuality_score": 95,
-          "angle": "Official retirement announcement with migration timeline and rationale"
-        },
-        {
-          "title": "OpenAI launches GPT-5.4 with Pro and Thinking versions",
-          "url": "https://techcrunch.com/2026/03/05/openai-launches-gpt-5-4-with-pro-and-thinking-versions/",
-          "source_name": "TechCrunch",
-          "image": "https://techcrunch.com/wp-content/uploads/2026/03/5.4-Thinking_Hero-SEO.png",
-          "excerpt": "OpenAI unveiled GPT-5.4 in standard, Thinking, and Pro variants with a record 1 million token context window for API users.",
-          "applicability_score": 78,
-          "factuality_score": 92,
-          "angle": "Technical launch details with benchmark comparisons and API pricing"
-        }
-      ],
-      "reddit_threads": []
-    },
-    {
-      "id": "figma-make-kits-design-system-ai",
-      "title": "Figma Make Gets Context-Aware: Make Kits and Attachments Bridge AI Prototyping and Design Systems",
-      "summary": "Figma shipped Make Kits and Make Attachments on April 2, letting teams feed design system components, code packages, brand guidelines, and real assets directly into Figma Make prompts. The update closes the biggest gap in AI-generated prototyping: designs that actually match your production system.",
-      "key_takeaways": [
-        "Make Kits let design system authors package components, styles, tokens, and usage guidelines so Make outputs production-aligned prototypes",
-        "Make Attachments support PRDs, brand guidelines, code files, CSVs, images, videos, and SVGs as direct prompt context",
-        "Code components can be imported through npm packages from public or Figma's private registry",
-        "FigJam also gained Microsoft 365 Copilot integration for generating structured diagrams from Microsoft context"
-      ],
-      "article": "Figma shipped two features on April 2 that address the biggest complaint about AI-generated design: it looks generic because it does not know your system. Make Kits and Make Attachments give Figma Make the context it needs to produce prototypes that actually align with your production design system.\n\nMake Kits let design system owners create reusable packages that combine components, styles, variables, and tokens with written guidelines that teach Make how to use them. You can import code components through npm packages, whether from a public registry or Figma's secure private registry. The key detail: guidelines teach Make not just what components exist, but the rules for when and how to use them. That means generated prototypes start from production-aligned components instead of generic placeholders.\n\nMake Attachments let you drop files directly into any Make prompt. Attach a PRD, brand guidelines, or code files as context. Attach images, CSVs, videos, or SVGs as real content. Supported formats include PDF, markdown, TSX, JS, CSS, JSON, and common media types.\n\nFor creative directors managing design systems across client work, this is a significant workflow unlock. You can feed a client's brand guidelines and component library into a prompt and get prototypes that are actually on-brand from the first generation. The gap between what Make outputs and what ships just got noticeably smaller.",
-      "impact_tier": "adopt",
-      "category": "design-tools",
-      "signal_score": 86,
       "image": null,
-      "tags": ["figma", "design-systems", "ai-prototyping", "make-kits", "creative-tools"],
+      "tags": ["cursor", "windsurf", "claude-code", "copilot", "ai-coding", "benchmarks"],
       "sources": [
         {
-          "title": "Build With More Context and More Control in Figma Make",
-          "url": "https://www.figma.com/blog/introducing-make-kits-and-make-attachments/",
-          "source_name": "Figma Blog",
+          "title": "Cursor vs Windsurf vs Claude Code: Best AI Coding Tool in 2026 (Now with Sonnet 4.6)",
+          "url": "https://www.nxcode.io/resources/news/cursor-vs-windsurf-vs-claude-code-2026",
+          "source_name": "NxCode",
           "image": null,
-          "excerpt": "Make Kits and Make Attachments bring design system context into Figma Make, so prototypes start from real components, data, and constraints instead of generic outputs.",
-          "applicability_score": 95,
-          "factuality_score": 95,
-          "angle": "Official announcement with detailed feature walkthrough and design system use cases"
+          "excerpt": "Updated April 2026 comparison of Cursor, Windsurf, and Claude Code benchmarking real-world coding performance with Claude Sonnet 4.6",
+          "applicability_score": 85,
+          "factuality_score": 72,
+          "angle": "direct tool comparison incorporating latest model updates"
         },
         {
-          "title": "Figma Release Notes - April 2026",
-          "url": "https://releasebot.io/updates/figma",
-          "source_name": "Releasebot",
-          "image": null,
-          "excerpt": "April 2 updates include Make Kits for design system prototyping, Make Attachments for file context, and built-in approvals in Figma Buzz.",
-          "applicability_score": 88,
-          "factuality_score": 92,
-          "angle": "Consolidated release notes including the FigJam + Microsoft 365 Copilot integration"
+          "title": "How AI is breaking the SaaS business model",
+          "url": "https://www.youtube.com/watch?v=cxcb55zr2Q8",
+          "source_name": "Fireship",
+          "image": "https://i.ytimg.com/vi/cxcb55zr2Q8/maxresdefault.jpg",
+          "excerpt": "Fireship examines seven AI developments including OpenAI Codex crossing 1M downloads and how AI coding tools are displacing traditional software categories",
+          "applicability_score": 82,
+          "factuality_score": 78,
+          "angle": "macro view of AI disrupting software business models"
         }
       ],
       "reddit_threads": []
     },
     {
-      "id": "pinterest-mcp-production-scale",
-      "title": "Pinterest Deploys Production-Scale MCP Ecosystem: 66K Monthly Invocations, 7K Hours Saved",
-      "summary": "Pinterest published details of its production MCP deployment, the most comprehensive enterprise implementation publicly documented. Domain-specific MCP servers with a central registry process 66,000 monthly invocations across 844 users, saving approximately 7,000 engineering hours per month.",
+      "id": "mcp-challenges-2026",
+      "title": "MCP Faces Security and Adoption Hurdles",
+      "summary": "Four months after Anthropic donated the Model Context Protocol to the Linux Foundation, MCP is alive but struggling with unresolved authentication gaps, security vulnerabilities, and high-profile vendors stepping back from adoption.",
       "key_takeaways": [
-        "Pinterest runs domain-specific MCP servers for Presto, Spark, and Airflow rather than a monolithic service, limiting context bloat",
-        "A central MCP registry acts as the source of truth for approved servers with both UI and API discovery",
-        "Human-in-the-loop approval is mandated for sensitive operations using elicitation to confirm before execution",
-        "66,000 monthly invocations across 844 users, saving roughly 7,000 hours per month"
+        "MCP faces unresolved security risks and authentication challenges post-Linux Foundation handoff",
+        "Perplexity and other vendors have publicly scaled back MCP commitments",
+        "Enterprises now average 12 AI agents per organization but expect to reach 20 by 2027",
+        "50% of enterprise AI agents still operate in complete isolation without inter-agent coordination"
       ],
-      "article": "Pinterest engineering published what may be the most detailed public case study of Model Context Protocol at enterprise scale. Their production MCP ecosystem processes 66,000 invocations per month across 844 active users, saving approximately 7,000 engineering hours monthly. Those are real numbers from a real deployment, not a proof of concept.\n\nThe architecture choices are instructive. Rather than building a single monolithic MCP server, Pinterest deployed a fleet of domain-specific servers, each dedicated to a tool like Presto, Spark, or Airflow. This limits context bloat, isolates failures, and enables fine-grained access control per domain. A central MCP registry serves as the source of truth, with both a human-friendly UI and an API for discovery and validation.\n\nSecurity is baked into the design. Pinterest mandates human-in-the-loop approval for sensitive operations, using elicitation prompts to confirm potentially dangerous actions before execution. This pattern matches what the AI agent security reports this week recommend as essential governance.\n\nFor teams building their own MCP infrastructure, Pinterest's approach validates several patterns: domain isolation over monolithic servers, centralized discovery, and mandatory human approval for destructive operations. If you are running MCP servers for your creative or engineering workflows, this is the reference architecture to study.",
+      "article": "The Model Context Protocol is at a critical inflection point. Four months after the Linux Foundation took stewardship from Anthropic, MCP faces real-world friction that threatens its role as the connective tissue for agentic AI. Security researchers have documented authentication gaps and prompt injection vulnerabilities that remain unresolved in the specification. High-profile vendors including Perplexity have publicly scaled back MCP commitments, citing the protocol's immaturity for production use. A new Belitsoft enterprise survey adds troubling context: the average enterprise now runs 12 AI agents, but 50% operate in complete isolation. True multi-agent coordination -- the exact use case MCP was designed to enable -- remains aspirational for most organizations. The protocol's long-term viability depends on resolving these security concerns before competing approaches gain traction.",
       "impact_tier": "watch",
       "category": "ai-agents",
-      "signal_score": 78,
-      "image": "https://res.infoq.com/news/2026/04/pinterest-mcp-ecosystem/en/headerimage/pininterestarch-1774143632607.jpeg",
-      "tags": ["mcp", "pinterest", "enterprise", "architecture", "production"],
+      "signal_score": 82,
+      "image": null,
+      "tags": ["mcp", "ai-agents", "security", "enterprise", "linux-foundation", "agentic"],
       "sources": [
         {
-          "title": "Pinterest Deploys Production-Scale Model Context Protocol Ecosystem for AI Agent Workflows",
-          "url": "https://www.infoq.com/news/2026/04/pinterest-mcp-ecosystem/",
-          "source_name": "InfoQ",
-          "image": "https://res.infoq.com/news/2026/04/pinterest-mcp-ecosystem/en/headerimage/pininterestarch-1774143632607.jpeg",
-          "excerpt": "Pinterest processes 66,000 monthly MCP invocations across 844 users with domain-specific servers and centralized registry governance, saving 7,000 hours per month.",
-          "applicability_score": 90,
-          "factuality_score": 92,
-          "angle": "Detailed enterprise case study with architecture diagrams and production metrics"
+          "title": "MCP is Alive, but Faces Challenges",
+          "url": "https://aibusiness.com/agentic-ai/mcp-alive-faces-challenges",
+          "source_name": "AI Business",
+          "image": null,
+          "excerpt": "Four months after Linux Foundation received MCP donation, the community grapples with security risks, authentication challenges, and Perplexity pulling back",
+          "applicability_score": 88,
+          "factuality_score": 78,
+          "angle": "critical assessment of MCP adoption trajectory and technical gaps"
         },
         {
-          "title": "Top MCP security resources - April 2026",
-          "url": "https://adversa.ai/blog/top-mcp-security-resources-april-2026/",
-          "source_name": "Adversa AI",
+          "title": "2026 AI Agent Trends: Enterprises Run 12 AI Agents on Average, but Half Work Alone",
+          "url": "https://markets.financialcontent.com/stocks/article/abnewswire-2026-4-6-belitsoft-report-2026-ai-agent-trends-enterprises-run-12-ai-agents-on-average-but-half-work-alone",
+          "source_name": "Belitsoft via PR Newswire",
           "image": null,
-          "excerpt": "April 2026 MCP research reveals risks including tool poisoning attacks, resource amplification loops, and authentication vulnerabilities in remote deployments.",
-          "applicability_score": 72,
-          "factuality_score": 85,
-          "angle": "Security research roundup covering emerging attack vectors against MCP infrastructure"
+          "excerpt": "New report finds enterprises average 12 AI agents but 50% operate in isolation without inter-agent coordination",
+          "applicability_score": 80,
+          "factuality_score": 75,
+          "angle": "quantitative data on the state of enterprise AI agent deployment"
         }
       ],
       "reddit_threads": []
     },
     {
-      "id": "gemini-android-auto-live-news",
-      "title": "Google Ships Gemini to Android Auto and Adds Interactive News Briefings to Gemini Live",
-      "summary": "Google rolled out Gemini to replace Google Assistant on Android Auto in a wide public release on April 2-3, five months behind schedule. Simultaneously, Gemini Live gained interactive daily news summaries that let users explore stories conversationally instead of receiving headline-only briefings.",
+      "id": "competitive-intel-april-2026",
+      "title": "Gemini Launches Chat Import to Poach ChatGPT and Claude Users",
+      "summary": "Google released switching tools letting users import chat histories and personal memories directly from ChatGPT and Claude into Gemini. April 2026 benchmarks show Gemini 3.1 Pro leading MMLU while GPT-5.4 tops coding evals.",
       "key_takeaways": [
-        "Gemini on Android Auto supports multi-turn conversational voice interactions, Google Maps, message editing, and music control",
-        "User reception is mixed: praise for conversational ability but complaints about verbose responses and location failures in a driving context",
-        "Gemini Live now provides detailed interactive news summaries with follow-up questions instead of headline-only briefings",
-        "The rollout is five months behind schedule after the original Google I/O 2025 announcement"
+        "Google released direct import tools for chat histories from ChatGPT and Claude into Gemini",
+        "Gemini 3.1 Pro leads April 2026 MMLU benchmarks at 94.1%",
+        "GPT-5.4 achieves 74.9% on SWE-bench coding evaluation",
+        "DeepSeek delivers near-frontier performance at 90% lower cost than Western alternatives"
       ],
-      "article": "Google pushed Gemini to Android Auto users at scale during the first week of April, five months after the original announcement at Google I/O 2025. Over 90% of users polled still did not have the feature as recently as late March, so the wide rollout represents a significant change in availability.\n\nGemini on Android Auto replaces Google Assistant with a conversational AI that supports multi-turn interactions. Drivers can make natural requests like asking for taco places with vegan options along their current route, and Gemini handles the context across follow-up questions. The integration connects to Google Maps, messaging, and music playback.\n\nEarly reception is divided. Some users appreciate the conversational upgrade, but others cite verbose responses that are distracting while driving, location lookup failures, and lost functionality compared to Google Assistant. In a driving context, long AI responses are not just annoying but potentially dangerous.\n\nSeparately, Google upgraded Gemini Live with interactive daily news summaries. Instead of short headline-style responses, Gemini Live now provides detailed summaries and lets users ask follow-up questions to dig deeper into specific stories. The feature is already available to early access users and does not require a separate update. For creative professionals who consume news through voice, this turns Gemini Live into something closer to a personalized news briefing service.",
-      "impact_tier": "ignore",
+      "article": "Google is aggressively targeting users of rival AI platforms with new switching tools that allow direct import of chat histories and personal memories from ChatGPT and Claude into Gemini. The move mirrors data portability norms from app stores and could meaningfully reduce platform switching friction. April 2026 benchmarks add competitive context: Gemini 3.1 Pro tops MMLU at 94.1%, while GPT-5.4 leads SWE-bench at 74.9% on coding tasks. DeepSeek remains the efficiency outlier, delivering near-frontier performance at roughly 90% lower cost. For enterprise buyers, the converging benchmarks reinforce that switching costs -- not raw capability -- are becoming the primary competitive moat for AI platform vendors, making Google's import play strategically significant.",
+      "impact_tier": "watch",
       "category": "competitive-intel",
-      "signal_score": 55,
-      "image": "https://9to5google.com/wp-content/uploads/sites/4/2025/11/android-auto-gemini-live-3.jpg?quality=82&strip=all",
-      "tags": ["google", "gemini", "android-auto", "gemini-live", "voice-ai", "news"],
+      "signal_score": 76,
+      "image": null,
+      "tags": ["gemini", "openai", "gpt-5", "benchmarks", "deepseek", "google", "competitive"],
       "sources": [
         {
-          "title": "Gemini for Android Auto is rolling out more widely, but not everyone is happy about it",
-          "url": "https://9to5google.com/2026/04/02/gemini-for-android-auto-is-rolling-out-more-widely-but-not-everyone-is-happy-about-it/",
-          "source_name": "9to5Google",
-          "image": "https://9to5google.com/wp-content/uploads/sites/4/2025/11/android-auto-gemini-live-3.jpg?quality=82&strip=all",
-          "excerpt": "Google is rolling out Gemini to Android Auto at wider scale, though adoption has been slow and early reactions are mixed with complaints about verbose responses.",
-          "applicability_score": 60,
-          "factuality_score": 90,
-          "angle": "User reception analysis with polling data and specific complaint patterns"
+          "title": "You can now transfer your chats and personal information from other chatbots directly into Gemini",
+          "url": "https://techcrunch.com/2026/03/26/you-can-now-transfer-your-chats-and-personal-information-from-other-chatgpts-directly-into-gemini/",
+          "source_name": "TechCrunch",
+          "image": null,
+          "excerpt": "Google launches switching tools allowing import of chat histories and personal memories from ChatGPT and Claude into Gemini",
+          "applicability_score": 82,
+          "factuality_score": 80,
+          "angle": "Google accelerating platform migration away from rivals"
         },
         {
-          "title": "Gemini Finally Hits Android Auto Widely, But Users Are Split",
-          "url": "https://winbuzzer.com/2026/04/03/gemini-finally-hits-android-auto-widely-but-users-are-split-xcxwbn/",
-          "source_name": "WinBuzzer",
-          "image": "https://winbuzzer.com/wp-content/uploads/2026/04/Android-Auto.jpg",
-          "excerpt": "The wide rollout of Gemini on Android Auto is five months behind schedule, with users divided over verbose responses and location failures.",
-          "applicability_score": 55,
-          "factuality_score": 88,
-          "angle": "Timeline analysis of the delayed rollout and feature comparison with Google Assistant"
-        },
+          "title": "ChatGPT vs Claude vs Gemini vs DeepSeek [April 2026 Benchmarks]",
+          "url": "https://tech-insider.org/chatgpt-vs-claude-vs-deepseek-vs-gemini-2026/",
+          "source_name": "Tech Insider",
+          "image": null,
+          "excerpt": "April 2026 benchmarks show Gemini 3.1 Pro at 94.1% MMLU, GPT-5.4 leading SWE-bench, DeepSeek competitive at 90% lower cost",
+          "applicability_score": 78,
+          "factuality_score": 70,
+          "angle": "head-to-head benchmark data across all major frontier models"
+        }
+      ],
+      "reddit_threads": []
+    },
+    {
+      "id": "ai-erasing-saas-value",
+      "title": "AI Is Erasing $1 Trillion in SaaS Market Cap",
+      "summary": "Fireship's latest Code Report synthesizes seven AI developments showing autonomous AI tools systematically eliminating the need for point SaaS products. OpenAI's Codex app surpassed one million downloads in its first week.",
+      "key_takeaways": [
+        "OpenAI Codex app surpassed 1 million downloads within one week of launch",
+        "Claude Opus 4.6 expanding into legal and financial analysis verticals",
+        "AI tools collectively displacing an estimated $1 trillion in SaaS market capitalization",
+        "Point SaaS products most vulnerable as AI agents handle end-to-end workflows"
+      ],
+      "article": "Fireship's latest Code Report frames seven recent AI developments around a single thesis: AI is systematically dismantling the SaaS business model. OpenAI's Codex app crossed one million downloads in its first week, demonstrating appetite for direct AI-to-task tooling that bypasses traditional software categories. Claude Opus 4.6 has expanded beyond coding into legal and financial analysis, targeting verticals that once supported multi-billion dollar SaaS incumbents. The macro effect is an estimated $1 trillion erosion in SaaS market capitalization as investors price in AI substitution risk. For developers and product builders, the signal is clear: AI-native workflows are displacing the layered SaaS stacks enterprises spent a decade assembling, and the disruption is accelerating faster than most incumbents anticipated.",
+      "impact_tier": "watch",
+      "category": "general",
+      "signal_score": 73,
+      "image": "https://i.ytimg.com/vi/cxcb55zr2Q8/maxresdefault.jpg",
+      "tags": ["saas", "disruption", "openai", "codex", "fireship", "market", "claude-opus"],
+      "sources": [
         {
-          "title": "Gemini Live just made news briefings way less boring",
-          "url": "https://www.androidauthority.com/news-summaries-update-gemini-live-3653960/",
-          "source_name": "Android Authority",
-          "image": "https://www.androidauthority.com/wp-content/uploads/2025/08/Gemini-Live-Pixel-10-Pro-XL-3.jpg",
-          "excerpt": "Gemini Live now provides interactive news summaries where users can ask follow-up questions mid-conversation without restarting.",
-          "applicability_score": 65,
-          "factuality_score": 88,
-          "angle": "Feature walkthrough of the new interactive news briefing capabilities"
+          "title": "How AI is breaking the SaaS business model",
+          "url": "https://www.youtube.com/watch?v=cxcb55zr2Q8",
+          "source_name": "Fireship",
+          "image": "https://i.ytimg.com/vi/cxcb55zr2Q8/maxresdefault.jpg",
+          "excerpt": "Fireship Code Report covers seven AI developments including OpenAI Codex 1M downloads and AI's trillion-dollar impact on SaaS valuations",
+          "applicability_score": 80,
+          "factuality_score": 78,
+          "angle": "macro trend analysis framing AI as existential threat to SaaS"
         }
       ],
       "reddit_threads": []
     }
   ],
   "stats": {
-    "total_sources": 19,
-    "total_topics": 7,
+    "total_sources": 10,
+    "total_topics": 5,
     "adopt_count": 2,
-    "watch_count": 4,
-    "ignore_count": 1
+    "watch_count": 3,
+    "ignore_count": 0
   },
-  "top_stories": [],
-  "product_radar": [
-    {
-      "name": "Gemma 4",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/gemma-4/",
-      "description": "Google's most capable open models under Apache 2.0, from 2B edge to 31B dense",
-      "tag": "NEW",
-      "category": "competitive-intel",
-      "tags": ["google", "open-source", "edge-ai"]
-    },
-    {
-      "name": "Figma Make Kits",
-      "url": "https://www.figma.com/blog/introducing-make-kits-and-make-attachments/",
-      "description": "Design system-aware AI prototyping with component packages and file attachments",
-      "tag": "NEW",
-      "category": "design-tools",
-      "tags": ["figma", "design-systems", "ai-prototyping"]
-    },
-    {
-      "name": "ChatGPT File Library",
-      "url": "https://imidef.com/en/2026-04-05-chatgpt-new-features-april-2026",
-      "description": "Save and reuse documents across conversations, turning ChatGPT into a persistent workspace",
-      "tag": "NEW",
-      "category": "competitive-intel",
-      "tags": ["openai", "chatgpt", "productivity"]
-    },
-    {
-      "name": "Qodo AI Code Governance",
-      "url": "https://fortune.com/2026/04/02/in-the-age-of-vibe-coding-trust-is-the-real-bottleneck/",
-      "description": "AI code verification platform raised $70M Series B, used by Walmart, Nvidia, Ford",
-      "tag": "NEW",
-      "category": "ai-coding",
-      "tags": ["code-review", "verification", "enterprise"]
-    }
+  "top_stories": [
+    "claude-code-source-leak",
+    "mcp-challenges-2026",
+    "ai-coding-tools-2026"
   ],
-  "watch_list": [],
+  "product_radar": [
+    "Windsurf: crossed 1M users, maturing as Cursor alternative at $20/month",
+    "Claude Sonnet 4.6: now integrated across Cursor, Windsurf, and Claude Code",
+    "OpenAI Codex app: 1M downloads in first week, direct AI-to-task tooling"
+  ],
+  "watch_list": [
+    "MCP authentication and security vulnerabilities still unresolved",
+    "Enterprise multi-agent coordination gap: 50% of agents operating in isolation",
+    "Gemini chat import tools reducing switching costs from ChatGPT and Claude"
+  ],
   "quick_hits": [
-    {
-      "title": "FigJam gains Microsoft 365 Copilot integration for generating structured diagrams",
-      "url": "https://releasebot.io/updates/figma",
-      "description": "Flowcharts, Gantt charts, and sequence diagrams generated from Microsoft 365 context directly in FigJam",
-      "category": "design-tools",
-      "tags": ["figma", "figjam", "microsoft", "copilot"]
-    },
-    {
-      "title": "Invariant Labs publishes reproducible MCP tool poisoning attack",
-      "url": "https://adversa.ai/blog/top-mcp-security-resources-april-2026/",
-      "description": "Easy-to-reproduce attack demonstrates how MCP servers can be exploited through tool definition manipulation",
-      "category": "ai-agents",
-      "tags": ["mcp", "security", "tool-poisoning"]
-    },
-    {
-      "title": "Harvard professor frames vibe coding as a lens into AI's future impact on all creative work",
-      "url": "https://news.harvard.edu/gazette/story/2026/04/vibe-coding-may-offer-insight-into-our-ai-future/",
-      "description": "Karen Brennan argues imagination and critical evaluation become essential life skills as AI tools democratize creation",
-      "category": "general",
-      "tags": ["vibe-coding", "education", "creative-skills"]
-    },
-    {
-      "title": "Gemini Live interactive news briefings now available in early access",
-      "url": "https://www.androidauthority.com/news-summaries-update-gemini-live-3653960/",
-      "description": "Users can explore news stories conversationally with follow-up questions instead of headline-only summaries",
-      "category": "competitive-intel",
-      "tags": ["google", "gemini-live", "news", "voice-ai"]
-    },
-    {
-      "title": "Darktrace report: only 37% of organizations have formal AI governance frameworks",
-      "url": "https://www.darktrace.com/blog/state-of-ai-cybersecurity-2026-92-of-security-professionals-concerned-about-the-impact-of-ai-agents",
-      "description": "92% of security leaders express concern about AI agents but less than half have governance structures in place",
-      "category": "ai-agents",
-      "tags": ["security", "governance", "enterprise"]
-    }
+    "AMD AI director publicly criticizes Claude Code quality regression post-update",
+    "DeepSeek delivers near-frontier AI results at 90% lower cost than US alternatives",
+    "Anthropic changing Pro and Max subscription policies for third-party agent frameworks"
   ],
   "creative_intel": [],
-  "knowledge_shelf": [],
-  "hero_story_index": 1
+  "knowledge_shelf": [
+    "Belitsoft 2026 AI Agent Report: enterprises run 12 agents avg, expect 20 by 2027, 50% isolated",
+    "April 2026 frontier benchmarks: Gemini 3.1 Pro 94.1% MMLU, GPT-5.4 74.9% SWE-bench"
+  ],
+  "hero_story_index": 0
 }
